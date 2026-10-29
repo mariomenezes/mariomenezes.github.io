@@ -1,0 +1,28 @@
+title: Mario Menezes
+description: >-
+  Notas de laboratório sobre infraestrutura, Kubernetes e service mesh.
+  Lab notes on infrastructure, Kubernetes and service mesh.
+url: "https://mariomenezes.github.io"
+baseurl: ""
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /:year/:month/:day/:title/
+
+minima:
+  social_links:
+    github: mariomenezes
+
+header_pages: []
+
+exclude:
+  - README.md
