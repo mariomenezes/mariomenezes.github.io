@@ -3,6 +3,7 @@ title: "Gray failure in Istio canaries: why per-version p95 misleads, and what I
 lang: en
 permalink: /en/2026/10/28/gray-failure-canary-istio/
 description: "Lab notes: detecting one degraded feature inside a canary with Istio metrics, deterministic rules, and measurements under injected faults."
+image: /assets/img/gray-failure-canary-istio/cover-en.png
 ---
 
 *[Leia em português]({{ "/pt/2026/10/28/gray-failure-canary-istio/" | relative_url }})*
@@ -10,6 +11,10 @@ description: "Lab notes: detecting one degraded feature inside a canary with Ist
 A canary can be broken for **one** feature and healthy for everything else. The most common canary analysis looks at the whole version: error rate and p95 of v2 against v1. This post records a lab experiment that measures what that view misses, and what changes when detection is done per `(cluster, version, feature)`.
 
 This is a lab, not production. The numbers hold for the environment described below, and the limits are at the end.
+
+![Animation: per-minute p95 of v1 and v2 heavy-reports; the fault on 10% of requests starts at minute 5, v2's p95 crosses the 1.15× threshold and the alarm fires at minute 8, while the whole-version p95 barely moves]({{ "/assets/img/gray-failure-canary-istio/fault-noise-en.gif" | relative_url }})
+
+*A real run from the lab. With 10% of v2's `heavy-reports` requests slowed down, the feature's p95 (orange) crosses the current threshold (dashed red) and the alarm fires at minute 8. The whole version's p95 (gray) barely moves. The old 1.3× threshold (dotted) would not have fired.*
 
 ## Summary
 
@@ -28,6 +33,20 @@ This is a lab, not production. The numbers hold for the environment described be
 - Two versions, v1 (stable) and v2 (canary), split 50/50 in the VirtualService. The VirtualService has `perTryTimeout: 5s` and 2 attempts.
 - One synthetic traffic generator per cluster, which sends an `X-Feature-Context` header with each request's feature.
 - Faults are injected through environment variables in the app, **on v2 only**. That way I know exactly what broke, when, and in what fraction.
+
+<pre class="mermaid">
+flowchart LR
+  G["traffic generator (X-Feature-Context header)"] --> S["Envoy sidecar (feature label)"]
+  S -->|50%| V1["app v1 (stable)"]
+  S -->|50%| V2["app v2 (canary)"]
+  S -. "metrics, reporter=source" .-> P["Prometheus (feature allow-list)"]
+  P --> D["detector: v2 vs v1 of the same feature"]
+  D --> E["recorded event (shadow mode)"]
+</pre>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+</script>
 
 ## Measuring per feature with Istio
 
@@ -97,6 +116,8 @@ The p95 of v2 as a whole went from 1–5 ms to about 2.9–3.4 s, because the mi
 |---|---|---|
 | Mix change 0% → 30% | 10/10 | 0/10 |
 
+![Log-scale chart: the p95 of v2 as a whole jumps from 1 ms to about 3 s when heavy-reports becomes 30% of traffic, while dashboard stays at 1 ms and heavy-reports is always about 3 s]({{ "/assets/img/gray-failure-canary-istio/mix-aggregate-en.svg" | relative_url }})
+
 This happens any time the usage profile shifts during a canary.
 
 ## Result 2: "p95 doubled" misses real regressions below the timeout
@@ -151,12 +172,20 @@ Lowering it to **1.15×** restored detection with no false alarms in the simulat
 
 The rule that stayed: **p95 > 1.15× v1's p95 for the same feature and > +500 ms, for 3 windows.**
 
+The full picture, across all rounds:
+
+![Detection bars per rule: A never detects; B at 1.3× detects without noise but drops to 7/10 and 1/10 with noise; B at 1.15× detects 10/10 in both noisy cases; the mean (C) only catches the uniform regression]({{ "/assets/img/gray-failure-canary-istio/detection-en.svg" | relative_url }})
+
 ## Result 5: false alarms on healthy traffic
 
 | Control | Duration | Alarms (all rules) |
 |---|---|---|
 | No noise | ~8.2 cluster-hours | 0 |
 | With noise (σ=0.1) | 8 cluster-hours | 0 |
+
+![Histogram of the per-minute v2/v1 p95 ratio in the noisy control: concentrated near 1.0, maximum 1.09, below the 1.15 threshold]({{ "/assets/img/gray-failure-canary-istio/noise-ratio-en.svg" | relative_url }})
+
+*In the noisy control, the ratio between v2's and v1's p95 in each minute stayed between 0.91 and 1.09. The headroom to the threshold is what keeps false alarms at zero.*
 
 Zero alarms doesn't mean a zero rate. At this volume, the 95% upper bound is about 0.37 false alarms per cluster-hour in each condition.
 
@@ -183,3 +212,7 @@ Zero alarms doesn't mean a zero rate. At this volume, the 95% upper bound is abo
 4. Test drift specific to a single pod.
 
 About AI: it plays no part in detection or decision. If it comes in at all, it will only write the explanation after an event has been detected by rule, and only if it shows measured value.
+
+---
+
+**Mario Menezes** — infrastructure, Kubernetes and service mesh. Comments, questions or corrections: [LinkedIn](https://www.linkedin.com/in/mario-a-menezes-costa/).

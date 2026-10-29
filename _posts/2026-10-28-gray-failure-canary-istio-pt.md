@@ -3,6 +3,7 @@ title: "Gray failure em canary com Istio: por que o p95 por versão engana, e o 
 lang: pt-BR
 permalink: /pt/2026/10/28/gray-failure-canary-istio/
 description: "Notas de laboratório: detectar uma feature degradada dentro de um canary com métricas do Istio, regras determinísticas e medições com falha injetada."
+image: /assets/img/gray-failure-canary-istio/cover-pt.png
 ---
 
 *[Read in English]({{ "/en/2026/10/28/gray-failure-canary-istio/" | relative_url }})*
@@ -10,6 +11,10 @@ description: "Notas de laboratório: detectar uma feature degradada dentro de um
 Uma versão canary pode estar quebrada para **uma** funcionalidade e saudável para todo o resto. A análise de canary mais comum olha a versão inteira: taxa de erro e p95 da v2 contra a v1. Este post registra um experimento de laboratório que mede o que essa visão deixa passar, e o que muda quando a detecção é feita por `(cluster, versão, feature)`.
 
 É um laboratório, não produção. Os números valem para o ambiente descrito abaixo, e os limites estão no fim do texto.
+
+![Animação: p95 por minuto da v1 e da v2 de heavy-reports; a falha em 10% das requisições começa no minuto 5, o p95 da v2 cruza o limiar de 1,15× e o alarme dispara no minuto 8, enquanto o p95 da versão inteira quase não muda]({{ "/assets/img/gray-failure-canary-istio/fault-noise-pt.gif" | relative_url }})
+
+*Uma execução real do laboratório. Com 10% das requisições de `heavy-reports` da v2 mais lentas, o p95 da feature (laranja) cruza o limiar atual (vermelho tracejado) e o alarme sai no minuto 8. O p95 da versão inteira (cinza) quase não se mexe. O limiar antigo, de 1,3× (pontilhado), não teria disparado.*
 
 ## Resumo
 
@@ -28,6 +33,20 @@ Uma versão canary pode estar quebrada para **uma** funcionalidade e saudável p
 - Duas versões, v1 (stable) e v2 (canary), com 50/50 no VirtualService. O VirtualService tem `perTryTimeout: 5s` e 2 tentativas.
 - Um gerador de tráfego sintético por cluster, que manda o header `X-Feature-Context` com a feature de cada requisição.
 - As falhas são injetadas por variáveis de ambiente no app, **só na v2**. Assim sei exatamente o que foi quebrado, quando e em que fração.
+
+<pre class="mermaid">
+flowchart LR
+  G["gerador de tráfego (header X-Feature-Context)"] --> S["sidecar Envoy (label feature)"]
+  S -->|50%| V1["app v1 (stable)"]
+  S -->|50%| V2["app v2 (canary)"]
+  S -. "métricas, reporter=source" .-> P["Prometheus (allow-list de features)"]
+  P --> D["detector: v2 contra v1 da mesma feature"]
+  D --> E["evento registrado (modo sombra)"]
+</pre>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+</script>
 
 ## Medindo por feature com o Istio
 
@@ -97,6 +116,8 @@ O p95 da v2 inteira foi de 1–5 ms para cerca de 2,9–3,4 s, porque a mistura 
 |---|---|---|
 | Mudança de proporção 0% → 30% | 10/10 | 0/10 |
 
+![Gráfico em escala log: o p95 da v2 inteira salta de 1 ms para cerca de 3 s quando heavy-reports passa a 30% do tráfego, enquanto dashboard continua em 1 ms e heavy-reports sempre em cerca de 3 s]({{ "/assets/img/gray-failure-canary-istio/mix-aggregate-pt.svg" | relative_url }})
+
 Isso acontece toda vez que o perfil de uso muda durante um canary.
 
 ## Resultado 2: "p95 dobrou" não vê regressão real abaixo do timeout
@@ -151,12 +172,20 @@ O ajuste para **1,15×** recuperava a detecção sem gerar alarme falso na simul
 
 A regra que ficou: **p95 > 1,15× o p95 da v1 da mesma feature e > +500 ms, por 3 janelas.**
 
+O quadro completo, de todas as rodadas:
+
+![Barras de detecção por regra: A nunca detecta; B com 1,3× detecta sem ruído mas cai para 7/10 e 1/10 com ruído; B com 1,15× detecta 10/10 nos dois casos com ruído; a média (C) só detecta a regressão uniforme]({{ "/assets/img/gray-failure-canary-istio/detection-pt.svg" | relative_url }})
+
 ## Resultado 5: falso alarme em tráfego saudável
 
 | Controle | Duração | Alarmes (todas as regras) |
 |---|---|---|
 | Sem ruído | ~8,2 horas-cluster | 0 |
 | Com ruído (σ=0,1) | 8 horas-cluster | 0 |
+
+![Histograma da razão p95 v2/v1 por minuto no controle com ruído: concentrada perto de 1,0, com máximo 1,09, abaixo do limiar de 1,15]({{ "/assets/img/gray-failure-canary-istio/noise-ratio-pt.svg" | relative_url }})
+
+*No controle com ruído, a razão entre o p95 da v2 e o da v1 em cada minuto ficou entre 0,91 e 1,09. A folga até o limiar é o que mantém o alarme falso em zero.*
 
 Zero alarmes não quer dizer taxa zero. Com esse volume, o limite superior de 95% é de cerca de 0,37 alarme falso por hora-cluster em cada condição.
 
@@ -183,3 +212,7 @@ Zero alarmes não quer dizer taxa zero. Com esse volume, o limite superior de 95
 4. Testar deriva específica de um pod.
 
 Sobre IA: ela não entra na detecção nem na decisão. Se entrar, vai ser só para escrever a explicação depois de o evento ter sido detectado por regra, e só se mostrar valor medido.
+
+---
+
+**Mario Menezes** — infraestrutura, Kubernetes e service mesh. Comentários, dúvidas ou correções: [LinkedIn](https://www.linkedin.com/in/mario-a-menezes-costa/).

@@ -18,9 +18,18 @@ kramdown:
 
 permalink: /:year/:month/:day/:title/
 
-minima:
-  social_links:
-    github: mariomenezes
+# minima 2.5.1 (versão do GitHub Pages) lê estes campos no rodapé
+github_username: mariomenezes
+linkedin_username: mario-a-menezes-costa
+
+# jekyll-seo-tag: autor e perfis nas metatags
+# (texto simples: o rodapé do minima 2.5.1 imprime `author` como está)
+author: Mario Menezes
+social:
+  name: Mario Menezes
+  links:
+    - "https://www.linkedin.com/in/mario-a-menezes-costa/"
+    - "https://github.com/mariomenezes"
 
 header_pages: []
 
