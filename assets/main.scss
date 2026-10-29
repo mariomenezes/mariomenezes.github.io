@@ -1,0 +1,41 @@
+---
+# Front matter obrigatório para o Jekyll compilar este arquivo.
+---
+@import "minima";
+
+.status { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; color: #6b7280; font-size: .9rem; margin: .5rem 0 1.2rem; }
+.pill { background: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; border-radius: 999px; padding: .1rem .7rem; font-weight: 600; font-size: .8rem; }
+
+.fig { margin: 1.6rem 0; }
+.fig img { width: 100%; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+.fig figcaption { font-size: .88rem; color: #4b5563; margin-top: .5rem; line-height: 1.5; }
+.fig details { margin-top: .6rem; font-size: .88rem; }
+.fig summary { cursor: pointer; color: #3730a3; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .8rem; margin: 1.4rem 0; }
+.tile { border: 1px solid #e5e7eb; border-radius: 10px; padding: .9rem 1rem; background: #fafafa; }
+.tile-value { font-size: 2rem; font-weight: 700; line-height: 1.1; color: #111827; }
+.tile-label { font-size: .85rem; color: #4b5563; margin-top: .3rem; line-height: 1.4; }
+
+.callout { border-left: 4px solid #f59e0b; background: #fffbeb; padding: .8rem 1.1rem; border-radius: 0 8px 8px 0; margin: 1.2rem 0; }
+.callout p, .callout ul { margin-bottom: .4rem; }
+
+table.data, .data table, table { border-collapse: collapse; width: 100%; font-size: .9rem; display: block; overflow-x: auto; }
+table th, table td { padding: .4rem .6rem; border: 1px solid #e5e7eb; text-align: left; }
+table th { background: #f3f4f6; }
+table tbody tr:nth-child(even) { background: #fafafa; }
+
+.mermaid { background: transparent; border: 0; }
+
+@media (prefers-color-scheme: dark) {
+  .pill { background: #1e1b4b; color: #c7d2fe; border-color: #3730a3; }
+  .fig img { background: #fff; border-color: #374151; }
+  .fig figcaption, .tile-label, .status { color: #9ca3af; }
+  .fig summary { color: #a5b4fc; }
+  .tile { background: #1f2937; border-color: #374151; }
+  .tile-value { color: #f3f4f6; }
+  .callout { background: #292208; border-left-color: #f59e0b; }
+  table th { background: #1f2937; }
+  table th, table td { border-color: #374151; }
+  table tbody tr:nth-child(even) { background: #161b22; }
+}
