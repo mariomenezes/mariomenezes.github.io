@@ -16,7 +16,7 @@ I wanted, on one host, an always-available fallback model, a small model for cod
 - **Models above 14B do not fit on a 16 GB card** at the quantization I used. A 27B model in Q6 took 30 GB on disk and was removed.
 - **Each card has a fixed role.** GPU 0 runs the router's fallback model. GPU 1 runs the code completion model and the embedding model.
 - **llama.cpp's sleep mode did not free the GPU.** VRAM was released, but the child process kept the card at 100% utilization.
-- **A timer fixed it:** every 2 minutes it unloads sleeping models through the API. The GPU went back to 0% idle use.
+- **The timer only acts on GPU 0.** Every 2 minutes it unloads the sleeping models of the router. The embedding and completion servers on GPU 1 are outside it. In a 5-minute sample, GPU 1 sat at 100% use with no requests in the logs.
 
 ## Environment
 
@@ -55,9 +55,14 @@ I removed the 27B file after confirming that no script or configuration still re
 
 llama.cpp's sleep mode releases VRAM when a model is idle. In practice the child process kept the GPU at 100% utilization, and the card ran hot with no useful work. Running with `--poll 0` did not reduce that use.
 
-What worked was a timer that, every 2 minutes, asks the server to unload the models that are sleeping. After that the GPU went back to 0% idle use.
+A timer, every 2 minutes, asks the router to unload the models that are sleeping. That resolved the observed case on GPU 0 (the fallback). In today's sample, GPU 0 sat at 2%.
 
-This is an observed effect, not one measured with instrumentation. I did not investigate the cause inside llama.cpp.
+GPU 1 is different. It hosts two separate servers, for embeddings and completion, that do not go through the router. The timer does not see them. In today's sample GPU 1 sat at 100% for the 5 minutes, with 4.7 GB of VRAM in use, and the logs of both servers show no requests in the last 10 minutes. I did not investigate the cause inside llama.cpp, nor confirm whether the load comes from both servers or just one.
+
+<figure class="fig">
+<img src="{{ "/assets/img/multimodelo-duas-gpus/gpu-en.svg" | relative_url }}" alt="Two panels. On the left, use of both GPUs over 5 minutes: GPU 1 at 100% the whole time and GPU 0 at 2%. On the right, memory in use: 10.4 GB on GPU 0 and 4.7 GB on GPU 1." loading="lazy">
+<figcaption>60 readings, one every 5 seconds, over 5 minutes, with no requests in the logs of the GPU 1 servers. A single time window; not a long series.</figcaption>
+</figure>
 
 ## Cost of keeping the fallback loaded
 
@@ -68,12 +73,15 @@ Keeping the 14B model loaded was a choice. The session report estimates about 40
 | Symptom | Cause | Fix |
 |---|---|---|
 | 27B model does not fit | 30 GB on a 16 GB card | removed; host kept to models up to 14B |
-| GPU at 100% with no work | child process of sleep mode | timer that unloads sleeping models |
+| GPU 0 busy while idle | child process of sleep mode | timer that unloads the router's models (resolved on GPU 0) |
+| GPU 1 at 100% with no requests | embedding and completion servers outside the router, so outside the timer | not resolved; cause not investigated |
 | `--poll 0` had no effect | it was not the cause | discarded |
 
 ## Limits
 
 - One hardware configuration.
+- The GPU sample covers 5 minutes at a single moment.
+- The cause of the 100% use on GPU 1 is still open.
 - Power draw and temperature were not measured.
 - I did not test a full host reboot with every service.
 

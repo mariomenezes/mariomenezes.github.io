@@ -58,7 +58,16 @@ O indexador do RAG lê de uma réplica em modo *receive-only*. Assim, nada que o
 
 ## Teste
 
-Criei e alterei arquivos nos dois lados e confirmei que as mudanças chegaram ao outro. Não medi o tempo de propagação; a conclusão é só de que a sincronização funciona nos dois sentidos.
+No relatório da sessão, criei e alterei arquivos nos dois lados e confirmei que as mudanças chegaram ao outro.
+
+Medi depois a propagação de um arquivo novo, do PC até o hub e até a réplica, em 10 execuções. Cada execução cria um arquivo numa pasta de rascunhos, que o indexador ignora, e registra quando ele aparece em cada destino.
+
+<figure class="fig">
+<img src="{{ "/assets/img/syncthing-vault-sincronizacao/sync-pt.svg" | relative_url }}" alt="Pontos mostrando o tempo até um arquivo novo aparecer no hub e na réplica, em 10 execuções. Quase todos ficam em 9 segundos; a primeira execução leva 13 segundos." loading="lazy">
+<figcaption>Tempo até o arquivo aparecer. Mediana de 9,0 s no hub e na réplica, que aparecem quase no mesmo instante. A primeira execução levou 13,3 s. Não medi o tempo de cada etapa separadamente.</figcaption>
+</figure>
+
+Os dois destinos aparecem quase no mesmo instante, então quase todo o tempo está antes do hub. Minha hipótese é que o atraso seja o intervalo de detecção de mudanças no PC de origem, perto dos 10 s padrão do Syncthing. Não verifiquei a configuração para confirmar.
 
 ## O que deu errado
 
@@ -71,7 +80,8 @@ Criei e alterei arquivos nos dois lados e confirmei que as mudanças chegaram ao
 ## Limites
 
 - Só o PC e o servidor estão conectados. Os celulares e o outro notebook ainda não.
-- Não medi tempo de propagação nem o comportamento com arquivos grandes.
+- Medi a propagação só de arquivos pequenos, em uma direção, em 10 execuções.
+- Não medi o comportamento com arquivos grandes nem com várias mudanças ao mesmo tempo.
 - A conexão depende de endereço fixo; uma mudança de rede exige ajuste manual.
 
 ---

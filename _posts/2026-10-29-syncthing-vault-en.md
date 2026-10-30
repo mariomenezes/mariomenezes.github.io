@@ -58,7 +58,16 @@ The RAG indexer reads from a replica in *receive-only* mode. So nothing the inde
 
 ## Test
 
-I created and changed files on both sides and confirmed the changes arrived on the other. I did not measure propagation time; the conclusion is only that sync works in both directions.
+In the session report, I created and changed files on both sides and confirmed the changes arrived on the other.
+
+I then measured the propagation of a new file, from the PC to the hub and to the replica, over 10 runs. Each run creates a file in a drafts folder, which the indexer ignores, and records when it appears at each destination.
+
+<figure class="fig">
+<img src="{{ "/assets/img/syncthing-vault-sincronizacao/sync-en.svg" | relative_url }}" alt="Dots showing the time until a new file appears on the hub and on the replica, over 10 runs. Almost all sit at 9 seconds; the first run takes 13 seconds." loading="lazy">
+<figcaption>Time until the file appears. Median of 9.0 s on the hub and on the replica, which show it at almost the same instant. The first run took 13.3 s. I did not measure each stage separately.</figcaption>
+</figure>
+
+Both destinations show the file at almost the same instant, so nearly all the time is spent before the hub. My hypothesis is that the delay is the change-detection interval on the source PC, close to Syncthing's 10 s default. I did not check the configuration to confirm it.
 
 ## What went wrong
 
@@ -71,7 +80,8 @@ I created and changed files on both sides and confirmed the changes arrived on t
 ## Limits
 
 - Only the PC and the server are connected. The phones and the other laptop are not yet.
-- I did not measure propagation time or behavior with large files.
+- I measured propagation only for small files, in one direction, over 10 runs.
+- I did not measure behavior with large files or with several changes at the same time.
 - The connection depends on a fixed address; a network change needs a manual update.
 
 ---

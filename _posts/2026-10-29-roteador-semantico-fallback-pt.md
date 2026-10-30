@@ -70,6 +70,11 @@ Pedidos curtos com 2 tokens de saída medem sobretudo o tempo de resposta do rot
 <figcaption>Topologia do roteamento na configuração ativa. Da esquerda para a direita: sinais, decisões (bloqueio de injeção, dados sensíveis, raciocínio profundo e rota padrão) e modelos.</figcaption>
 </figure>
 
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/monitoramento-roteador.png" | relative_url }}" alt="Página de monitoramento do roteador com o painel do Grafana: 33 requisições de inferência concluídas, 87,9% de taxa de sucesso, nenhuma em andamento, e gráficos de resultado e de latência por hora." loading="lazy">
+<figcaption>Monitoramento embutido no painel do roteador, no momento da captura: 33 requisições concluídas, 87,9% de sucesso, nenhuma em andamento. Mostra métricas de operação, não a qualidade das respostas.</figcaption>
+</figure>
+
 ## Decisão: fallback sempre carregado ou sob demanda
 
 | Opção | Custo | Efeito |

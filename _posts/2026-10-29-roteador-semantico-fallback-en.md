@@ -70,6 +70,11 @@ Short requests with 2 output tokens mostly measure the router's response time, n
 <figcaption>Routing topology in the active configuration. From left to right: signals, decisions (injection blocking, sensitive data, deep reasoning and default route) and models.</figcaption>
 </figure>
 
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/monitoramento-roteador.png" | relative_url }}" alt="Router monitoring page with the Grafana panel: 33 completed inference requests, 87.9% success rate, none in flight, and charts of outcomes and latency over time." loading="lazy">
+<figcaption>Monitoring embedded in the router panel at capture time: 33 completed requests, 87.9% success, none in flight. It shows operational metrics, not the quality of the answers.</figcaption>
+</figure>
+
 ## Decision: fallback always loaded or on demand
 
 | Option | Cost | Effect |

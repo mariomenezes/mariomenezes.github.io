@@ -1,0 +1,52 @@
+[
+ {
+  "run": 0,
+  "hub_s": 13.29,
+  "replica_s": 13.29
+ },
+ {
+  "run": 1,
+  "hub_s": 8.93,
+  "replica_s": 8.93
+ },
+ {
+  "run": 2,
+  "hub_s": 9.01,
+  "replica_s": 9.01
+ },
+ {
+  "run": 3,
+  "hub_s": 9.01,
+  "replica_s": 9.01
+ },
+ {
+  "run": 4,
+  "hub_s": 8.91,
+  "replica_s": 9.01
+ },
+ {
+  "run": 5,
+  "hub_s": 8.95,
+  "replica_s": 8.95
+ },
+ {
+  "run": 6,
+  "hub_s": 9.0,
+  "replica_s": 9.0
+ },
+ {
+  "run": 7,
+  "hub_s": 9.01,
+  "replica_s": 9.01
+ },
+ {
+  "run": 8,
+  "hub_s": 9.01,
+  "replica_s": 9.01
+ },
+ {
+  "run": 9,
+  "hub_s": 8.92,
+  "replica_s": 8.92
+ }
+]
