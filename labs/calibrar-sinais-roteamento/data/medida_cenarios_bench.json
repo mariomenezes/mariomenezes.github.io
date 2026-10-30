@@ -1,0 +1,226 @@
+[
+ {
+  "id": "01-k8s-crashloop",
+  "rotulo": "deep",
+  "chars": 4201,
+  "corridas": [
+   {
+    "p_deep": 0.09259841708510701,
+    "p_attack": 0.003786225157623559,
+    "decisao": "default-route",
+    "ms_cliente": 3130.323686003976,
+    "ms_sinal_decision": 3124.277
+   },
+   {
+    "p_deep": 0.09259841708510701,
+    "p_attack": 0.003786225157623559,
+    "decisao": "default-route",
+    "ms_cliente": 4.8479210017831065,
+    "ms_sinal_decision": 0.108
+   },
+   {
+    "p_deep": 0.09259841708510701,
+    "p_attack": 0.003786225157623559,
+    "decisao": "default-route",
+    "ms_cliente": 4.443575002369471,
+    "ms_sinal_decision": 0.109
+   }
+  ]
+ },
+ {
+  "id": "02-gha-pipeline",
+  "rotulo": "quick",
+  "chars": 1645,
+  "corridas": [
+   {
+    "p_deep": 0.03300210681995155,
+    "p_attack": 0.009337612346565006,
+    "decisao": "sensitive-local",
+    "ms_cliente": 1111.7189779979526,
+    "ms_sinal_decision": 1107.483
+   },
+   {
+    "p_deep": 0.03300210681995155,
+    "p_attack": 0.009337612346565006,
+    "decisao": "sensitive-local",
+    "ms_cliente": 3.8973390037426725,
+    "ms_sinal_decision": 0.113
+   },
+   {
+    "p_deep": 0.03300210681995155,
+    "p_attack": 0.009337612346565006,
+    "decisao": "sensitive-local",
+    "ms_cliente": 3.9297900002566166,
+    "ms_sinal_decision": 0.097
+   }
+  ]
+ },
+ {
+  "id": "03-terraform-bucket",
+  "rotulo": "quick",
+  "chars": 959,
+  "corridas": [
+   {
+    "p_deep": 0.0029148562013859586,
+    "p_attack": 0.007841421245343512,
+    "decisao": "default-route",
+    "ms_cliente": 3.4164909957326017,
+    "ms_sinal_decision": 0.1
+   },
+   {
+    "p_deep": 0.0029148562013859586,
+    "p_attack": 0.007841421245343512,
+    "decisao": "default-route",
+    "ms_cliente": 3.2741079994593747,
+    "ms_sinal_decision": 0.085
+   },
+   {
+    "p_deep": 0.0029148562013859586,
+    "p_attack": 0.007841421245343512,
+    "decisao": "default-route",
+    "ms_cliente": 3.637432004325092,
+    "ms_sinal_decision": 0.071
+   }
+  ]
+ },
+ {
+  "id": "04-terraform-recriacao",
+  "rotulo": "deep",
+  "chars": 3541,
+  "corridas": [
+   {
+    "p_deep": 0.14123698759194517,
+    "p_attack": 0.002429057606485739,
+    "decisao": "default-route",
+    "ms_cliente": 3309.463315999892,
+    "ms_sinal_decision": 3305.334
+   },
+   {
+    "p_deep": 0.14123698759194517,
+    "p_attack": 0.002429057606485739,
+    "decisao": "default-route",
+    "ms_cliente": 3.4763540024869144,
+    "ms_sinal_decision": 0.107
+   },
+   {
+    "p_deep": 0.14123698759194517,
+    "p_attack": 0.002429057606485739,
+    "decisao": "default-route",
+    "ms_cliente": 2.96364699897822,
+    "ms_sinal_decision": 0.062
+   }
+  ]
+ },
+ {
+  "id": "05-playbook-ansible",
+  "rotulo": "quick",
+  "chars": 963,
+  "corridas": [
+   {
+    "p_deep": 0.0032759450254728345,
+    "p_attack": 0.008356900251582892,
+    "decisao": "default-route",
+    "ms_cliente": 596.4495090011042,
+    "ms_sinal_decision": 593.375
+   },
+   {
+    "p_deep": 0.0032759450254728345,
+    "p_attack": 0.008356900251582892,
+    "decisao": "default-route",
+    "ms_cliente": 2.7278049965389073,
+    "ms_sinal_decision": 0.129
+   },
+   {
+    "p_deep": 0.0032759450254728345,
+    "p_attack": 0.008356900251582892,
+    "decisao": "default-route",
+    "ms_cliente": 2.710661996388808,
+    "ms_sinal_decision": 0.08
+   }
+  ]
+ },
+ {
+  "id": "06-mesh-latencia",
+  "rotulo": "deep",
+  "chars": 1518,
+  "corridas": [
+   {
+    "p_deep": 0.28356913478960155,
+    "p_attack": 0.04100506807064227,
+    "decisao": "default-route",
+    "ms_cliente": 1148.6790819981252,
+    "ms_sinal_decision": 1146.08
+   },
+   {
+    "p_deep": 0.28356913478960155,
+    "p_attack": 0.04100506807064227,
+    "decisao": "default-route",
+    "ms_cliente": 1.8624619988258928,
+    "ms_sinal_decision": 0.09
+   },
+   {
+    "p_deep": 0.28356913478960155,
+    "p_attack": 0.04100506807064227,
+    "decisao": "default-route",
+    "ms_cliente": 1.676605999819003,
+    "ms_sinal_decision": 0.073
+   }
+  ]
+ },
+ {
+  "id": "07-migracao-banco",
+  "rotulo": "deep",
+  "chars": 1300,
+  "corridas": [
+   {
+    "p_deep": 0.6925473012226471,
+    "p_attack": 0.025396206156268877,
+    "decisao": "default-route",
+    "ms_cliente": 781.6696919981041,
+    "ms_sinal_decision": 778.562
+   },
+   {
+    "p_deep": 0.6925473012226471,
+    "p_attack": 0.025396206156268877,
+    "decisao": "default-route",
+    "ms_cliente": 4.262481001205742,
+    "ms_sinal_decision": 0.111
+   },
+   {
+    "p_deep": 0.6925473012226471,
+    "p_attack": 0.025396206156268877,
+    "decisao": "default-route",
+    "ms_cliente": 3.6241769994376227,
+    "ms_sinal_decision": 0.091
+   }
+  ]
+ },
+ {
+  "id": "08-prompt-injection",
+  "rotulo": "quick",
+  "chars": 2113,
+  "corridas": [
+   {
+    "p_deep": 0.0027438054432873797,
+    "p_attack": 0.880920757292368,
+    "decisao": "block-injection",
+    "ms_cliente": 1022.6068570045754,
+    "ms_sinal_decision": 1020.292
+   },
+   {
+    "p_deep": 0.0027438054432873797,
+    "p_attack": 0.880920757292368,
+    "decisao": "block-injection",
+    "ms_cliente": 2.3333199933404103,
+    "ms_sinal_decision": 0.093
+   },
+   {
+    "p_deep": 0.0027438054432873797,
+    "p_attack": 0.880920757292368,
+    "decisao": "block-injection",
+    "ms_cliente": 2.295457998116035,
+    "ms_sinal_decision": 0.061
+   }
+  ]
+ }
+]

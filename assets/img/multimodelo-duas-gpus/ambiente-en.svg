@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="476.208pt" height="272.909812pt" viewBox="0 0 476.208 272.909812" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-30T14:01:35.015299</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 272.909812 
+L 476.208 272.909812 
+L 476.208 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 18.982944 256.199908 
+L 457.225056 256.199908 
+Q 461.771136 256.199908 461.771136 251.653828 
+L 461.771136 70.265236 
+Q 461.771136 65.719156 457.225056 65.719156 
+L 18.982944 65.719156 
+Q 14.436864 65.719156 14.436864 70.265236 
+L 14.436864 251.653828 
+Q 14.436864 256.199908 18.982944 256.199908 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #f6f8fb; stroke: #9ca3af; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 29.438928 247.107748 
+L 230.830272 247.107748 
+Q 234.467136 247.107748 234.467136 243.470884 
+L 234.467136 112.54378 
+Q 234.467136 108.906916 230.830272 108.906916 
+L 29.438928 108.906916 
+Q 25.802064 108.906916 25.802064 112.54378 
+L 25.802064 243.470884 
+Q 25.802064 247.107748 29.438928 247.107748 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #ffffff; stroke: #9ca3af; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 245.377728 247.107748 
+L 446.769072 247.107748 
+Q 450.405936 247.107748 450.405936 243.470884 
+L 450.405936 112.54378 
+Q 450.405936 108.906916 446.769072 108.906916 
+L 245.377728 108.906916 
+Q 241.740864 108.906916 241.740864 112.54378 
+L 241.740864 243.470884 
+Q 241.740864 247.107748 245.377728 247.107748 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #ffffff; stroke: #9ca3af; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 39.894912 183.462628 
+L 220.374288 183.462628 
+Q 223.101936 183.462628 223.101936 180.734981 
+L 223.101936 136.638004 
+Q 223.101936 133.910356 220.374288 133.910356 
+L 39.894912 133.910356 
+Q 37.167264 133.910356 37.167264 136.638004 
+L 37.167264 180.734981 
+Q 37.167264 183.462628 39.894912 183.462628 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #eaf0f8; stroke: #4c72b0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 255.833712 174.370468 
+L 436.313088 174.370468 
+Q 439.040736 174.370468 439.040736 171.64282 
+L 439.040736 132.091925 
+Q 439.040736 129.364276 436.313088 129.364276 
+L 255.833712 129.364276 
+Q 253.106064 129.364276 253.106064 132.091925 
+L 253.106064 171.64282 
+Q 253.106064 174.370468 255.833712 174.370468 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #fbe3d6; stroke: #dd8452; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 255.833712 233.469508 
+L 436.313088 233.469508 
+Q 439.040736 233.469508 439.040736 230.74186 
+L 439.040736 191.190965 
+Q 439.040736 188.463316 436.313088 188.463316 
+L 255.833712 188.463316 
+Q 253.106064 188.463316 253.106064 191.190965 
+L 253.106064 230.74186 
+Q 253.106064 233.469508 255.833712 233.469508 
+z
+" clip-path="url(#pb52fb6cb61)" style="fill: #fbe3d6; stroke: #dd8452; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="10.8" y="44.581794" transform="rotate(-0 10.8 44.581794)">Each orange box is one llama-server process with a compute queue on GPU 1</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="24.43824" y="81.111229" transform="rotate(-0 24.43824 81.111229)">Proxmox host</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="24.43824" y="95.723586" transform="rotate(-0 24.43824 95.723586)">Ryzen 5 5600G · 62 GB · container with both GPUs</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="33.5304" y="123.259421" transform="rotate(-0 33.5304 123.259421)">GPU 0 · 16 GB</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="249.4692" y="123.259421" transform="rotate(-0 249.4692 123.259421)">GPU 1 · 16 GB</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="130.1346" y="155.59875" transform="rotate(-0 130.1346 155.59875)">router fallback</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="130.1346" y="170.9608" transform="rotate(-0 130.1346 170.9608)">Qwen3-14B Q4_K_M · 10.4 GB</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4c72b0" x="129.907296" y="207.556852" transform="rotate(-0 129.907296 207.556852)">timer unloads idle models</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="129.907296" y="224.831956" transform="rotate(-0 129.907296 224.831956)">only reaches the router (GPU 0)</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="346.0734" y="149.37062" transform="rotate(-0 346.0734 149.37062)">code completion</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="346.0734" y="163.232874" transform="rotate(-0 346.0734 163.232874)">Qwen2.5-Coder-3B · port 8083</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="346.0734" y="208.46966" transform="rotate(-0 346.0734 208.46966)">RAG embeddings</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="346.0734" y="222.331914" transform="rotate(-0 346.0734 222.331914)">Qwen3-Embedding-0.6B · port 8084</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start" x="10.8" y="21.437813" transform="rotate(-0 10.8 21.437813)">The host and the role of each GPU</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb52fb6cb61">
+   <rect x="10.8" y="51.437813" width="454.608" height="210.672"/>
+  </clipPath>
+ </defs>
+</svg>

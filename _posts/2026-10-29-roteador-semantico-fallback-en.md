@@ -40,10 +40,6 @@ flowchart LR
   R -->|"priority 1"| X["main model (24 GB)"]
   R -->|"on failure"| F["14B fallback (16 GB)"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 The configuration has prioritized routes. One blocks requests with direct prompt-injection patterns aimed at the assistant, another sends requests with sensitive data to local models only, another sends investigation or design requests to the large model with reasoning, and the last is the default route: the main model, with the 14B model as the alternative.
 

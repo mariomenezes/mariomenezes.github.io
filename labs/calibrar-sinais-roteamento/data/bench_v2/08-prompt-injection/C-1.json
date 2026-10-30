@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.11975391399755608,
+  "ttft": 0.4211938249936793,
+  "ttft_content": 0.4211938249936793,
+  "t_last_token": 2.470629880997876,
+  "total": 2.4791317419949337,
+  "chunks": 291,
+  "token_chunks": 288,
+  "usage": {
+    "completion_tokens": 289,
+    "prompt_tokens": 593,
+    "total_tokens": 882,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 140.5264629536752,
+  "cenario": "08-prompt-injection",
+  "braco": "C",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:28:01.651384+00:00",
+  "prompt_chars": 2157,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 1193,
+  "reasoning_chars": 0
+}

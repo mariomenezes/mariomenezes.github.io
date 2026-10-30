@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.09046156699332641,
+  "ttft": 0.2898621229978744,
+  "ttft_content": 0.2898621229978744,
+  "t_last_token": 17.71923632099788,
+  "total": 17.727011208997283,
+  "chunks": 2436,
+  "token_chunks": 2433,
+  "usage": {
+    "completion_tokens": 2437,
+    "prompt_tokens": 434,
+    "total_tokens": 2871,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.76405419533236,
+  "cenario": "07-migracao-banco",
+  "braco": "C",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:27:42.814588+00:00",
+  "prompt_chars": 1344,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 8604,
+  "reasoning_chars": 0
+}

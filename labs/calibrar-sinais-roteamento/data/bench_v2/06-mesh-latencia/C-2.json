@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.11772637499962002,
+  "ttft": 0.43357636500149965,
+  "ttft_content": 0.43357636500149965,
+  "t_last_token": 13.844816194003215,
+  "total": 13.852541129999736,
+  "chunks": 1879,
+  "token_chunks": 1876,
+  "usage": {
+    "completion_tokens": 1877,
+    "prompt_tokens": 664,
+    "total_tokens": 2541,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.88266736854283,
+  "cenario": "06-mesh-latencia",
+  "braco": "C",
+  "rodada": 2,
+  "inicio_utc": "2026-10-30T13:30:35.997012+00:00",
+  "prompt_chars": 1562,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 6487,
+  "reasoning_chars": 0
+}

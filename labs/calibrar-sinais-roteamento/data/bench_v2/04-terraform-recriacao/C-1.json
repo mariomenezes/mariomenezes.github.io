@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.12478171999828191,
+  "ttft": 0.5795731499965768,
+  "ttft_content": 0.5795731499965768,
+  "t_last_token": 16.42019966299995,
+  "total": 16.42844057399634,
+  "chunks": 2210,
+  "token_chunks": 2207,
+  "usage": {
+    "completion_tokens": 2208,
+    "prompt_tokens": 1201,
+    "total_tokens": 3409,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.32529740463872,
+  "cenario": "04-terraform-recriacao",
+  "braco": "C",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:26:15.378154+00:00",
+  "prompt_chars": 3585,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 8072,
+  "reasoning_chars": 0
+}

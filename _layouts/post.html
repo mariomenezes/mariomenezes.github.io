@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- comment -%}
+Baseado no _layouts/post.html do minima 2.5.1. Mudanças: data no idioma do post,
+tempo de leitura e Mermaid com a paleta do blog (carregado só quando o post tem diagrama).
+{%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | plus: 1 -%}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {%- if page.lang == "pt-BR" -%}
+        {%- assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: "," -%}
+        {%- assign m = page.date | date: "%-m" | minus: 1 -%}
+        {{ page.date | date: "%-d" }} de {{ meses[m] }} de {{ page.date | date: "%Y" }}
+      {%- else -%}
+        {{ page.date | date: "%B %-d, %Y" }}
+      {%- endif -%}
+      </time>
+      · {{ minutes }} {% if page.lang == "pt-BR" %}min de leitura{% else %}min read{% endif %}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+{%- if content contains 'class="mermaid"' %}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "base",
+    flowchart: { curve: "basis", nodeSpacing: 40, rankSpacing: 48, padding: 14 },
+    themeVariables: {
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
+      fontSize: "15px",
+      primaryColor: "#EAF0F8", primaryBorderColor: "#4C72B0", primaryTextColor: "#0F1B2D",
+      secondaryColor: "#FDF0E7", tertiaryColor: "#F6F8FB",
+      lineColor: "#6B7280", edgeLabelBackground: "#FFFFFF",
+      clusterBkg: "#F6F8FB", clusterBorder: "#C8D6EA"
+    }
+  });
+</script>
+{%- endif %}

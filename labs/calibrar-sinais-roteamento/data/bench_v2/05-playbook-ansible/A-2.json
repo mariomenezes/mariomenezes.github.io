@@ -1,0 +1,43 @@
+{
+  "t_headers": 0.7180064610001864,
+  "ttft": 0.8915079469952616,
+  "ttft_content": 0.8915079469952616,
+  "t_last_token": 12.903664040000876,
+  "total": 12.911487038996711,
+  "chunks": 1684,
+  "token_chunks": 1681,
+  "usage": {
+    "completion_tokens": 1682,
+    "prompt_tokens": 321,
+    "total_tokens": 2003,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {
+    "x-vsr-config-version": "8",
+    "x-vsr-response-path": "upstream",
+    "x-vsr-routing-latency-ms": "598.469",
+    "x-vsr-schema-version": "2",
+    "x-vsr-selected-algorithm": "static",
+    "x-vsr-selected-confidence": "0.0000",
+    "x-vsr-selected-decision": "default-route",
+    "x-vsr-selected-model": "principal/qwen3.6-35b",
+    "x-vsr-selected-recipe": "default"
+  },
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.94157143685513,
+  "cenario": "05-playbook-ansible",
+  "braco": "A",
+  "rodada": 2,
+  "inicio_utc": "2026-10-30T13:29:56.311552+00:00",
+  "prompt_chars": 1007,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": null,
+  "content_chars": 6200,
+  "reasoning_chars": 0
+}

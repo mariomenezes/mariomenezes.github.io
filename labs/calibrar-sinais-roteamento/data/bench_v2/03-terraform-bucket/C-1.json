@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.08367205099784769,
+  "ttft": 0.2551213889964856,
+  "ttft_content": 0.2551213889964856,
+  "t_last_token": 13.882351726002526,
+  "total": 13.890121436001209,
+  "chunks": 1906,
+  "token_chunks": 1903,
+  "usage": {
+    "completion_tokens": 1909,
+    "prompt_tokens": 298,
+    "total_tokens": 2207,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 140.01377776807988,
+  "cenario": "03-terraform-bucket",
+  "braco": "C",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:25:40.715538+00:00",
+  "prompt_chars": 1003,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 6322,
+  "reasoning_chars": 0
+}

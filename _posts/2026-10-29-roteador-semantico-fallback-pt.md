@@ -40,10 +40,6 @@ flowchart LR
   R -->|"prioridade 1"| X["modelo principal (24 GB)"]
   R -->|"se falhar"| F["fallback 14B (16 GB)"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 A configuração tem rotas com prioridade. Uma delas bloqueia pedidos com padrões de ataque direto ao assistente, outra manda para modelos locais pedidos com dados sensíveis, outra envia pedidos de investigação ao modelo grande com raciocínio, e a última é a rota padrão, o modelo principal com o de 14B como alternativa.
 

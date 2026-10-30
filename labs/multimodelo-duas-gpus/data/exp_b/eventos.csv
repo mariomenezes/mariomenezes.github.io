@@ -1,0 +1,8 @@
+t,fase,descricao
+1793367080,1,ambos ligados
+1793367141,2,so completacao
+1793367205,3,so embedding
+1793367270,4,ambos ligados de novo
+1793367334,5,GPU 0: segundo processo HIP ao lado do fallback
+1793367395,6,GPU 0 sem o processo temporario
+1793367456,7,fim

@@ -39,10 +39,6 @@ flowchart LR
   H -->|"send"| R["receive-only replica (RAG)"]
   M["other devices"] <-->|"pending"| H
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 ## Why rebuild
 

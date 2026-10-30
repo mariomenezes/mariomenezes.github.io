@@ -1,0 +1,34 @@
+[
+ {
+  "id": "01-k8s-crashloop",
+  "chars_instrucao": 168,
+  "chars_total": 4201,
+  "so_instrucao": 0.9298841007786027,
+  "original": 0.09259841708510701,
+  "instrucao_no_fim": 0.2575214496107646
+ },
+ {
+  "id": "04-terraform-recriacao",
+  "chars_instrucao": 226,
+  "chars_total": 3541,
+  "so_instrucao": 0.9972736661266121,
+  "original": 0.14123698759194517,
+  "instrucao_no_fim": 0.7663669395808324
+ },
+ {
+  "id": "06-mesh-latencia",
+  "chars_instrucao": 222,
+  "chars_total": 1518,
+  "so_instrucao": 0.981693248793348,
+  "original": 0.28356913478960155,
+  "instrucao_no_fim": 0.8279822126851347
+ },
+ {
+  "id": "07-migracao-banco",
+  "chars_instrucao": 142,
+  "chars_total": 1300,
+  "so_instrucao": 0.03506352022457439,
+  "original": 0.6925473012226471,
+  "instrucao_no_fim": 0.3714705961874887
+ }
+]

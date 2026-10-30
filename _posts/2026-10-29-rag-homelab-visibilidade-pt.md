@@ -55,7 +55,7 @@ Montei uma busca semântica sobre as minhas notas de infraestrutura para o assis
 |---|---|
 | Hospedeiro | AMD Ryzen 5 5600G (12 threads), 62 GB de RAM, Proxmox VE 8.4.19, kernel 6.14.11 |
 | GPUs do hospedeiro | duas placas AMD com PCI ID 1002:7590, 16 GB cada (o nome comercial não aparece no `pci.ids` do hospedeiro) |
-| Servidor de embeddings | llama.cpp build `b216-f12cc6d`, Vulkan na GPU 1, Qwen3-Embedding-0.6B quantizado em Q8_0, contexto 4096, 4 slots, 2 threads |
+| Servidor de embeddings | llama.cpp build `b216-f12cc6d`, HIP (ROCm 7.2.3) na GPU 1, Qwen3-Embedding-0.6B quantizado em Q8_0, contexto 4096, 4 slots, 2 threads |
 | Banco vetorial | Qdrant 1.20.0 em container, volume nomeado, chave de API |
 | Coleção | 1024 dimensões, distância cosseno, HNSW padrão (m=16, ef_construct=100), 2 segmentos |
 | Réplica do vault | Syncthing 1.19.2, pasta em modo *receive-only* |
@@ -87,10 +87,6 @@ flowchart LR
   M -->|"busca"| Q
   M -.->|"log"| L["consultas.log"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 - **Indexar a partir de uma réplica**, não do vault direto: o vault fica no PC, o indexador num servidor sempre ligado. A pasta *receive-only* impede que algo do servidor volte e altere as notas.
 - **Indexador incremental:** hash SHA-256 por arquivo, trechos de 1000 caracteres com 150 de sobreposição, divididos primeiro por título Markdown. Ele pula arquivos que começam com `.` ou `_`, diretórios listados em `EXCLUDE_DIRS` e arquivos que casam com um padrão de segredo (chaves AWS, tokens do GitHub, chaves privadas, `password`/`token` seguidos de valor).
@@ -238,6 +234,16 @@ Baseadas no checklist de benchmarking de Brendan Gregg.
 ## Material para reproduzir
 
 [`labs/rag-homelab-visibilidade/`](https://github.com/mariomenezes/mariomenezes.github.io/tree/main/labs/rag-homelab-visibilidade): scripts de indexação, MCP, medição e figuras; dados brutos das duas medições e o histórico do indexador; configurações com placeholders.
+
+## Referências
+
+1. Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", NeurIPS 2020, arXiv:2005.11401. <https://arxiv.org/abs/2005.11401>. Sustenta: o padrão RAG (recuperar trechos e entregá-los ao modelo) que este post implementa.
+2. Zhang et al., "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models", arXiv:2506.05176, 2025. <https://arxiv.org/abs/2506.05176>. Sustenta: o modelo de embeddings usado (Qwen3-Embedding-0.6B, 1.024 dimensões).
+3. Qdrant, "Indexing" (documentação). <https://qdrant.tech/documentation/concepts/indexing/>. Sustenta: parâmetros do HNSW (m, ef_construct) e o limiar abaixo do qual a busca exata é preferida.
+4. Qdrant, "Optimizer" (documentação). <https://qdrant.tech/documentation/ops-optimization/optimizer/>. Sustenta: o `indexing_threshold_kb` (padrão 10.000 KB) que decide quando o segmento ganha índice HNSW, base da conta de ~2.500 vetores.
+5. Syncthing, "Folder Types" (documentação). <https://docs.syncthing.net/users/foldertypes.html>. Sustenta: o modo *receive-only* da réplica, que não devolve alterações locais.
+6. Model Context Protocol, especificação 2025-06-18. <https://modelcontextprotocol.io/specification/2025-06-18>. Sustenta: o protocolo da ferramenta `buscar_vault` usada pelo OpenCode (transporte stdio).
+7. Brendan Gregg, "Evaluating the Evaluation: A Benchmarking Checklist", 2018. <https://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html>. Sustenta: as sete perguntas de verificação aplicadas às medições.
 
 ---
 

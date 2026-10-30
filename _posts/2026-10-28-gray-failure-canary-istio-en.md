@@ -65,10 +65,6 @@ flowchart LR
   P --> D["detector: v2 vs v1 of the same feature"]
   D --> E["recorded event (shadow mode)"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 ## Measuring per feature with Istio
 

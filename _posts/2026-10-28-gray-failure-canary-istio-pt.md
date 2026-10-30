@@ -65,10 +65,6 @@ flowchart LR
   P --> D["detector: v2 contra v1 da mesma feature"]
   D --> E["evento registrado (modo sombra)"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 ## Medindo por feature com o Istio
 

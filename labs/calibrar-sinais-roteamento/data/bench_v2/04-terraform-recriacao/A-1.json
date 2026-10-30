@@ -1,0 +1,43 @@
+{
+  "t_headers": 3.5423530510015553,
+  "ttft": 3.99840084000607,
+  "ttft_content": 3.99840084000607,
+  "t_last_token": 20.76121271300508,
+  "total": 20.769543045003957,
+  "chunks": 2334,
+  "token_chunks": 2331,
+  "usage": {
+    "completion_tokens": 2332,
+    "prompt_tokens": 1204,
+    "total_tokens": 3536,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {
+    "x-vsr-config-version": "8",
+    "x-vsr-response-path": "upstream",
+    "x-vsr-routing-latency-ms": "3422.467",
+    "x-vsr-schema-version": "2",
+    "x-vsr-selected-algorithm": "static",
+    "x-vsr-selected-confidence": "0.0000",
+    "x-vsr-selected-decision": "default-route",
+    "x-vsr-selected-model": "principal/qwen3.6-35b",
+    "x-vsr-selected-recipe": "default"
+  },
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.05781545843743,
+  "cenario": "04-terraform-recriacao",
+  "braco": "A",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:25:54.607240+00:00",
+  "prompt_chars": 3585,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": null,
+  "content_chars": 8618,
+  "reasoning_chars": 0
+}

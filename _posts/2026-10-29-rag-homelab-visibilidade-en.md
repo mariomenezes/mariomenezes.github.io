@@ -55,7 +55,7 @@ This is a personal lab, not production, with a small corpus. The numbers hold fo
 |---|---|
 | Host | AMD Ryzen 5 5600G (12 threads), 62 GB RAM, Proxmox VE 8.4.19, kernel 6.14.11 |
 | Host GPUs | two AMD cards with PCI ID 1002:7590, 16 GB each (the commercial name is not in the host's `pci.ids`) |
-| Embedding server | llama.cpp build `b216-f12cc6d`, Vulkan on GPU 1, Qwen3-Embedding-0.6B quantized to Q8_0, context 4096, 4 slots, 2 threads |
+| Embedding server | llama.cpp build `b216-f12cc6d`, HIP (ROCm 7.2.3) on GPU 1, Qwen3-Embedding-0.6B quantized to Q8_0, context 4096, 4 slots, 2 threads |
 | Vector database | Qdrant 1.20.0 in a container, named volume, API key |
 | Collection | 1024 dimensions, cosine distance, default HNSW (m=16, ef_construct=100), 2 segments |
 | Vault replica | Syncthing 1.19.2, folder in *receive-only* mode |
@@ -87,10 +87,6 @@ flowchart LR
   M -->|"search"| Q
   M -.->|"log"| L["consultas.log"]
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 - **Index from a replica**, not from the vault directly: the vault lives on the PC, the indexer on an always-on server. The *receive-only* folder keeps anything on the server from flowing back and altering the notes.
 - **Incremental indexer:** SHA-256 per file, 1000-character chunks with 150 overlap, split first by Markdown heading. It skips files that start with `.` or `_`, directories listed in `EXCLUDE_DIRS`, and files that match a secret pattern (AWS keys, GitHub tokens, private keys, `password`/`token` followed by a value).
@@ -238,6 +234,16 @@ Based on Brendan Gregg's benchmarking checklist.
 ## Material to reproduce
 
 [`labs/rag-homelab-visibilidade/`](https://github.com/mariomenezes/mariomenezes.github.io/tree/main/labs/rag-homelab-visibilidade): indexing, MCP, measurement and figure scripts; raw data from both measurements and the indexer history; configurations with placeholders.
+
+## References
+
+1. Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", NeurIPS 2020, arXiv:2005.11401. <https://arxiv.org/abs/2005.11401>. Supports: the RAG pattern (retrieve chunks and hand them to the model) this post implements.
+2. Zhang et al., "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models", arXiv:2506.05176, 2025. <https://arxiv.org/abs/2506.05176>. Supports: the embedding model used (Qwen3-Embedding-0.6B, 1,024 dimensions).
+3. Qdrant, "Indexing" (documentation). <https://qdrant.tech/documentation/concepts/indexing/>. Supports: HNSW parameters (m, ef_construct) and the threshold below which exact search is preferred.
+4. Qdrant, "Optimizer" (documentation). <https://qdrant.tech/documentation/ops-optimization/optimizer/>. Supports: the `indexing_threshold_kb` (default 10,000 KB) that decides when a segment gets an HNSW index, the basis for the ~2,500-vector estimate.
+5. Syncthing, "Folder Types" (documentation). <https://docs.syncthing.net/users/foldertypes.html>. Supports: the replica's *receive-only* mode, which does not send local changes back.
+6. Model Context Protocol, specification 2025-06-18. <https://modelcontextprotocol.io/specification/2025-06-18>. Supports: the protocol of the `buscar_vault` tool used by OpenCode (stdio transport).
+7. Brendan Gregg, "Evaluating the Evaluation: A Benchmarking Checklist", 2018. <https://www.brendangregg.com/blog/2018-06-30/benchmarking-checklist.html>. Supports: the seven verification questions applied to the measurements.
 
 ---
 

@@ -1,0 +1,9 @@
+t,fase,descricao
+1793366382,1,ambos ligados, estado encontrado
+1793366473,2,completacao parada; so embedding
+1793366570,3,embedding parado; so completacao (recem-iniciada)
+1793366661,4,ambos parados
+1793366756,5,ambos recem-iniciados, sem pedidos
+1793366847,6,1 pedido de embedding (HTTP 200)
+1793366939,7,1 pedido de completacao (HTTP 200)
+1793367029,8,fim

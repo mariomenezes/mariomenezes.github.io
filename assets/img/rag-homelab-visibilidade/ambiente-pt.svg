@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="360pt" viewBox="0 0 792 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="476.208pt" height="339.437813pt" viewBox="0 0 476.208 339.437813" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-30T01:50:40.565274</dc:date>
+    <dc:date>2026-10-30T16:55:50.546757</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,196 +21,177 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 360 
-L 792 360 
-L 792 0 
-L 0 0 
+   <path d="M 0 339.437813 
+L 476.208 339.437813 
+L 476.208 -0 
+L 0 -0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 24.725598 268.640136 
-L 181.577107 268.640136 
-Q 189.690116 268.640136 189.690116 260.595432 
-L 189.690116 84.952728 
-Q 189.690116 76.908024 181.577107 76.908024 
-L 24.725598 76.908024 
-Q 16.612589 76.908024 16.612589 84.952728 
-L 16.612589 260.595432 
-Q 16.612589 268.640136 24.725598 268.640136 
+    <path d="M 18.073728 104.516069 
+L 458.134272 104.516069 
+Q 461.771136 104.516069 461.771136 100.879205 
+L 461.771136 56.327621 
+Q 461.771136 52.690757 458.134272 52.690757 
+L 18.073728 52.690757 
+Q 14.436864 52.690757 14.436864 56.327621 
+L 14.436864 100.879205 
+Q 14.436864 104.516069 18.073728 104.516069 
 z
-" clip-path="url(#p10c70182cd)" style="fill: #eef2f8; stroke: #4c72b0; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p17a3e4f0a5)" style="fill: #eaf0f8; stroke: #4c72b0; stroke-width: 1.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 243.100759 328.975416 
-L 740.69865 328.975416 
-Q 750.839911 328.975416 750.839911 318.919536 
-L 750.839911 40.036464 
-Q 750.839911 29.980584 740.69865 29.980584 
-L 243.100759 29.980584 
-Q 232.959498 29.980584 232.959498 40.036464 
-L 232.959498 318.919536 
-Q 232.959498 328.975416 243.100759 328.975416 
+    <path d="M 18.982944 327.273989 
+L 457.225056 327.273989 
+Q 461.771136 327.273989 461.771136 322.727909 
+L 461.771136 139.066277 
+Q 461.771136 134.520197 457.225056 134.520197 
+L 18.982944 134.520197 
+Q 14.436864 134.520197 14.436864 139.066277 
+L 14.436864 322.727909 
+Q 14.436864 327.273989 18.982944 327.273989 
 z
-" clip-path="url(#p10c70182cd)" style="fill: #ffffff; stroke: #555555; stroke-width: 1.6; stroke-linejoin: miter"/>
+" clip-path="url(#p17a3e4f0a5)" style="fill: #f6f8fb; stroke: #9ca3af; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 254.594189 302.159736 
-L 397.924016 302.159736 
-Q 406.037025 302.159736 406.037025 294.115032 
-L 406.037025 91.656648 
-Q 406.037025 83.611944 397.924016 83.611944 
-L 254.594189 83.611944 
-Q 246.48118 83.611944 246.48118 91.656648 
-L 246.48118 294.115032 
-Q 246.48118 302.159736 254.594189 302.159736 
+    <path d="M 27.165888 320.454869 
+L 161.275248 320.454869 
+Q 164.912112 320.454869 164.912112 316.818005 
+L 164.912112 174.525701 
+Q 164.912112 170.888837 161.275248 170.888837 
+L 27.165888 170.888837 
+Q 23.529024 170.888837 23.529024 174.525701 
+L 23.529024 316.818005 
+Q 23.529024 320.454869 27.165888 320.454869 
 z
-" clip-path="url(#p10c70182cd)" style="fill: #eef2f8; stroke: #4c72b0; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p17a3e4f0a5)" style="fill: #eaf0f8; stroke: #4c72b0; stroke-width: 1.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 423.615211 302.159736 
-L 560.184198 302.159736 
-Q 568.297207 302.159736 568.297207 294.115032 
-L 568.297207 91.656648 
-Q 568.297207 83.611944 560.184198 83.611944 
-L 423.615211 83.611944 
-Q 415.502202 83.611944 415.502202 91.656648 
-L 415.502202 294.115032 
-Q 415.502202 302.159736 423.615211 302.159736 
+    <path d="M 171.276624 320.454869 
+L 305.385984 320.454869 
+Q 309.022848 320.454869 309.022848 316.818005 
+L 309.022848 174.525701 
+Q 309.022848 170.888837 305.385984 170.888837 
+L 171.276624 170.888837 
+Q 167.63976 170.888837 167.63976 174.525701 
+L 167.63976 316.818005 
+Q 167.63976 320.454869 171.276624 320.454869 
 z
-" clip-path="url(#p10c70182cd)" style="fill: #f4f4f4; stroke: #8c8c8c; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#p17a3e4f0a5)" style="fill: #f4f4f4; stroke: #8c8c8c; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
-    <path d="M 585.875393 302.159736 
-L 735.966061 302.159736 
-Q 744.07907 302.159736 744.07907 294.115032 
-L 744.07907 91.656648 
-Q 744.07907 83.611944 735.966061 83.611944 
-L 585.875393 83.611944 
-Q 577.762384 83.611944 577.762384 91.656648 
-L 577.762384 294.115032 
-Q 577.762384 302.159736 585.875393 302.159736 
+    <path d="M 315.38736 320.454869 
+L 449.49672 320.454869 
+Q 453.133584 320.454869 453.133584 316.818005 
+L 453.133584 174.525701 
+Q 453.133584 170.888837 449.49672 170.888837 
+L 315.38736 170.888837 
+Q 311.750496 170.888837 311.750496 174.525701 
+L 311.750496 316.818005 
+Q 311.750496 320.454869 315.38736 320.454869 
 z
-" clip-path="url(#p10c70182cd)" style="fill: #eef2f8; stroke: #4c72b0; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p17a3e4f0a5)" style="fill: #eaf0f8; stroke: #4c72b0; stroke-width: 1.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111111" x="28.106018" y="101.646183" transform="rotate(-0 28.106018 101.646183)">PC de trabalho</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="10.8" y="43.251234" transform="rotate(-0 10.8 43.251234)">Em azul, o que participa do RAG; em cinza, outros serviços</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="28.106018" y="127.70202" transform="rotate(-0 28.106018 127.70202)">vault de notas (Markdown)</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="22.1652" y="70.446434" transform="rotate(-0 22.1652 70.446434)">PC de trabalho</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="28.106018" y="151.836132" transform="rotate(-0 28.106018 151.836132)">OpenCode v2.2.1</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="22.1652" y="86.581772" transform="rotate(-0 22.1652 86.581772)">vault de notas (Markdown) · OpenCode v2.2.1 · ferramenta MCP buscar_vault</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="28.106018" y="175.970244" transform="rotate(-0 28.106018 175.970244)">ferramenta MCP buscar_vault</text>
-   </g>
-   <g id="text_5">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="28.106018" y="224.238468" transform="rotate(-0 28.106018 224.238468)">consulta: embedding + busca</text>
-   </g>
-   <g id="text_6">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="248.509432" y="49.355607" transform="rotate(-0 248.509432 49.355607)">Hospedeiro Proxmox VE 8.4.19 · Ryzen 5 5600G (12 threads) · 62 GB RAM</text>
-   </g>
-   <g id="text_7">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111111" x="257.974609" y="108.350103" transform="rotate(-0 257.974609 108.350103)">Container de serviços</text>
-   </g>
-   <g id="text_8">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="134.40594" transform="rotate(-0 257.974609 134.40594)">Qdrant 1.20.0</text>
-   </g>
-   <g id="text_9">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="158.540052" transform="rotate(-0 257.974609 158.540052)">  1024 dim · cosseno</text>
-   </g>
-   <g id="text_10">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="182.674164" transform="rotate(-0 257.974609 182.674164)">Syncthing 1.19.2</text>
-   </g>
-   <g id="text_11">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="206.808276" transform="rotate(-0 257.974609 206.808276)">  pasta receive-only</text>
-   </g>
-   <g id="text_12">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="230.942388" transform="rotate(-0 257.974609 230.942388)">indexador Python 3.11.2</text>
-   </g>
-   <g id="text_13">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="257.974609" y="255.0765" transform="rotate(-0 257.974609 255.0765)">  timer a cada hora</text>
-   </g>
-   <g id="text_14">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111111" x="426.995632" y="108.349283" transform="rotate(-0 426.995632 108.349283)">GPU 0 · 16 GB</text>
-   </g>
-   <g id="text_15">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="426.995632" y="134.40594" transform="rotate(-0 426.995632 134.40594)">modelo de fallback</text>
-   </g>
-   <g id="text_16">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="426.995632" y="158.540052" transform="rotate(-0 426.995632 158.540052)">do roteador</text>
-   </g>
-   <g id="text_17">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="426.995632" y="206.970073" transform="rotate(-0 426.995632 206.970073)">não participa do RAG</text>
-   </g>
-   <g id="text_18">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #111111" x="589.255814" y="108.349283" transform="rotate(-0 589.255814 108.349283)">GPU 1 · 16 GB</text>
-   </g>
-   <g id="text_19">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="134.40594" transform="rotate(-0 589.255814 134.40594)">llama.cpp b216-f12cc6d</text>
-   </g>
-   <g id="text_20">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="158.540052" transform="rotate(-0 589.255814 158.540052)">Vulkan · 4 slots · ctx 4096</text>
-   </g>
-   <g id="text_21">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="182.674164" transform="rotate(-0 589.255814 182.674164)">Qwen3-Embedding-0.6B</text>
-   </g>
-   <g id="text_22">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="206.807533" transform="rotate(-0 589.255814 206.807533)">  Q8_0 (RAG)</text>
-   </g>
-   <g id="text_23">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="231.322388" transform="rotate(-0 589.255814 231.322388)">completação de código</text>
-   </g>
-   <g id="text_24">
-    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #222222" x="589.255814" y="255.0765" transform="rotate(-0 589.255814 255.0765)">  (fora do RAG)</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="22.1652" y="98.856188" transform="rotate(-0 22.1652 98.856188)">consulta: embedding + busca</text>
    </g>
    <g id="patch_7">
-    <path d="M 193.477883 172.77408 
-Q 212.338111 172.77408 231.198338 172.77408 
-" style="fill: none; stroke: #333333; stroke-width: 1.6; stroke-linecap: round"/>
-    <path d="M 197.877883 174.97408 
-L 193.477883 172.77408 
-L 197.877883 170.57408 
-" style="fill: none; stroke: #333333; stroke-width: 1.6; stroke-linecap: round"/>
-    <path d="M 226.798338 170.57408 
-L 231.198338 172.77408 
-L 226.798338 174.97408 
-" style="fill: none; stroke: #333333; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 238.104 109.555731 
+Q 238.104 119.061943 238.104 128.568154 
+" style="fill: none; stroke: #374151; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 235.304 115.155731 
+L 238.104 109.555731 
+L 240.904 115.155731 
+z
+" style="fill: #374151; stroke: #374151; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 240.904 122.968154 
+L 238.104 128.568154 
+L 235.304 122.968154 
+z
+" style="fill: #374151; stroke: #374151; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="244.92312" y="121.791064" transform="rotate(-0 244.92312 121.791064)">LAN</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="24.43824" y="147.639229" transform="rotate(-0 24.43824 147.639229)">Hospedeiro Proxmox VE 8.4.19</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="24.43824" y="161.796978" transform="rotate(-0 24.43824 161.796978)">Ryzen 5 5600G (12 threads) · 62 GB RAM</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="31.25736" y="188.644514" transform="rotate(-0 31.25736 188.644514)">Container de serviços</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="204.779852" transform="rotate(-0 31.25736 204.779852)">Qdrant 1.20.0</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="217.054268" transform="rotate(-0 31.25736 217.054268)">  1024 dim · cosseno</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="229.328684" transform="rotate(-0 31.25736 229.328684)">Syncthing 1.19.2</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="241.6031" transform="rotate(-0 31.25736 241.6031)">  pasta receive-only</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="253.877516" transform="rotate(-0 31.25736 253.877516)">indexador Python 3.11.2</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="31.25736" y="266.151932" transform="rotate(-0 31.25736 266.151932)">  timer a cada hora</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="175.368096" y="188.643576" transform="rotate(-0 175.368096 188.643576)">GPU 0 · 16 GB</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="175.368096" y="204.779852" transform="rotate(-0 175.368096 204.779852)">modelo de fallback</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="175.368096" y="217.054268" transform="rotate(-0 175.368096 217.054268)">do roteador</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="175.368096" y="241.781928" transform="rotate(-0 175.368096 241.781928)">não participa do RAG</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="319.478832" y="188.643576" transform="rotate(-0 319.478832 188.643576)">GPU 1 · 16 GB</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="204.779852" transform="rotate(-0 319.478832 204.779852)">llama.cpp b216-f12cc6d</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="217.054268" transform="rotate(-0 319.478832 217.054268)">HIP · 4 slots · ctx 4096</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="229.328684" transform="rotate(-0 319.478832 229.328684)">Qwen3-Embedding-0.6B</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="241.60228" transform="rotate(-0 319.478832 241.60228)">  Q8_0 (RAG)</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="254.297516" transform="rotate(-0 319.478832 254.297516)">completação de código</text>
    </g>
    <g id="text_25">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #333333" x="212.000891" y="159.36624" transform="rotate(-0 212.000891 159.36624)">LAN</text>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #222222" x="319.478832" y="266.151932" transform="rotate(-0 319.478832 266.151932)">  (fora do RAG)</text>
    </g>
-   <g id="legend_1">
-    <g id="patch_8">
-     <path d="M 19.98 343.517811 
-L 37.98 343.517811 
-L 37.98 337.217811 
-L 19.98 337.217811 
-z
-" style="fill: #eef2f8; stroke: #4c72b0; stroke-width: 2; stroke-linejoin: miter"/>
-    </g>
-    <g id="text_26">
-     <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="45.18" y="343.517811" transform="rotate(-0 45.18 343.517811)">participa do RAG</text>
-    </g>
-    <g id="patch_9">
-     <path d="M 138.618281 343.517811 
-L 156.618281 343.517811 
-L 156.618281 337.217811 
-L 138.618281 337.217811 
-z
-" style="fill: #f4f4f4; stroke: #8c8c8c; stroke-linejoin: miter"/>
-    </g>
-    <g id="text_27">
-     <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="163.818281" y="343.517811" transform="rotate(-0 163.818281 343.517811)">outros serviços</text>
-    </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start" x="10.8" y="21.437813" transform="rotate(-0 10.8 21.437813)">Onde cada peça roda</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p10c70182cd">
-   <rect x="11.88" y="11.88" width="743.6925" height="335.196"/>
+  <clipPath id="p17a3e4f0a5">
+   <rect x="10.8" y="51.437813" width="454.608" height="277.2"/>
   </clipPath>
  </defs>
 </svg>

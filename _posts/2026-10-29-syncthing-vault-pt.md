@@ -39,10 +39,6 @@ flowchart LR
   H -->|"envio"| R["réplica receive-only (RAG)"]
   M["outros dispositivos"] <-->|"pendente"| H
 </pre>
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
 
 ## Por que recriar
 

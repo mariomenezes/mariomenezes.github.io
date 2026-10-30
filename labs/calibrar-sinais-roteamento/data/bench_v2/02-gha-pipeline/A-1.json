@@ -1,0 +1,42 @@
+{
+  "t_headers": 1.3601219229967683,
+  "ttft": 1.5788965659958194,
+  "ttft_content": 1.5788965659958194,
+  "t_last_token": 15.892223199,
+  "total": 15.901116215994989,
+  "chunks": 1997,
+  "token_chunks": 1994,
+  "usage": {
+    "completion_tokens": 2000,
+    "prompt_tokens": 505,
+    "total_tokens": 2505,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {
+    "x-vsr-config-version": "8",
+    "x-vsr-response-path": "upstream",
+    "x-vsr-routing-latency-ms": "1198.120",
+    "x-vsr-schema-version": "2",
+    "x-vsr-selected-algorithm": "static",
+    "x-vsr-selected-decision": "sensitive-local",
+    "x-vsr-selected-model": "principal/qwen3.6-35b",
+    "x-vsr-selected-recipe": "default"
+  },
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 139.66005606206417,
+  "cenario": "02-gha-pipeline",
+  "braco": "A",
+  "rodada": 1,
+  "inicio_utc": "2026-10-30T13:24:56.592501+00:00",
+  "prompt_chars": 1689,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": null,
+  "content_chars": 7094,
+  "reasoning_chars": 0
+}

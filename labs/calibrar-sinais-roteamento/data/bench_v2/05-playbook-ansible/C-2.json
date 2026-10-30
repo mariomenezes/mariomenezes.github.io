@@ -1,0 +1,33 @@
+{
+  "t_headers": 0.07851176799886161,
+  "ttft": 0.2529517709990614,
+  "ttft_content": 0.2529517709990614,
+  "t_last_token": 10.592804296000395,
+  "total": 10.600543350003136,
+  "chunks": 1451,
+  "token_chunks": 1448,
+  "usage": {
+    "completion_tokens": 1449,
+    "prompt_tokens": 319,
+    "total_tokens": 1768,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "vsr": {},
+  "status": 200,
+  "error": null,
+  "served_model": "/models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-Q4_K_M.gguf",
+  "decode_tok_s_cliente": 140.0406820599033,
+  "cenario": "05-playbook-ansible",
+  "braco": "C",
+  "rodada": 2,
+  "inicio_utc": "2026-10-30T13:30:09.224626+00:00",
+  "prompt_chars": 1007,
+  "temperature": 0.1,
+  "max_tokens": 8192,
+  "thinking_pedido": false,
+  "content_chars": 5428,
+  "reasoning_chars": 0
+}

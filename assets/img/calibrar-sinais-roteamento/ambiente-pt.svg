@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="500.32268pt" height="283.997813pt" viewBox="0 0 500.32268 283.997813" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-30T16:51:23.877911</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 283.997813 
+L 500.32268 283.997813 
+L 500.32268 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 14.891472 183.185429 
+L 90.811008 183.185429 
+Q 93.538656 183.185429 93.538656 180.457781 
+L 93.538656 138.633845 
+Q 93.538656 135.906197 90.811008 135.906197 
+L 14.891472 135.906197 
+Q 12.163824 135.906197 12.163824 138.633845 
+L 12.163824 180.457781 
+Q 12.163824 183.185429 14.891472 183.185429 
+z
+" clip-path="url(#p846f8c10ee)" style="fill: #ffffff; stroke: #8c8c8c; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 124.906608 258.195748 
+L 278.564112 258.195748 
+Q 282.200976 258.195748 282.200976 254.558885 
+L 282.200976 96.355301 
+Q 282.200976 92.718437 278.564112 92.718437 
+L 124.906608 92.718437 
+Q 121.269744 92.718437 121.269744 96.355301 
+L 121.269744 254.558885 
+Q 121.269744 258.195748 124.906608 258.195748 
+z
+" clip-path="url(#p846f8c10ee)" style="fill: #f6f8fb; stroke: #9ca3af; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 133.089552 244.557509 
+L 270.381168 244.557509 
+Q 273.108816 244.557509 273.108816 241.82986 
+L 273.108816 172.729444 
+Q 273.108816 170.001797 270.381168 170.001797 
+L 133.089552 170.001797 
+Q 130.361904 170.001797 130.361904 172.729444 
+L 130.361904 241.82986 
+Q 130.361904 244.557509 133.089552 244.557509 
+z
+" clip-path="url(#p846f8c10ee)" style="fill: #fbe3d6; stroke: #dd8452; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 310.386672 158.181989 
+L 461.316528 158.181989 
+Q 464.044176 158.181989 464.044176 155.454341 
+L 464.044176 106.811285 
+Q 464.044176 104.083637 461.316528 104.083637 
+L 310.386672 104.083637 
+Q 307.659024 104.083637 307.659024 106.811285 
+L 307.659024 155.454341 
+Q 307.659024 158.181989 310.386672 158.181989 
+z
+" clip-path="url(#p846f8c10ee)" style="fill: #eaf0f8; stroke: #4c72b0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 310.386672 244.557509 
+L 461.316528 244.557509 
+Q 464.044176 244.557509 464.044176 241.82986 
+L 464.044176 193.186805 
+Q 464.044176 190.459157 461.316528 190.459157 
+L 310.386672 190.459157 
+Q 307.659024 190.459157 307.659024 193.186805 
+L 307.659024 241.82986 
+Q 307.659024 244.557509 310.386672 244.557509 
+z
+" clip-path="url(#p846f8c10ee)" style="fill: #ffffff; stroke: #4c72b0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="10.8" y="44.360034" transform="rotate(-0 10.8 44.360034)">O classificador do roteador roda em CPU, antes de o pedido chegar a uma GPU</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="52.85124" y="156.49376" transform="rotate(-0 52.85124 156.49376)">Cliente</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="52.85124" y="171.106117" transform="rotate(-0 52.85124 171.106117)">OpenCode</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="128.99808" y="110.623549" transform="rotate(-0 128.99808 110.623549)">Roteador semântico</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="128.99808" y="126.813928" transform="rotate(-0 128.99808 126.813928)">4 vCPU · 6 GB · sem GPU</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="201.73536" y="200.681658" transform="rotate(-0 201.73536 200.681658)">Vela-2.0-0.3B</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: #4b5563" transform="translate(172.724735 218.513056)">responde as</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; fill: #4b5563" transform="translate(150.525165 230.07745)">perguntas de decisão</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="385.8516" y="127.194274" transform="rotate(-0 385.8516 127.194274)">Modelo principal</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="385.8516" y="144.05657" transform="rotate(-0 385.8516 144.05657)">Qwen3.6-35B-A3B · RX 7900 XTX</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="385.8516" y="213.569794" transform="rotate(-0 385.8516 213.569794)">Fallback</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="385.8516" y="230.43209" transform="rotate(-0 385.8516 230.43209)">Qwen3-14B · RX 9060 XT</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 94.631391 159.545813 
+Q 107.40476 159.545813 118.501079 159.545813 
+" style="fill: none; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 112.901079 156.745813 
+L 118.501079 159.545813 
+L 112.901079 162.345813 
+z
+" style="fill: #6b7280; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 283.292879 132.269333 
+Q 294.929356 132.269333 304.888783 132.269333 
+" style="fill: none; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 299.288783 129.469333 
+L 304.888783 132.269333 
+L 299.288783 135.069333 
+z
+" style="fill: #6b7280; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 385.8516 159.274724 
+Q 385.8516 174.32058 385.8516 187.689386 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 388.6516 182.089386 
+L 385.8516 187.689386 
+L 383.0516 182.089386 
+z
+" style="fill: #6b7280; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #6b7280; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="390.39768" y="177.145923" transform="rotate(-0 390.39768 177.145923)">se o principal falhar</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start" x="10.8" y="21.437813" transform="rotate(-0 10.8 21.437813)">Onde cada peça roda</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p846f8c10ee">
+   <rect x="10.8" y="51.437813" width="454.608" height="221.76"/>
+  </clipPath>
+ </defs>
+</svg>
