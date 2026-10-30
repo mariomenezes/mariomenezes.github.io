@@ -3,6 +3,8 @@ title: "A model router with fallback in my homelab: what I configured and what I
 lang: en
 permalink: /en/2026/10/29/roteador-semantico-fallback/
 description: "Lab notes: a model router in front of two inference sources, with priority order, a local fallback and a test that takes the main source down. Includes what has not been tested yet."
+resumo: "A router in front of two inference sources, with priority and a local fallback. The main source really went down: 10 of 10 requests went to the fallback."
+image: /assets/img/roteador-fallback/cover-en.png
 ---
 
 *[Leia em português]({{ "/pt/2026/10/29/roteador-semantico-fallback/" | relative_url }})*

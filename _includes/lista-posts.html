@@ -1,0 +1,21 @@
+{%- comment -%}Lista de posts de um idioma. Parâmetros: include.lang ("pt-BR" ou "en").{%- endcomment -%}
+{%- assign posts = site.posts | where: "lang", include.lang -%}
+{%- assign meses = "jan,fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez" | split: "," -%}
+<ul class="lista-posts">
+{%- for post in posts %}
+  <li>
+    {%- if post.image -%}
+    <a class="lp-capa" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ post.image | relative_url }}" alt="" loading="lazy" width="240" height="126"></a>
+    {%- endif -%}
+    <div class="lp-texto">
+      <span class="lp-data">
+      {%- if include.lang == "pt-BR" -%}
+        {%- assign m = post.date | date: "%-m" | minus: 1 -%}{{ post.date | date: "%-d" }} {{ meses[m] }} {{ post.date | date: "%Y" }}
+      {%- else -%}{{ post.date | date: "%b %-d, %Y" }}{%- endif -%}
+      </span>
+      <h3 class="lp-titulo"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      {%- if post.resumo %}<p class="lp-resumo">{{ post.resumo | escape }}</p>{% elsif post.description %}<p class="lp-resumo">{{ post.description | escape }}</p>{% endif %}
+    </div>
+  </li>
+{%- endfor %}
+</ul>

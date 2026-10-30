@@ -3,6 +3,7 @@ title: "Gray failure in Istio canaries: why per-version p95 misleads, and what I
 lang: en
 permalink: /en/2026/10/28/gray-failure-canary-istio/
 description: "Lab notes (study in progress): detecting one degraded feature inside a canary with Istio metrics, deterministic rules, and measurements under injected faults."
+resumo: "A failure in 10% of one feature's requests goes unnoticed at the whole-version level. Measured per feature with Istio, it was caught in 16 of 16 runs."
 image: /assets/img/gray-failure-canary-istio/cover-en.png
 ---
 

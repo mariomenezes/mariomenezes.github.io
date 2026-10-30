@@ -3,6 +3,7 @@ title: "RAG no homelab: 92% do meu índice era ruído, e o log de consultas most
 lang: pt-BR
 permalink: /pt/2026/10/29/rag-homelab-visibilidade/
 description: "Notas de laboratório: busca semântica sobre as minhas notas de infraestrutura (Qdrant, indexador incremental, ferramenta MCP no OpenCode), com latência medida, o ambiente completo e o passo a passo para reproduzir. O achado: dados de benchmark gravados no vault viraram 92% do índice, e excluí-los reconstruiu o ranking."
+resumo: "Busca semântica sobre minhas notas, com log de cada consulta. Dados de benchmark viraram 92% do índice; excluí-los reconstruiu o ranking."
 image: /assets/img/rag-homelab-visibilidade/cover-pt.png
 ---
 

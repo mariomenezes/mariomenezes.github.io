@@ -3,6 +3,7 @@ title: "Two servers on the same AMD GPU kept the card at 100% with no work; one 
 lang: en
 permalink: /en/2026/10/29/multimodelo-duas-gpus/
 description: "Lab notes: two llama.cpp (ROCm) processes on the same RX 9060 XT kept the GPU at 100% and ~37 W while idle. I isolated the cause in 4 experiments and measured the GPU_MAX_HW_QUEUES=1 workaround: 11 W idle, +2.6 ms per embedding."
+resumo: "Two llama.cpp ROCm processes on the same card kept it at 100% and 37 W while idle. Four experiments to the cause, and a workaround that costs 2.6 ms per request."
 image: /assets/img/multimodelo-duas-gpus/cover-en.png
 ---
 

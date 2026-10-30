@@ -3,6 +3,7 @@ title: "RAG in a homelab: 92% of my index was noise, and the query log showed it
 lang: en
 permalink: /en/2026/10/29/rag-homelab-visibilidade/
 description: "Lab notes: semantic search over my infrastructure notes (Qdrant, incremental indexer, MCP tool in OpenCode), with measured latency, the full environment and step-by-step reproduction. The finding: benchmark data stored in the vault became 92% of the index, and excluding it rebuilt the ranking."
+resumo: "Semantic search over my notes, with a log of every query. Benchmark data became 92% of the index; excluding it rebuilt the ranking."
 image: /assets/img/rag-homelab-visibilidade/cover-en.png
 ---
 

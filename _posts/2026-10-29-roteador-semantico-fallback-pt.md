@@ -3,6 +3,8 @@ title: "Roteador de modelos com fallback no homelab: o que configurei e o que te
 lang: pt-BR
 permalink: /pt/2026/10/29/roteador-semantico-fallback/
 description: "Notas de laboratório: um roteador de modelos na frente de duas fontes de inferência, com ordem de prioridade, fallback local e o teste de queda da fonte principal. Inclui o que ainda não foi testado."
+resumo: "Um roteador na frente de duas fontes de inferência, com prioridade e fallback local. A fonte principal caiu de verdade: 10 de 10 pedidos foram para o fallback."
+image: /assets/img/roteador-fallback/cover-pt.png
 ---
 
 *[Read in English]({{ "/en/2026/10/29/roteador-semantico-fallback/" | relative_url }})*

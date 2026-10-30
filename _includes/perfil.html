@@ -1,0 +1,27 @@
+{%- comment -%}Cartão de perfil da página inicial. Parâmetro: include.lang = "pt" ou "en".{%- endcomment -%}
+{%- assign pt = false -%}{%- if include.lang == "pt" -%}{%- assign pt = true -%}{%- endif -%}
+<aside class="perfil">
+  <img class="perfil-foto" src="{{ "/assets/img/perfil.jpg" | relative_url }}" width="160" height="160"
+       alt="{% if pt %}Foto de Mario Menezes{% else %}Photo of Mario Menezes{% endif %}">
+  <h1 class="perfil-nome">Mario Menezes</h1>
+  <p class="perfil-cargo">Senior DevOps / Platform Engineer<br>Tech Lead</p>
+  <p class="perfil-foco">Kubernetes · Istio · AWS · Terraform</p>
+  <p class="perfil-bio">
+  {%- if pt -%}
+    Mais de 10 anos em infraestrutura, com AWS desde 2016. Lidero o time de plataforma de uma fintech: EKS, service mesh multi-cluster, GitOps e observabilidade. Aqui ficam minhas notas de laboratório, com o que medi, como repetir e o que deu errado.
+  {%- else -%}
+    10+ years in infrastructure, on AWS since 2016. I lead the platform team at a fintech: EKS, multi-cluster service mesh, GitOps and observability. These are my lab notes: what I measured, how to repeat it and what went wrong.
+  {%- endif -%}
+  </p>
+  <p class="perfil-certs"><span class="pill">AWS Solutions Architect</span> <span class="pill">CKA</span></p>
+  <nav class="perfil-links">
+    <a href="https://www.linkedin.com/in/mario-a-menezes-costa/" rel="me noopener">LinkedIn</a>
+    <a href="https://github.com/mariomenezes" rel="me noopener">GitHub</a>
+    <a href="{% if pt %}{{ "/sobre/" | relative_url }}{% else %}{{ "/en/about/" | relative_url }}{% endif %}">{% if pt %}Currículo{% else %}Résumé{% endif %}</a>
+    <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+  </nav>
+  <p class="perfil-idioma">
+  {%- if pt -%}<a href="{{ "/en/" | relative_url }}" hreflang="en">Read in English →</a>
+  {%- else -%}<a href="{{ "/" | relative_url }}" hreflang="pt-BR">Ler em português →</a>{%- endif -%}
+  </p>
+</aside>

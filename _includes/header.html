@@ -1,0 +1,19 @@
+{%- comment -%}Cabeçalho próprio (substitui o do minima 2.5.1): navegação no idioma da página.{%- endcomment -%}
+{%- assign en = false -%}{%- if page.lang == "en" -%}{%- assign en = true -%}{%- endif -%}
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{% if en %}{{ "/en/" | relative_url }}{% else %}{{ "/" | relative_url }}{% endif %}">
+      <img class="site-avatar" src="{{ "/assets/img/perfil-192.jpg" | relative_url }}" width="32" height="32" alt="">{{ site.title | escape }}</a>
+    <nav class="site-nav nav-simples">
+      {%- if en -%}
+      <a class="page-link" href="{{ "/en/#posts" | relative_url }}">Posts</a>
+      <a class="page-link" href="{{ "/en/about/" | relative_url }}">Résumé</a>
+      <a class="page-link" href="{{ "/" | relative_url }}" hreflang="pt-BR">PT</a>
+      {%- else -%}
+      <a class="page-link" href="{{ "/#posts" | relative_url }}">Posts</a>
+      <a class="page-link" href="{{ "/sobre/" | relative_url }}">Currículo</a>
+      <a class="page-link" href="{{ "/en/" | relative_url }}" hreflang="en">EN</a>
+      {%- endif -%}
+    </nav>
+  </div>
+</header>

@@ -3,6 +3,7 @@ title: "O roteador acerta 47 de 48 perguntas curtas e erra as 4 tarefas reais"
 lang: pt-BR
 permalink: /pt/2026/10/30/calibrar-sinais-roteamento/
 description: "Laboratório: medi, com rótulos fixados antes da medição, os sinais de dificuldade e de ataque de um roteador semântico local. Perguntas curtas: 47 de 48 certas. Tarefas reais com artefatos: 0 de 4 chegaram ao modo de raciocínio. E quanto a decisão custa."
+resumo: "Rótulos selados antes de medir: o sinal de dificuldade acerta perguntas curtas e falha quando o pedido traz logs e arquivos. Também: ataques indiretos e o custo da decisão em CPU."
 image: /assets/img/calibrar-sinais-roteamento/cover-pt.png
 ---
 

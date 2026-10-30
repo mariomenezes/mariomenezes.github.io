@@ -3,6 +3,8 @@ title: "Syncthing entre sub-redes: recriar do zero, endereço fixo e réplica so
 lang: pt-BR
 permalink: /pt/2026/10/29/syncthing-vault-sincronizacao/
 description: "Notas de laboratório: sincronizei uma pasta de notas entre um PC e um servidor em sub-redes diferentes, recriando a instalação do Syncthing do zero, com endereço fixo e uma réplica somente leitura para o indexador."
+resumo: "Notas sincronizadas entre sub-redes com Syncthing refeito do zero, endereço fixo e uma réplica somente leitura. Uma nota chega ao servidor em cerca de 9 s."
+image: /assets/img/syncthing-vault-sincronizacao/cover-pt.png
 ---
 
 *[Read in English]({{ "/en/2026/10/29/syncthing-vault-sync/" | relative_url }})*

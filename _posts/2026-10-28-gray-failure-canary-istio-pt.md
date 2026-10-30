@@ -3,6 +3,7 @@ title: "Gray failure em canary com Istio: por que o p95 por versão engana, e o 
 lang: pt-BR
 permalink: /pt/2026/10/28/gray-failure-canary-istio/
 description: "Notas de laboratório (estudo em andamento): detectar uma feature degradada dentro de um canary com métricas do Istio, regras determinísticas e medições com falha injetada."
+resumo: "Uma falha em 10% das requisições de uma feature passa despercebida na visão da versão inteira. Medindo por feature com o Istio, foi detectada em 16 de 16 execuções."
 image: /assets/img/gray-failure-canary-istio/cover-pt.png
 ---
 

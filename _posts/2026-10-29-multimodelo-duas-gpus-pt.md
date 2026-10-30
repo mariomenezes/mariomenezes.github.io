@@ -3,6 +3,7 @@ title: "Dois servidores na mesma GPU AMD deixaram a placa em 100% sem trabalho; 
 lang: pt-BR
 permalink: /pt/2026/10/29/multimodelo-duas-gpus/
 description: "Laboratório: dois processos llama.cpp (ROCm) na mesma RX 9060 XT mantinham a GPU em 100% e ~37 W ociosa. Isolei a causa em 4 experimentos e medi o contorno GPU_MAX_HW_QUEUES=1: 11 W ociosa, +2,6 ms por embedding."
+resumo: "Dois processos llama.cpp com ROCm na mesma placa a mantinham em 100% e 37 W parada. Quatro experimentos até a causa, e um contorno de 2,6 ms por pedido."
 image: /assets/img/multimodelo-duas-gpus/cover-pt.png
 ---
 

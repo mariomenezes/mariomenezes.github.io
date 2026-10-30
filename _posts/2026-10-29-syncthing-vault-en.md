@@ -3,6 +3,8 @@ title: "Syncthing across subnets: rebuilding from scratch, a fixed address and a
 lang: en
 permalink: /en/2026/10/29/syncthing-vault-sync/
 description: "Lab notes: I synced a notes folder between a PC and a server on different subnets, rebuilding the Syncthing install from scratch, with a fixed address and a read-only replica for the indexer."
+resumo: "Notes synced across subnets with Syncthing rebuilt from scratch, a fixed address and a read-only replica. A note reaches the server in about 9 s."
+image: /assets/img/syncthing-vault-sincronizacao/cover-en.png
 ---
 
 *[Leia em português]({{ "/pt/2026/10/29/syncthing-vault-sincronizacao/" | relative_url }})*

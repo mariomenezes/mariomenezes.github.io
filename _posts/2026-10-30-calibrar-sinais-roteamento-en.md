@@ -3,6 +3,7 @@ title: "The router gets 47 of 48 short questions right and all 4 real tasks wron
 lang: en
 permalink: /en/2026/10/30/calibrar-sinais-roteamento/
 description: "Lab notes: with labels frozen before measuring, I tested the difficulty and attack signals of a local semantic router. Short questions: 47 of 48 right. Real tasks with artifacts: 0 of 4 reached reasoning mode. And what the decision costs."
+resumo: "Labels sealed before measuring: the difficulty signal gets short questions right and fails when the request carries logs and files. Also: indirect attacks and the cost of deciding on CPU."
 image: /assets/img/calibrar-sinais-roteamento/cover-en.png
 ---
 
