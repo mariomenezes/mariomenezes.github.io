@@ -34,4 +34,5 @@ social:
 header_pages: []
 
 exclude:
+  - labs
   - README.md

@@ -1,0 +1,15 @@
+[Unit]
+Description=llama.cpp embeddings (Qwen3-Embedding-0.6B, GPU 1)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=<ARQUIVO_COM_LLAMA_API_KEY>
+Environment="ROCR_VISIBLE_DEVICES=1"
+Environment="GGML_VK_VISIBLE_DEVICES=1"
+ExecStart=<LLAMA_CPP>/build/bin/llama-server -m <MODELOS>/Qwen3-Embedding-0.6B-Q8_0.gguf -ngl 99 -c 4096 --embeddings --host 0.0.0.0 --port 8084 --api-key ${LLAMA_API_KEY} -t 2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

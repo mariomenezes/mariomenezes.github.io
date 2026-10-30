@@ -1,0 +1,46 @@
+[
+ {
+  "q": "como reinicio o roteador",
+  "esperado": "notas/nota-02.md"
+ },
+ {
+  "q": "onde fica a chave de API do banco vetorial",
+  "esperado": "notas/nota-07.md"
+ },
+ {
+  "q": "qual modelo gera os embeddings e quantas dimensoes",
+  "esperado": "notas/nota-07.md"
+ },
+ {
+  "q": "por que o modo sleeping nao libera a GPU",
+  "esperado": "notas/nota-06.md"
+ },
+ {
+  "q": "qual modelo foi removido do servidor de modelos",
+  "esperado": "notas/nota-06.md"
+ },
+ {
+  "q": "quais sao as rotas do roteador e a ordem de prioridade",
+  "esperado": "notas/nota-02.md"
+ },
+ {
+  "q": "como testar o fallback do roteador",
+  "esperado": "notas/nota-02.md"
+ },
+ {
+  "q": "regras de sanitizacao antes de publicar",
+  "esperado": "notas/nota-03.md"
+ },
+ {
+  "q": "em qual cliente o braco do Claude deve rodar",
+  "esperado": "notas/nota-03.md"
+ },
+ {
+  "q": "receita de bolo de cenoura",
+  "esperado": null
+ },
+ {
+  "q": "previsao do tempo em Lisboa",
+  "esperado": null
+ }
+]

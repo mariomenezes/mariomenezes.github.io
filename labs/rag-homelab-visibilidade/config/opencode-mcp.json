@@ -1,0 +1,9 @@
+{
+  "mcp": {
+    "rag-vault": {
+      "type": "local",
+      "command": ["python3", "<CAMINHO>/mcp_server.py"],
+      "enabled": true
+    }
+  }
+}

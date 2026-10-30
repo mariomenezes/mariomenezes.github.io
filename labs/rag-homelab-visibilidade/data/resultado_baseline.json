@@ -1,0 +1,357 @@
+{
+ "pontos": 972,
+ "rows": [
+  {
+   "q": "como reinicio o roteador",
+   "esperado": "notas/nota-02.md",
+   "top": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.668
+    ],
+    [
+     "notas/nota-07.md",
+     0.668
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.612
+    ],
+    [
+     "notas/nota-03.md",
+     0.605
+    ]
+   ],
+   "emb_ms": [
+    24.412155151367188,
+    9.295225143432617,
+    12.943267822265625
+   ],
+   "qd_ms": [
+    2.931356430053711,
+    3.5500526428222656,
+    3.6630630493164062
+   ]
+  },
+  {
+   "q": "onde fica a chave de API do banco vetorial",
+   "esperado": "notas/nota-07.md",
+   "top": [
+    [
+     "notas/nota-07.md",
+     0.63
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.599
+    ],
+    [
+     "dados/arquivo-08.md",
+     0.594
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.575
+    ]
+   ],
+   "emb_ms": [
+    14.671087265014648,
+    8.598804473876953,
+    10.954141616821289
+   ],
+   "qd_ms": [
+    2.523660659790039,
+    2.237558364868164,
+    2.6009082794189453
+   ]
+  },
+  {
+   "q": "qual modelo gera os embeddings e quantas dimensoes",
+   "esperado": "notas/nota-07.md",
+   "top": [
+    [
+     "notas/nota-02.md",
+     0.609
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.594
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.589
+    ],
+    [
+     "notas/nota-06.md",
+     0.585
+    ]
+   ],
+   "emb_ms": [
+    14.844655990600586,
+    9.933948516845703,
+    11.807918548583984
+   ],
+   "qd_ms": [
+    3.9610862731933594,
+    4.471778869628906,
+    4.416704177856445
+   ]
+  },
+  {
+   "q": "por que o modo sleeping nao libera a GPU",
+   "esperado": "notas/nota-06.md",
+   "top": [
+    [
+     "notas/nota-06.md",
+     0.573
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.554
+    ],
+    [
+     "dados/arquivo-04.md",
+     0.497
+    ],
+    [
+     "dados/arquivo-02.md",
+     0.493
+    ]
+   ],
+   "emb_ms": [
+    15.052318572998047,
+    9.701728820800781,
+    12.609720230102539
+   ],
+   "qd_ms": [
+    4.552602767944336,
+    4.759311676025391,
+    4.50897216796875
+   ]
+  },
+  {
+   "q": "qual modelo foi removido do servidor de modelos",
+   "esperado": "notas/nota-06.md",
+   "top": [
+    [
+     "notas/nota-02.md",
+     0.529
+    ],
+    [
+     "notas/nota-06.md",
+     0.524
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.498
+    ],
+    [
+     "dados/arquivo-03.md",
+     0.464
+    ]
+   ],
+   "emb_ms": [
+    15.491008758544922,
+    9.746074676513672,
+    12.582063674926758
+   ],
+   "qd_ms": [
+    4.431009292602539,
+    4.58979606628418,
+    5.046367645263672
+   ]
+  },
+  {
+   "q": "quais sao as rotas do roteador e a ordem de prioridade",
+   "esperado": "notas/nota-02.md",
+   "top": [
+    [
+     "notas/nota-03.md",
+     0.658
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.638
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.619
+    ],
+    [
+     "dados/arquivo-06.md",
+     0.592
+    ]
+   ],
+   "emb_ms": [
+    17.827510833740234,
+    10.471105575561523,
+    12.358427047729492
+   ],
+   "qd_ms": [
+    4.772424697875977,
+    4.64630126953125,
+    4.596948623657227
+   ]
+  },
+  {
+   "q": "como testar o fallback do roteador",
+   "esperado": "notas/nota-02.md",
+   "top": [
+    [
+     "notas/nota-07.md",
+     0.696
+    ],
+    [
+     "notas/nota-03.md",
+     0.694
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.672
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.651
+    ]
+   ],
+   "emb_ms": [
+    15.372514724731445,
+    10.262489318847656,
+    12.798070907592773
+   ],
+   "qd_ms": [
+    4.656076431274414,
+    4.748821258544922,
+    2.986431121826172
+   ]
+  },
+  {
+   "q": "regras de sanitizacao antes de publicar",
+   "esperado": "notas/nota-03.md",
+   "top": [
+    [
+     "notas/nota-03.md",
+     0.681
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.604
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.558
+    ],
+    [
+     "dados/arquivo-10.md",
+     0.549
+    ]
+   ],
+   "emb_ms": [
+    15.652656555175781,
+    10.169267654418945,
+    28.771400451660156
+   ],
+   "qd_ms": [
+    4.605531692504883,
+    4.706382751464844,
+    4.710912704467773
+   ]
+  },
+  {
+   "q": "em qual cliente o braco do Claude deve rodar",
+   "esperado": "notas/nota-03.md",
+   "top": [
+    [
+     "dados/arquivo-01.md",
+     0.679
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.678
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.588
+    ],
+    [
+     "notas/nota-03.md",
+     0.562
+    ]
+   ],
+   "emb_ms": [
+    16.787052154541016,
+    10.744094848632812,
+    12.149810791015625
+   ],
+   "qd_ms": [
+    5.096673965454102,
+    4.088401794433594,
+    4.780769348144531
+   ]
+  },
+  {
+   "q": "receita de bolo de cenoura",
+   "esperado": null,
+   "top": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.597
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.512
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.509
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.488
+    ]
+   ],
+   "emb_ms": [
+    16.38627052307129,
+    10.69951057434082,
+    13.444185256958008
+   ],
+   "qd_ms": [
+    4.755735397338867,
+    4.630327224731445,
+    5.413532257080078
+   ]
+  },
+  {
+   "q": "previsao do tempo em Lisboa",
+   "esperado": null,
+   "top": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.599
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.561
+    ],
+    [
+     "dados/arquivo-07.md",
+     0.56
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.556
+    ]
+   ],
+   "emb_ms": [
+    16.295433044433594,
+    10.718345642089844,
+    13.144254684448242
+   ],
+   "qd_ms": [
+    4.93621826171875,
+    5.348443984985352,
+    4.070758819580078
+   ]
+  }
+ ]
+}

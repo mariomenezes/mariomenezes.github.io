@@ -1,0 +1,588 @@
+{
+ "consultas": [
+  {
+   "q": "como reinicio o roteador",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "notas/nota-07.md",
+     0.668
+    ],
+    [
+     "notas/nota-03.md",
+     0.605
+    ],
+    [
+     "notas/nota-02.md",
+     0.585
+    ],
+    [
+     "notas/nota-05.md",
+     0.508
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.668
+    ],
+    [
+     "notas/nota-03.md",
+     0.605
+    ],
+    [
+     "notas/nota-02.md",
+     0.585
+    ],
+    [
+     "notas/nota-05.md",
+     0.508
+    ]
+   ],
+   "pos_antes": 3,
+   "pos_depois": 3
+  },
+  {
+   "q": "onde fica a chave de API do banco vetorial",
+   "esperado": "notas/nota-07.md",
+   "antes": [
+    [
+     "notas/nota-07.md",
+     0.63
+    ],
+    [
+     "notas/nota-02.md",
+     0.562
+    ],
+    [
+     "notas/nota-04.md",
+     0.561
+    ],
+    [
+     "notas/nota-05.md",
+     0.517
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.63
+    ],
+    [
+     "notas/nota-02.md",
+     0.562
+    ],
+    [
+     "notas/nota-04.md",
+     0.561
+    ],
+    [
+     "notas/nota-05.md",
+     0.517
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "qual modelo gera os embeddings e quantas dimensoes",
+   "esperado": "notas/nota-07.md",
+   "antes": [
+    [
+     "notas/nota-02.md",
+     0.609
+    ],
+    [
+     "notas/nota-06.md",
+     0.585
+    ],
+    [
+     "notas/nota-03.md",
+     0.514
+    ],
+    [
+     "notas/nota-05.md",
+     0.5
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-02.md",
+     0.609
+    ],
+    [
+     "notas/nota-06.md",
+     0.585
+    ],
+    [
+     "notas/nota-03.md",
+     0.514
+    ],
+    [
+     "notas/nota-05.md",
+     0.5
+    ]
+   ],
+   "pos_antes": 5,
+   "pos_depois": 5
+  },
+  {
+   "q": "por que o modo sleeping nao libera a GPU",
+   "esperado": "notas/nota-06.md",
+   "antes": [
+    [
+     "notas/nota-06.md",
+     0.573
+    ],
+    [
+     "notas/nota-03.md",
+     0.471
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ],
+    [
+     "notas/nota-02.md",
+     0.466
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-06.md",
+     0.573
+    ],
+    [
+     "notas/nota-03.md",
+     0.471
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ],
+    [
+     "notas/nota-02.md",
+     0.466
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "qual modelo foi removido do servidor de modelos",
+   "esperado": "notas/nota-06.md",
+   "antes": [
+    [
+     "notas/nota-02.md",
+     0.529
+    ],
+    [
+     "notas/nota-06.md",
+     0.524
+    ],
+    [
+     "notas/nota-03.md",
+     0.447
+    ],
+    [
+     "notas/nota-05.md",
+     0.409
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-02.md",
+     0.529
+    ],
+    [
+     "notas/nota-06.md",
+     0.524
+    ],
+    [
+     "notas/nota-03.md",
+     0.447
+    ],
+    [
+     "notas/nota-05.md",
+     0.409
+    ]
+   ],
+   "pos_antes": 2,
+   "pos_depois": 2
+  },
+  {
+   "q": "quais sao as rotas do roteador e a ordem de prioridade",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.658
+    ],
+    [
+     "notas/nota-07.md",
+     0.566
+    ],
+    [
+     "notas/nota-02.md",
+     0.548
+    ],
+    [
+     "notas/nota-05.md",
+     0.482
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.658
+    ],
+    [
+     "notas/nota-07.md",
+     0.566
+    ],
+    [
+     "notas/nota-02.md",
+     0.548
+    ],
+    [
+     "notas/nota-05.md",
+     0.482
+    ]
+   ],
+   "pos_antes": 3,
+   "pos_depois": 3
+  },
+  {
+   "q": "como testar o fallback do roteador",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "notas/nota-07.md",
+     0.696
+    ],
+    [
+     "notas/nota-03.md",
+     0.694
+    ],
+    [
+     "notas/nota-02.md",
+     0.625
+    ],
+    [
+     "notas/nota-06.md",
+     0.557
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.696
+    ],
+    [
+     "notas/nota-03.md",
+     0.694
+    ],
+    [
+     "notas/nota-02.md",
+     0.625
+    ],
+    [
+     "notas/nota-06.md",
+     0.557
+    ]
+   ],
+   "pos_antes": 3,
+   "pos_depois": 3
+  },
+  {
+   "q": "regras de sanitizacao antes de publicar",
+   "esperado": "notas/nota-03.md",
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.681
+    ],
+    [
+     "notas/nota-05.md",
+     0.511
+    ],
+    [
+     "notas/nota-01.md",
+     0.51
+    ],
+    [
+     "notas/nota-04.md",
+     0.474
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.681
+    ],
+    [
+     "notas/nota-05.md",
+     0.511
+    ],
+    [
+     "notas/nota-01.md",
+     0.51
+    ],
+    [
+     "notas/nota-04.md",
+     0.474
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "em qual cliente o braco do Claude deve rodar",
+   "esperado": "notas/nota-03.md",
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.562
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ],
+    [
+     "notas/nota-06.md",
+     0.44
+    ],
+    [
+     "notas/nota-05.md",
+     0.44
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.562
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ],
+    [
+     "notas/nota-06.md",
+     0.44
+    ],
+    [
+     "notas/nota-05.md",
+     0.44
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "receita de bolo de cenoura",
+   "esperado": null,
+   "antes": [
+    [
+     "notas/nota-04.md",
+     0.441
+    ],
+    [
+     "notas/nota-03.md",
+     0.402
+    ],
+    [
+     "notas/nota-01.md",
+     0.399
+    ],
+    [
+     "notas/nota-05.md",
+     0.393
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-04.md",
+     0.441
+    ],
+    [
+     "notas/nota-03.md",
+     0.402
+    ],
+    [
+     "notas/nota-01.md",
+     0.399
+    ],
+    [
+     "notas/nota-05.md",
+     0.393
+    ]
+   ],
+   "pos_antes": null,
+   "pos_depois": null
+  },
+  {
+   "q": "previsao do tempo em Lisboa",
+   "esperado": null,
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.483
+    ],
+    [
+     "notas/nota-04.md",
+     0.473
+    ],
+    [
+     "notas/nota-05.md",
+     0.473
+    ],
+    [
+     "notas/nota-01.md",
+     0.468
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.483
+    ],
+    [
+     "notas/nota-04.md",
+     0.473
+    ],
+    [
+     "notas/nota-05.md",
+     0.473
+    ],
+    [
+     "notas/nota-01.md",
+     0.468
+    ]
+   ],
+   "pos_antes": null,
+   "pos_depois": null
+  }
+ ],
+ "latencia_ms": {
+  "embed": {
+   "p50": 15.7,
+   "p95": 20.6,
+   "min": 13.9,
+   "max": 20.7,
+   "n": 30
+  },
+  "busca": {
+   "p50": 4.0,
+   "p95": 4.3,
+   "min": 2.1,
+   "max": 4.3,
+   "n": 30
+  },
+  "total": {
+   "p50": 19.7,
+   "p95": 24.7,
+   "min": 16.2,
+   "max": 25.0,
+   "n": 30
+  }
+ },
+ "erros": 0,
+ "lat_raw": {
+  "embed": [
+   20.320449002610985,
+   15.441066003404558,
+   15.693653003836516,
+   19.37058499606792,
+   13.918848999310285,
+   15.068102002260275,
+   20.107770003960468,
+   15.462056995602325,
+   15.733170002931729,
+   20.167816001048777,
+   15.119531999516767,
+   16.27131100394763,
+   19.96042699465761,
+   14.974643003370147,
+   15.451046005182434,
+   20.109042998228688,
+   15.186471995548345,
+   15.70406600512797,
+   19.588415998441633,
+   15.148053003940731,
+   15.52197900309693,
+   20.670272002462298,
+   14.986846996180248,
+   15.751182996609714,
+   20.144731999607757,
+   14.951755001675338,
+   15.639289005775936,
+   20.639474998461083,
+   15.44356199883623,
+   16.242028003034648
+  ],
+  "busca": [
+   4.0444100013701245,
+   3.921117000572849,
+   3.6485509990598075,
+   2.122231999237556,
+   2.313001998118125,
+   2.9319710010895506,
+   3.9672700004302897,
+   3.9598500006832182,
+   3.836562995275017,
+   4.174150002654642,
+   4.172214998106938,
+   3.888371997163631,
+   3.643366006144788,
+   3.0835840007057413,
+   3.259339995565824,
+   3.7707430019509047,
+   3.8031680014682934,
+   3.9796609999029897,
+   4.021480999654159,
+   3.9543570019304752,
+   4.041742002300452,
+   4.029750001791399,
+   3.875394002534449,
+   4.039781997562386,
+   4.155766000621952,
+   4.172355998889543,
+   4.316958998970222,
+   4.318168001191225,
+   4.223375995934475,
+   3.679948997159954
+  ],
+  "total": [
+   24.36485900398111,
+   19.362183003977407,
+   19.342204002896324,
+   21.492816995305475,
+   16.23185099742841,
+   18.000073003349826,
+   24.075040004390758,
+   19.421906996285543,
+   19.569732998206746,
+   24.34196600370342,
+   19.291746997623704,
+   20.15968300111126,
+   23.603793000802398,
+   18.05822700407589,
+   18.710386000748258,
+   23.879786000179593,
+   18.98963999701664,
+   19.68372700503096,
+   23.609896998095792,
+   19.102410005871207,
+   19.563721005397383,
+   24.700022004253697,
+   18.862240998714697,
+   19.7909649941721,
+   24.30049800022971,
+   19.12411100056488,
+   19.956248004746158,
+   24.957642999652307,
+   19.666937994770706,
+   19.9219770001946
+  ]
+ }
+}

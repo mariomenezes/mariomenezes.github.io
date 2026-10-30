@@ -1,0 +1,9 @@
+[Unit]
+Description=Indexa o vault no Qdrant
+After=network-online.target syncthing-rag.service
+
+[Service]
+Type=oneshot
+Environment=RAG_ENV=<CAMINHO>/rag.env
+Environment=RAG_LOG=<CAMINHO>/rag-indexer.log
+ExecStart=/usr/bin/python3 <CAMINHO>/rag-indexer.py

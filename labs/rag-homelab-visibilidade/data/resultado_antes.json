@@ -1,0 +1,564 @@
+{
+ "consultas": [
+  {
+   "q": "como reinicio o roteador",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.668
+    ],
+    [
+     "notas/nota-07.md",
+     0.668
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.612
+    ],
+    [
+     "notas/nota-03.md",
+     0.605
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.668
+    ],
+    [
+     "notas/nota-03.md",
+     0.605
+    ],
+    [
+     "notas/nota-02.md",
+     0.585
+    ],
+    [
+     "notas/nota-05.md",
+     0.508
+    ]
+   ],
+   "pos_antes": 5,
+   "pos_depois": 3
+  },
+  {
+   "q": "onde fica a chave de API do banco vetorial",
+   "esperado": "notas/nota-07.md",
+   "antes": [
+    [
+     "notas/nota-07.md",
+     0.63
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.599
+    ],
+    [
+     "dados/arquivo-08.md",
+     0.594
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.575
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.63
+    ],
+    [
+     "notas/nota-02.md",
+     0.562
+    ],
+    [
+     "notas/nota-04.md",
+     0.561
+    ],
+    [
+     "notas/nota-05.md",
+     0.517
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "qual modelo gera os embeddings e quantas dimensoes",
+   "esperado": "notas/nota-07.md",
+   "antes": [
+    [
+     "notas/nota-02.md",
+     0.609
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.594
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.589
+    ],
+    [
+     "notas/nota-06.md",
+     0.585
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-02.md",
+     0.609
+    ],
+    [
+     "notas/nota-06.md",
+     0.585
+    ],
+    [
+     "notas/nota-03.md",
+     0.514
+    ],
+    [
+     "notas/nota-05.md",
+     0.5
+    ]
+   ],
+   "pos_antes": 41,
+   "pos_depois": 5
+  },
+  {
+   "q": "por que o modo sleeping nao libera a GPU",
+   "esperado": "notas/nota-06.md",
+   "antes": [
+    [
+     "notas/nota-06.md",
+     0.573
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.554
+    ],
+    [
+     "dados/arquivo-04.md",
+     0.497
+    ],
+    [
+     "dados/arquivo-02.md",
+     0.493
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-06.md",
+     0.573
+    ],
+    [
+     "notas/nota-03.md",
+     0.471
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ],
+    [
+     "notas/nota-02.md",
+     0.466
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "qual modelo foi removido do servidor de modelos",
+   "esperado": "notas/nota-06.md",
+   "antes": [
+    [
+     "notas/nota-02.md",
+     0.529
+    ],
+    [
+     "notas/nota-06.md",
+     0.524
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.498
+    ],
+    [
+     "dados/arquivo-03.md",
+     0.464
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-02.md",
+     0.529
+    ],
+    [
+     "notas/nota-06.md",
+     0.524
+    ],
+    [
+     "notas/nota-03.md",
+     0.447
+    ],
+    [
+     "notas/nota-05.md",
+     0.409
+    ]
+   ],
+   "pos_antes": 2,
+   "pos_depois": 2
+  },
+  {
+   "q": "quais sao as rotas do roteador e a ordem de prioridade",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.658
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.638
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.619
+    ],
+    [
+     "dados/arquivo-06.md",
+     0.592
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.658
+    ],
+    [
+     "notas/nota-07.md",
+     0.566
+    ],
+    [
+     "notas/nota-02.md",
+     0.548
+    ],
+    [
+     "notas/nota-05.md",
+     0.482
+    ]
+   ],
+   "pos_antes": 8,
+   "pos_depois": 3
+  },
+  {
+   "q": "como testar o fallback do roteador",
+   "esperado": "notas/nota-02.md",
+   "antes": [
+    [
+     "notas/nota-07.md",
+     0.696
+    ],
+    [
+     "notas/nota-03.md",
+     0.694
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.672
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.651
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-07.md",
+     0.696
+    ],
+    [
+     "notas/nota-03.md",
+     0.694
+    ],
+    [
+     "notas/nota-02.md",
+     0.625
+    ],
+    [
+     "notas/nota-06.md",
+     0.557
+    ]
+   ],
+   "pos_antes": 5,
+   "pos_depois": 3
+  },
+  {
+   "q": "regras de sanitizacao antes de publicar",
+   "esperado": "notas/nota-03.md",
+   "antes": [
+    [
+     "notas/nota-03.md",
+     0.681
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.604
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.558
+    ],
+    [
+     "dados/arquivo-10.md",
+     0.549
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.681
+    ],
+    [
+     "notas/nota-05.md",
+     0.511
+    ],
+    [
+     "notas/nota-01.md",
+     0.51
+    ]
+   ],
+   "pos_antes": 1,
+   "pos_depois": 1
+  },
+  {
+   "q": "em qual cliente o braco do Claude deve rodar",
+   "esperado": "notas/nota-03.md",
+   "antes": [
+    [
+     "dados/arquivo-01.md",
+     0.679
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.678
+    ],
+    [
+     "dados/pacote-avaliacao.md",
+     0.588
+    ],
+    [
+     "notas/nota-03.md",
+     0.562
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.562
+    ],
+    [
+     "notas/nota-07.md",
+     0.469
+    ]
+   ],
+   "pos_antes": 4,
+   "pos_depois": 1
+  },
+  {
+   "q": "receita de bolo de cenoura",
+   "esperado": null,
+   "antes": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.597
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.512
+    ],
+    [
+     "dados/arquivo-01.md",
+     0.509
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.488
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-04.md",
+     0.441
+    ]
+   ],
+   "pos_antes": null,
+   "pos_depois": null
+  },
+  {
+   "q": "previsao do tempo em Lisboa",
+   "esperado": null,
+   "antes": [
+    [
+     "dados/pacote-avaliacao.md",
+     0.599
+    ],
+    [
+     "dados/arquivo-09.md",
+     0.561
+    ],
+    [
+     "dados/arquivo-07.md",
+     0.56
+    ],
+    [
+     "dados/arquivo-05.md",
+     0.556
+    ]
+   ],
+   "depois": [
+    [
+     "notas/nota-03.md",
+     0.483
+    ],
+    [
+     "notas/nota-04.md",
+     0.473
+    ],
+    [
+     "notas/nota-05.md",
+     0.473
+    ],
+    [
+     "notas/nota-01.md",
+     0.468
+    ]
+   ],
+   "pos_antes": null,
+   "pos_depois": null
+  }
+ ],
+ "latencia_ms": {
+  "embed": {
+   "p50": 16.2,
+   "p95": 20.9,
+   "min": 14.9,
+   "max": 22.4,
+   "n": 30
+  },
+  "busca": {
+   "p50": 4.3,
+   "p95": 4.7,
+   "min": 2.7,
+   "max": 4.8,
+   "n": 30
+  },
+  "total": {
+   "p50": 20.6,
+   "p95": 25.4,
+   "min": 17.6,
+   "max": 27.0,
+   "n": 30
+  }
+ },
+ "erros": 0,
+ "lat_raw": {
+  "embed": [
+   22.432281999499537,
+   16.561664000619203,
+   16.353066996089183,
+   20.40064199536573,
+   15.463739000551868,
+   16.135739999299403,
+   20.058392998180352,
+   15.11062499776017,
+   15.773935003380757,
+   19.780788003117777,
+   15.40815500629833,
+   14.91685500513995,
+   20.452156000828836,
+   15.290389004803728,
+   15.77987599739572,
+   19.961017998866737,
+   15.20353300293209,
+   15.630642003088724,
+   20.504054002230987,
+   15.200736001133919,
+   15.910752001218498,
+   20.732767996378243,
+   15.308117996028159,
+   16.653049002343323,
+   20.87819699954707,
+   15.875472003244795,
+   16.30465099879075,
+   20.500384001934435,
+   15.570040995953605,
+   16.695337995770387
+  ],
+  "busca": [
+   4.55569000041578,
+   4.522351999185048,
+   4.633615004422609,
+   4.59132700052578,
+   4.480830997636076,
+   4.303572000935674,
+   4.137244999583345,
+   4.378233999887016,
+   4.2152680034632795,
+   4.264993993274402,
+   4.446655999345239,
+   2.6770719996420667,
+   4.347559995949268,
+   4.221468996547628,
+   4.695191004429944,
+   4.293409001547843,
+   4.348871996626258,
+   4.263946997525636,
+   4.210758001136128,
+   4.175389003648888,
+   4.5752570003969595,
+   4.424933998961933,
+   3.952483006287366,
+   4.814611995243467,
+   4.503905998717528,
+   4.280012995877769,
+   4.416996001964435,
+   4.213448999507818,
+   4.433435999089852,
+   4.286331997718662
+  ],
+  "total": [
+   26.987971999915317,
+   21.08401599980425,
+   20.98668200051179,
+   24.99196899589151,
+   19.944569998187944,
+   20.439312000235077,
+   24.195637997763697,
+   19.488858997647185,
+   19.989203006844036,
+   24.04578199639218,
+   19.85481100564357,
+   17.593927004782017,
+   24.799715996778104,
+   19.511858001351357,
+   20.475067001825664,
+   24.25442700041458,
+   19.552404999558348,
+   19.89458900061436,
+   24.714812003367115,
+   19.376125004782807,
+   20.486009001615457,
+   25.157701995340176,
+   19.260601002315525,
+   21.46766099758679,
+   25.3821029982646,
+   20.155484999122564,
+   20.721647000755183,
+   24.713833001442254,
+   20.003476995043457,
+   20.98166999348905
+  ]
+ }
+}
