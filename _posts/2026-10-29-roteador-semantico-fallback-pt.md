@@ -17,7 +17,7 @@ Este post descreve a configuração, o teste de queda que fiz e o que ainda não
 
 - **Um endereço para o cliente.** O roteador expõe uma API compatível com OpenAI e escolhe a rota pelo tipo de pedido.
 - **Ordem de prioridade fixa.** A rota padrão é o modelo grande; se ele falhar, vai para o de 14B.
-- **Queda testada:** com o modelo grande derrubado, o pedido foi atendido pelo fallback em cerca de 19 s, incluindo o carregamento do modelo. Foi um teste único, sem repetição.
+- **Queda real medida:** com a fonte principal fora do ar, 10 de 10 pedidos foram para o fallback (0,15 s de mediana). Quando ela voltou, 10 de 10 foram para a principal (0,11 s).
 - **Divergência encontrada:** a descrição do fallback na configuração diz que o modelo carrega sob demanda; a decisão registrada no vault é mantê-lo sempre carregado. Uma das duas está desatualizada.
 
 ## Ambiente
@@ -49,11 +49,26 @@ A configuração tem rotas com prioridade. Uma delas bloqueia pedidos com padrõ
 
 Um limite importante: a detecção de injeção indireta, vinda de texto que o assistente lê, não existe nesta configuração. Só cobre o caso direto.
 
-## O teste de queda
+## Queda real da fonte principal
 
-Parei o proxy que liga o roteador ao modelo principal e fiz um pedido curto pelo roteador. O pedido foi atendido pelo fallback. O tempo total foi de cerca de 19 s, sendo a maior parte o carregamento do modelo de 14B. Depois o proxy foi religado.
+Num dia de medições, a fonte principal saiu do ar sem eu ter feito nada. O roteador passou a responder pelo fallback. Medi 10 pedidos curtos (16 tokens no máximo, temperatura 0) enquanto ela estava fora, e 10 depois que voltou. Não investiguei a causa da queda.
 
-O que isso não mostra: a latência em regime, a variação entre repetições e o comportamento com pedidos longos. Foi uma execução.
+| Estado | Rota (cabeçalho) | Modelo que respondeu | Mediana | Mín–máx |
+|---|---|---|---|---|
+| Fonte principal fora | `fallback` | qwen3-14b | 0,15 s | 0,12–0,15 s |
+| Fonte principal no ar | `upstream` | Qwen3.6-35B-A3B | 0,11 s | 0,10–0,13 s |
+
+Pedidos curtos com 2 tokens de saída medem sobretudo o tempo de resposta do roteador, não a geração. Não repeti com pedidos longos.
+
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/painel-roteador.png" | relative_url }}" alt="Painel do roteador com 2 modelos, 4 decisões, 4 sinais, 3 de 3 serviços saudáveis e status pronto." loading="lazy">
+<figcaption>Painel do roteador no momento das medições: dois modelos registrados, quatro decisões, três de três serviços saudáveis.</figcaption>
+</figure>
+
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/topologia-roteador.png" | relative_url }}" alt="Mapa de roteamento: a consulta do usuário passa por sinais de palavra-chave e de decisão, depois por cinco decisões, e chega aos modelos qwen3-14b e qwen3.6-35b, com a rota padrão para o modelo grande." loading="lazy">
+<figcaption>Topologia do roteamento na configuração ativa. Da esquerda para a direita: sinais, decisões (bloqueio de injeção, dados sensíveis, raciocínio profundo e rota padrão) e modelos.</figcaption>
+</figure>
 
 ## Decisão: fallback sempre carregado ou sob demanda
 
@@ -66,7 +81,8 @@ A decisão registrada no vault é manter o fallback carregado. A configuração 
 
 ## Limites
 
-- Um teste de queda, com uma execução. Não há repetições nem medição de qualidade.
+- Pedidos curtos apenas; não medi latência com pedidos longos nem qualidade das respostas.
+- Os 19 s de carregamento do fallback vêm do relatório da sessão, de um teste anterior que não repeti.
 - O consumo contínuo do fallback não foi medido aqui.
 - Injeção indireta não é detectada pelo roteador.
 - Não testei a volta automática depois de um reinício completo do hospedeiro.

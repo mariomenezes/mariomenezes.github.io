@@ -17,7 +17,7 @@ This post describes the setup, a fallback test I ran and what has not been measu
 
 - **One address for the client.** The router exposes an OpenAI-compatible API and picks the route by request type.
 - **Fixed priority order.** The default route is the large model; if it fails, the request goes to the 14B model.
-- **Fallback tested once:** with the large model down, the request was served by the fallback in about 19 s, including loading the model. A single run, no repetitions.
+- **Real outage measured:** with the main source down, 10 of 10 requests went to the fallback (0.15 s median). When it came back, 10 of 10 went to the main source (0.11 s).
 - **Inconsistency found:** the fallback's description in the configuration says the model loads on demand; the decision recorded in my notes is to keep it always loaded. One of the two is out of date.
 
 ## Environment
@@ -49,11 +49,26 @@ The configuration has prioritized routes. One blocks requests with direct prompt
 
 An important limit: detection of indirect injection, from text the assistant reads, does not exist in this setup. It only covers the direct case.
 
-## The fallback test
+## Real outage of the main source
 
-I stopped the proxy that links the router to the main model and sent a short request through the router. The request was served by the fallback. The total time was about 19 s, most of it loading the 14B model. Then I restarted the proxy.
+On a day of measurements, the main source went offline without any action from me. The router started answering through the fallback. I measured 10 short requests (16 tokens at most, temperature 0) while it was down, and 10 more after it came back. I did not investigate the cause of the outage.
 
-What this does not show: steady-state latency, variation between repetitions, or behavior with long requests. It was one run.
+| State | Route (header) | Model that answered | Median | Min–max |
+|---|---|---|---|---|
+| Main source down | `fallback` | qwen3-14b | 0.15 s | 0.12–0.15 s |
+| Main source up | `upstream` | Qwen3.6-35B-A3B | 0.11 s | 0.10–0.13 s |
+
+Short requests with 2 output tokens mostly measure the router's response time, not generation. I did not repeat with long requests.
+
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/painel-roteador.png" | relative_url }}" alt="Router dashboard showing 2 models, 4 decisions, 4 signals, 3 of 3 services healthy and status ready." loading="lazy">
+<figcaption>Router dashboard during the measurements: two registered models, four decisions, three of three services healthy.</figcaption>
+</figure>
+
+<figure class="fig">
+<img src="{{ "/assets/img/roteador-fallback/topologia-roteador.png" | relative_url }}" alt="Routing map: the user query goes through keyword and decision signals, then five decisions, and reaches the qwen3-14b and qwen3.6-35b models, with the default route to the large model." loading="lazy">
+<figcaption>Routing topology in the active configuration. From left to right: signals, decisions (injection blocking, sensitive data, deep reasoning and default route) and models.</figcaption>
+</figure>
 
 ## Decision: fallback always loaded or on demand
 
@@ -66,7 +81,8 @@ The decision recorded in my notes is to keep the fallback loaded. The configurat
 
 ## Limits
 
-- One failover test, one run. No repetitions and no quality measurement.
+- Short requests only; no latency measurement with long requests and no answer-quality measurement.
+- The 19 s loading time for the fallback comes from the session report, from an earlier test that I have not repeated.
 - The continuous consumption of the fallback was not measured here.
 - Indirect injection is not detected by the router.
 - I did not test automatic recovery after a full host reboot.
