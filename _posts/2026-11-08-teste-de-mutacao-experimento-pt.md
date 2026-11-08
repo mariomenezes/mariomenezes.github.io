@@ -3,7 +3,7 @@ title: "Testes que testam os testes: mutação num experimento de infraestrutura
 lang: pt-BR
 permalink: /pt/2026/11/08/teste-de-mutacao-experimento/
 description: "Toda lógica estatística nova do experimento de gray failure foi validada com mutantes: mudanças pequenas e propositais que os testes precisam pegar. 210 mutantes em 22 commits, 206 mortos. O que os sobreviventes revelaram, e o dia em que o próprio teste de mutação mentiu por causa de um .pyc velho."
-resumo: "Meu teste de mutação estava mentindo: um arquivo de bytecode antigo fazia um mutante parecer morto. Antes disso, os sobreviventes tinham apontado dez testes que faltavam."
+resumo: "Meu teste de mutação podia mentir: um bytecode antigo fazia o Python rodar o código mutante com o fonte certo no disco. Antes disso, os sobreviventes tinham apontado uns dez testes que faltavam."
 image: /assets/img/teste-de-mutacao-experimento/cover-pt.png
 ---
 

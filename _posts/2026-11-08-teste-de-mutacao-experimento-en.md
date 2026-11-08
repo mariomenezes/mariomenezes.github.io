@@ -3,7 +3,7 @@ title: "Tests that test the tests: mutation testing in an infrastructure experim
 lang: en
 permalink: /en/2026/11/08/teste-de-mutacao-experimento/
 description: "Every new piece of statistical logic in the gray-failure experiment was checked with mutants: small, deliberate changes the tests must catch. 210 mutants across 22 commits, 206 killed. What the survivors revealed, and the day the mutation test itself lied because of a stale .pyc."
-resumo: "My mutation test was lying: a stale bytecode file made a mutant look killed. Before that, the survivors had pointed at about ten missing tests."
+resumo: "My mutation test could lie: stale bytecode made Python run the mutant code with the correct source on disk. Before that, the survivors had pointed at about ten missing tests."
 image: /assets/img/teste-de-mutacao-experimento/cover-en.png
 ---
 
