@@ -1,0 +1,10 @@
+[["    return os.path.join(plan.out_dir, cluster)", "    return plan.out_dir"],
+ ["        chk(not changed, f\"manifesto divergente", "        chk(True, f\"manifesto divergente"],
+ ["        changed = verify_manifest(cdir, allow_append=True)", "        changed = verify_manifest(cdir)"],
+ ["                    if exc is None:\n                        raise'", "                    pass'"],
+ ["                except Exception as e3:  # sem manifesto o bloco não pode passar por íntegro\n                    deps.log(f\"[{cluster}] ERRO AO GRAVAR O MANIFESTO: {e3}\")\n                    if exc is None:\n                        raise", "                except Exception as e3:  # sem manifesto o bloco não pode passar por íntegro\n                    deps.log(f\"[{cluster}] ERRO AO GRAVAR O MANIFESTO: {e3}\")"],
+ ["                except Exception as e3:  # sem manifesto o bloco não pode passar por íntegro\n                    deps.log(f\"[{cluster}] ERRO AO GRAVAR O MANIFESTO: {e3}\")\n                    if exc is None:\n                        raise", "                except Exception as e3:  # sem manifesto o bloco não pode passar por íntegro\n                    deps.log(f\"[{cluster}] ERRO AO GRAVAR O MANIFESTO: {e3}\")\n                    raise"],
+ ["os.path.getsize(p) < size or _sha(p, size) != digest:", "_sha(p, size) != digest:"],
+ ["os.path.getsize(p) < size or _sha(p, size) != digest:", "os.path.getsize(p) < size:"],
+ ["            if left is not None:\n                left -= len(chunk)", "            pass"],
+ ["            elif allow_append:\n", "            elif False:\n"]]

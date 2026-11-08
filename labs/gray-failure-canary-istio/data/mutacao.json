@@ -1,0 +1,290 @@
+[
+ {
+  "commit": "7a784dd",
+  "date": "2026-11-07T21:39:51-03:00",
+  "subject": "feat(triage): registra o máximo de checagens falhas e escreve a v6 do pré-registro",
+  "text": "Mutação 2/3 (1 equivalente)",
+  "pairs": [
+   [
+    2,
+    3
+   ]
+  ]
+ },
+ {
+  "commit": "91ce382",
+  "date": "2026-11-07T20:28:14-03:00",
+  "subject": "fix(triage): espera pela fase Progressing ignora o status velho do Flagger",
+  "text": "Mutação 20/20",
+  "pairs": [
+   [
+    20,
+    20
+   ]
+  ]
+ },
+ {
+  "commit": "8434b6b",
+  "date": "2026-11-07T20:25:37-03:00",
+  "subject": "fix(triage): Flagger no namespace clusterLocal e pré-voo mede o caminho pelo Service",
+  "text": "Mutação 6/6 nas checagens novas",
+  "pairs": [
+   [
+    6,
+    6
+   ]
+  ]
+ },
+ {
+  "commit": "caa303a",
+  "date": "2026-11-07T19:45:03-03:00",
+  "subject": "feat(triage): orquestrador e analisador do teste com o Flagger real",
+  "text": "Mutação: runner 19/20 e analisador 14/15 (1 equivalente em cada)",
+  "pairs": [
+   [
+    19,
+    20
+   ],
+   [
+    14,
+    15
+   ]
+  ]
+ },
+ {
+  "commit": "f601cd1",
+  "date": "2026-11-07T19:34:50-03:00",
+  "subject": "feat(triage): laboratório do Flagger real: manifestos, A/B e seletor do coletor configurável",
+  "text": "Mutação 7/7",
+  "pairs": [
+   [
+    7,
+    7
+   ]
+  ]
+ },
+ {
+  "commit": "eadb737",
+  "date": "2026-11-06T10:01:28-03:00",
+  "subject": "feat(triage): analisador da avaliação v5 escrito antes dos dados",
+  "text": "Mutação 13/13",
+  "pairs": [
+   [
+    13,
+    13
+   ]
+  ]
+ },
+ {
+  "commit": "c84b1a5",
+  "date": "2026-11-05T17:21:19-03:00",
+  "subject": "feat(triage): plano EVAL-V5 (σ=0,1) e out_dir relativo à raiz do repositório",
+  "text": "Mutação 2/2",
+  "pairs": [
+   [
+    2,
+    2
+   ]
+  ]
+ },
+ {
+  "commit": "1a2cf05",
+  "date": "2026-11-05T17:20:43-03:00",
+  "subject": "feat(triage): análise por versão estilo mercado e detecção por execução",
+  "text": "Mutação 14/14",
+  "pairs": [
+   [
+    14,
+    14
+   ]
+  ]
+ },
+ {
+  "commit": "983488f",
+  "date": "2026-11-05T16:20:56-03:00",
+  "subject": "feat(triage): consequência do portão aplicada em código e saídas da Fase 2",
+  "text": "Mutação 5/5",
+  "pairs": [
+   [
+    5,
+    5
+   ]
+  ]
+ },
+ {
+  "commit": "c395269",
+  "date": "2026-11-05T16:17:50-03:00",
+  "subject": "feat(triage): Fase 2 offline: dashboard, regras BF e D, seleção na calibração e portão σ=0,1",
+  "text": "Mutação: decision_curve 24/24, gate_measure 5/5",
+  "pairs": [
+   [
+    24,
+    24
+   ],
+   [
+    5,
+    5
+   ]
+  ]
+ },
+ {
+  "commit": "0ed3917",
+  "date": "2026-11-05T11:19:08-03:00",
+  "subject": "fix(triage): manifesto por cluster, verificado no início do bloco e sem suprimir erro",
+  "text": "Mutação 8/9 (1 equivalente: o teste de tamanho é redundante com o hash do prefixo)",
+  "pairs": [
+   [
+    8,
+    9
+   ]
+  ]
+ },
+ {
+  "commit": "d92d43d",
+  "date": "2026-11-05T11:16:51-03:00",
+  "subject": "fix(triage): impressão digital cobre runner e app; constantes de descarte no hash",
+  "text": "Mutação: runner 5/5, coletor 2/2",
+  "pairs": [
+   [
+    5,
+    5
+   ],
+   [
+    2,
+    2
+   ]
+  ]
+ },
+ {
+  "commit": "b17a840",
+  "date": "2026-11-05T11:15:45-03:00",
+  "subject": "fix(triage): DUP_S passa de 30 para 55 s",
+  "text": "Mutação 3/3",
+  "pairs": [
+   [
+    3,
+    3
+   ]
+  ]
+ },
+ {
+  "commit": "2b8cefc",
+  "date": "2026-11-05T11:14:48-03:00",
+  "subject": "fix(triage): replay passa a razão relativa explícita em vez de trocar o global",
+  "text": "Mutação: detector 7/7, agente 2/2, replay 3/3",
+  "pairs": [
+   [
+    7,
+    7
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ]
+  ]
+ },
+ {
+  "commit": "90188cc",
+  "date": "2026-11-05T11:13:26-03:00",
+  "subject": "fix(triage): coletor recusa amostra sem as duas versões das duas features",
+  "text": "Mutação 4/4",
+  "pairs": [
+   [
+    4,
+    4
+   ]
+  ]
+ },
+ {
+  "commit": "2677be1",
+  "date": "2026-11-05T11:12:44-03:00",
+  "subject": "fix(triage): pré-voo exige uma réplica em app-service-v1 e v2",
+  "text": "Mutação 3/3",
+  "pairs": [
+   [
+    3,
+    3
+   ]
+  ]
+ },
+ {
+  "commit": "6050853",
+  "date": "2026-11-05T11:12:29-03:00",
+  "subject": "fix(triage): retomada de controle exige condição inalterada desde o t0",
+  "text": "Mutação 10/10",
+  "pairs": [
+   [
+    10,
+    10
+   ]
+  ]
+ },
+ {
+  "commit": "a2aeb3a",
+  "date": "2026-11-05T11:10:28-03:00",
+  "subject": "fix(triage): controle compara contador monotônico de mudanças do admin",
+  "text": "Mutação: runner 3/3, app 3/3",
+  "pairs": [
+   [
+    3,
+    3
+   ],
+   [
+    3,
+    3
+   ]
+  ]
+ },
+ {
+  "commit": "bf7158a",
+  "date": "2026-11-05T09:33:35-03:00",
+  "subject": "fix(triage): faixa de falha do runner usa rótulos em (t_on, t_off]",
+  "text": "Mutação 6/6",
+  "pairs": [
+   [
+    6,
+    6
+   ]
+  ]
+ },
+ {
+  "commit": "7d351d9",
+  "date": "2026-11-05T09:32:48-03:00",
+  "subject": "fix(triage): replay recusa regra D com feature fora de --limits",
+  "text": "Mutação 4/4",
+  "pairs": [
+   [
+    4,
+    4
+   ]
+  ]
+ },
+ {
+  "commit": "675ee1a",
+  "date": "2026-11-05T09:32:13-03:00",
+  "subject": "fix(triage): regra D usa o total +Inf do histograma como n e base_n",
+  "text": "Mutação 5/5",
+  "pairs": [
+   [
+    5,
+    5
+   ]
+  ]
+ },
+ {
+  "commit": "4190a66",
+  "date": "2026-11-05T09:31:34-03:00",
+  "subject": "fix(triage): regra D trata base da v1 fraca como janela insuficiente",
+  "text": "Mutação 7/7",
+  "pairs": [
+   [
+    7,
+    7
+   ]
+  ]
+ }
+]

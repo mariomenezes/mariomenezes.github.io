@@ -1,0 +1,22 @@
+{
+ "fonte": "saída do terminal durante o diagnóstico do piloto do Flagger, 2026-11-07, cluster a; 8 requisições GET /api/v1/fast-data em sequência, tempo em ms",
+ "antes": {
+  "gerador_para_service_app_fl": [12, 3563, 3535, 2, 10000, 3, 504, 2520, 8498, 1565],
+  "gerador_para_service_primary": [10112, 7860, 3, 2498, 4472, 1096, 2615, 3, 10006, 4873],
+  "dentro_do_conteiner_127_0_0_1": [8, 1, 0, 0, 0, 0, 0, 0],
+  "gerador_para_ip_do_pod": [57, 2, 1, 6, 1, 1, 1, 1],
+  "pod_de_teste_sem_carga_para_service_primary": [127, 10025, 10025, 3, 3, 2, 2, 2],
+  "pod_de_teste_sem_carga_para_app_service_do_lab": [24, 4, 5, 3, 2, 8, 3, 5]
+ },
+ "estatisticas_envoy_pod_de_teste": {
+  "endpoint_do_pod_local": {"cx_connect_fail": 0, "rq_success": 8},
+  "endpoint_de_outro_cluster_mesmo_ip_de_faixa_sobreposta": {"cx_connect_fail": 2, "rq_success": 0, "health_flags": "healthy"},
+  "connect_timeout": "10s"
+ },
+ "depois": {
+  "pod_de_teste_sem_carga_para_service_primary": [112, 2, 2, 2, 2, 2, 2, 2],
+  "pod_de_teste_sem_carga_para_service_app_fl": [109, 2, 2, 2, 2, 2, 2, 2],
+  "gerador_para_service_app_fl_cluster_a": [12, 2, 2, 2, 2, 2, 2, 2],
+  "gerador_para_service_app_fl_cluster_b": [11, 2, 2, 2, 2, 2, 2, 2]
+ }
+}

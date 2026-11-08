@@ -1,0 +1,3 @@
+[["        if st[\"phase\"] == \"Progressing\":\n            self.max_failed", "        if False:\n            self.max_failed"],
+ ["            self.max_failed = max(self.max_failed, st[\"failed_checks\"])", "            self.max_failed = st[\"failed_checks\"]"],
+ ["\"failed_checks_max\": obs.max_failed,", "\"failed_checks_max\": 0,"]]

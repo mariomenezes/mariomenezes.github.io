@@ -1,0 +1,7 @@
+[["if rule == RULE_D and (w.base_n < MIN_SAMPLE", "if rule == RULE_D and (w.base_n <= MIN_SAMPLE"],
+ ["if rule == RULE_D and (w.base_n < MIN_SAMPLE", "if rule == RULE_D and (w.base_n < 29"],
+ ["or w.base_slow_n < 0):", "or w.base_slow_n < -1):"],
+ ["or w.base_slow_n < 0):", "and w.base_slow_n < 0):"],
+ ["if rule == RULE_D and (", "if rule != RULE_A and ("],
+ ["if is_insufficient(w, self.rule):", "if is_insufficient(w):"],
+ ["        return True\n    return w.n < MIN_SAMPLE", "        return False\n    return w.n < MIN_SAMPLE"]]

@@ -1,0 +1,2906 @@
+{
+ "v5": {
+  "methods": {
+   "dash10": {
+    "feature:B": [
+     0,
+     30
+    ],
+    "feature:BF": [
+     30,
+     30
+    ],
+    "feature:D": [
+     30,
+     30
+    ],
+    "agg_b": [
+     0,
+     30
+    ],
+    "flagger_rel": [
+     0,
+     30
+    ]
+   },
+   "heavy10": {
+    "feature:B": [
+     30,
+     30
+    ],
+    "feature:BF": [
+     30,
+     30
+    ],
+    "feature:D": [
+     25,
+     30
+    ],
+    "agg_b": [
+     30,
+     30
+    ],
+    "flagger_rel": [
+     30,
+     30
+    ]
+   },
+   "dash20": {
+    "feature:B": [
+     0,
+     30
+    ],
+    "feature:BF": [
+     30,
+     30
+    ],
+    "feature:D": [
+     30,
+     30
+    ],
+    "agg_b": [
+     0,
+     30
+    ],
+    "flagger_rel": [
+     0,
+     30
+    ]
+   },
+   "heavy20": {
+    "feature:B": [
+     30,
+     30
+    ],
+    "feature:BF": [
+     30,
+     30
+    ],
+    "feature:D": [
+     30,
+     30
+    ],
+    "agg_b": [
+     30,
+     30
+    ],
+    "flagger_rel": [
+     30,
+     30
+    ]
+   }
+  },
+  "primary": {
+   "dash10": [
+    30,
+    30,
+    0.9049661471447012
+   ],
+   "heavy10": [
+    30,
+    30,
+    0.9049661471447012
+   ],
+   "dash20": [
+    30,
+    30,
+    0.9049661471447012
+   ],
+   "heavy20": [
+    30,
+    30,
+    0.9049661471447012
+   ]
+  },
+  "ttd": {
+   "dash10": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    6,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "dash20": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "heavy10": [
+    5,
+    8,
+    3,
+    6,
+    3,
+    3,
+    3,
+    6,
+    3,
+    3,
+    7,
+    3,
+    8,
+    6,
+    3,
+    3,
+    3,
+    3,
+    5,
+    3,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "heavy20": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  "control": {
+   "windows": 1800,
+   "hours": 30.0,
+   "alarms": {
+    "heavy-reports": 0,
+    "dashboard": 0
+   },
+   "ub95": {
+    "heavy-reports": 0.09985774245179968,
+    "dashboard": 0.09985774245179968
+   },
+   "h3_pass": {
+    "heavy-reports": true,
+    "dashboard": true
+   },
+   "agg_blocks": {
+    "agg_b": {
+     "with_alarm": 0,
+     "blocks": 128
+    },
+    "flagger_rel": {
+     "with_alarm": 0,
+     "blocks": 128
+    }
+   }
+  },
+  "h5": {
+   "dash10/agg_b": {
+    "b": 30,
+    "c": 0,
+    "p": 9.313225746154785e-10,
+    "p_holm": 7.450580596923828e-09,
+    "reject": true
+   },
+   "dash10/flagger_rel": {
+    "b": 30,
+    "c": 0,
+    "p": 9.313225746154785e-10,
+    "p_holm": 7.450580596923828e-09,
+    "reject": true
+   },
+   "heavy10/agg_b": {
+    "b": 0,
+    "c": 0,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "heavy10/flagger_rel": {
+    "b": 0,
+    "c": 0,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "dash20/agg_b": {
+    "b": 30,
+    "c": 0,
+    "p": 9.313225746154785e-10,
+    "p_holm": 7.450580596923828e-09,
+    "reject": true
+   },
+   "dash20/flagger_rel": {
+    "b": 30,
+    "c": 0,
+    "p": 9.313225746154785e-10,
+    "p_holm": 7.450580596923828e-09,
+    "reject": true
+   },
+   "heavy20/agg_b": {
+    "b": 0,
+    "c": 0,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   "heavy20/flagger_rel": {
+    "b": 0,
+    "c": 0,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "runs_ok": 122,
+  "discarded": 0
+ },
+ "flagger": {
+  "scenarios": {
+   "dash10": {
+    "flagger": [
+     0,
+     30
+    ],
+    "ours": [
+     30,
+     30
+    ],
+    "emul_agg_b": [
+     0,
+     30
+    ],
+    "emul_flagger_rel": [
+     0,
+     30
+    ],
+    "agreement": [
+     30,
+     30
+    ]
+   },
+   "heavy10": {
+    "flagger": [
+     30,
+     30
+    ],
+    "ours": [
+     28,
+     30
+    ],
+    "emul_agg_b": [
+     30,
+     30
+    ],
+    "emul_flagger_rel": [
+     29,
+     30
+    ],
+    "agreement": [
+     29,
+     30
+    ]
+   }
+  },
+  "control": {
+   "flagger": {
+    "false_alarms": 0,
+    "runs": 30
+   },
+   "ours": {
+    "false_alarms": 0,
+    "runs": 30
+   },
+   "emul_agg_b": {
+    "false_alarms": 0,
+    "runs": 30
+   },
+   "emul_flagger_rel": {
+    "false_alarms": 0,
+    "runs": 30
+   }
+  },
+  "h7": {
+   "dash10": {
+    "b": 30,
+    "c": 0,
+    "p": 9.313225746154785e-10,
+    "p_holm": 1.862645149230957e-09,
+    "reject": true
+   },
+   "heavy10": {
+    "b": 0,
+    "c": 2,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  },
+  "rows": [
+   {
+    "cluster": "a",
+    "rep": 1,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 2,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 3,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 4,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 5,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 6,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 7,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 8,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 9,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 10,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 11,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 12,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 13,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 14,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 15,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 6,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "a",
+    "rep": 1,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 7,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 2,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 3,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 7.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 4,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 5,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 6,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 4,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 7,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 8,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 9,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 8.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 10,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 11,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 12,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 6,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 13,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 14,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 15,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.7,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "a",
+    "rep": 1,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 2,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 3,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 4,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 5,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 6,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 7,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 8,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 9,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 10,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 11,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 12,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 13,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 14,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "a",
+    "rep": 15,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 1,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 2,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 3,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 4,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 5,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 6,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 7,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 8,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 9,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 10,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 11,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 12,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 13,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 14,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 15,
+    "scenario": "dash10",
+    "phase": "Succeeded",
+    "flagger_hit": false,
+    "flagger_min": null,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": false,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 1,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.783333333333333,
+    "ours": true,
+    "ours_min": 5,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 2,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 3,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": false,
+    "ours_min": null,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 4,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 5,
+    "agg_b": true,
+    "flagger_rel": false
+   },
+   {
+    "cluster": "b",
+    "rep": 5,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 6,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 7.783333333333333,
+    "ours": true,
+    "ours_min": 8,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 7,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 8,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 9,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 10,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 11,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 12,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.783333333333333,
+    "ours": true,
+    "ours_min": 7,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 13,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 5.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 14,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 7.783333333333333,
+    "ours": false,
+    "ours_min": null,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 15,
+    "scenario": "heavy10",
+    "phase": "Failed",
+    "flagger_hit": true,
+    "flagger_min": 6.783333333333333,
+    "ours": true,
+    "ours_min": 3,
+    "agg_b": true,
+    "flagger_rel": true
+   },
+   {
+    "cluster": "b",
+    "rep": 1,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 2,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 3,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 4,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 5,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 6,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 7,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 8,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 9,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 10,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 11,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 12,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 13,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 14,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   },
+   {
+    "cluster": "b",
+    "rep": 15,
+    "scenario": "ctrl",
+    "phase": "Succeeded"
+   }
+  ],
+  "runs_ok": 90,
+  "discarded": 0
+ },
+ "path": {
+  "pilot-flagger-caminho-quebrado": {
+   "v1": [
+    9425.0,
+    9312.5,
+    9552.083333333332,
+    9625.0,
+    9828.125,
+    9236.111111111111,
+    10999.999999999956
+   ],
+   "v2": [
+    9471.08659805538,
+    9489.583333333332,
+    9166.666666666664,
+    24999.999999999993,
+    22310.082508712596,
+    19862.08207489385,
+    9964.1533120182
+   ]
+  },
+  "pilot-flagger-caminho-ok": {
+   "v1": [
+    0.95,
+    0.9499999999999998,
+    0.9500000000000001,
+    0.9499999999999998,
+    4.79009900990099,
+    4.794736842105263,
+    4.795714285714286,
+    4.791044776119403
+   ],
+   "v2": [
+    4.2,
+    0.95,
+    0.95,
+    0.95,
+    4.915151515151515,
+    4.795,
+    4.798540145985402,
+    4.798333333333333
+   ]
+  }
+ },
+ "power": {
+  "v4": {
+   "n": 29,
+   "lb": 0.9,
+   "max_misses": 0,
+   "curve": [
+    [
+     0.6,
+     3.684565328678885e-07
+    ],
+    [
+     0.605,
+     4.6871177596835596e-07
+    ],
+    [
+     0.61,
+     5.950661074415934e-07
+    ],
+    [
+     0.615,
+     7.540121733117737e-07
+    ],
+    [
+     0.62,
+     9.53584087684515e-07
+    ],
+    [
+     0.625,
+     1.2037062152420223e-06
+    ],
+    [
+     0.63,
+     1.516617050288402e-06
+    ],
+    [
+     0.635,
+     1.907383552956844e-06
+    ],
+    [
+     0.64,
+     2.3945242826029527e-06
+    ],
+    [
+     0.645,
+     3.0007631947360185e-06
+    ],
+    [
+     0.65,
+     3.7539401358852415e-06
+    ],
+    [
+     0.655,
+     4.688108990843886e-06
+    ],
+    [
+     0.66,
+     5.844860236919063e-06
+    ],
+    [
+     0.665,
+     7.274911488847285e-06
+    ],
+    [
+     0.67,
+     9.04001764829898e-06
+    ],
+    [
+     0.675,
+     1.1215261702986727e-05
+    ],
+    [
+     0.68,
+     1.389179828316325e-05
+    ],
+    [
+     0.685,
+     1.718013504444863e-05
+    ],
+    [
+     0.69,
+     2.121405211324922e-05
+    ],
+    [
+     0.695,
+     2.61552775593448e-05
+    ],
+    [
+     0.7,
+     3.219905755813174e-05
+    ],
+    [
+     0.705,
+     3.9580784042589496e-05
+    ],
+    [
+     0.71,
+     4.85838707624806e-05
+    ],
+    [
+     0.715,
+     5.954910138579958e-05
+    ],
+    [
+     0.72,
+     7.28857113063526e-05
+    ],
+    [
+     0.725,
+     8.908450897658657e-05
+    ],
+    [
+     0.73,
+     0.0001087333937993221
+    ],
+    [
+     0.735,
+     0.00013253568695276662
+    ],
+    [
+     0.74,
+     0.00016133176020903634
+    ],
+    [
+     0.745,
+     0.00019612452722876978
+    ],
+    [
+     0.75,
+     0.00023810945356001964
+    ],
+    [
+     0.755,
+     0.0002887098474463836
+    ],
+    [
+     0.76,
+     0.0003496183156153759
+    ],
+    [
+     0.765,
+     0.0004228454088141778
+    ],
+    [
+     0.77,
+     0.0005107766436462449
+    ],
+    [
+     0.775,
+     0.000616239273259139
+    ],
+    [
+     0.78,
+     0.0007425803930678713
+    ],
+    [
+     0.785,
+     0.0008937582128529951
+    ],
+    [
+     0.79,
+     0.0010744486076476637
+    ],
+    [
+     0.795,
+     0.001290169381801106
+    ],
+    [
+     0.8,
+     0.0015474250491067279
+    ],
+    [
+     0.805,
+     0.001853875353271696
+    ],
+    [
+     0.81,
+     0.002218531234462265
+    ],
+    [
+     0.815,
+     0.002651982497286223
+    ],
+    [
+     0.82,
+     0.003166662062502742
+    ],
+    [
+     0.825,
+     0.0037771523992668208
+    ],
+    [
+     0.83,
+     0.004500540548399724
+    ],
+    [
+     0.835,
+     0.005356829073050279
+    ],
+    [
+     0.84,
+     0.006369411325813279
+    ],
+    [
+     0.845,
+     0.007565620617339997
+    ],
+    [
+     0.85,
+     0.008977364229164097
+    ],
+    [
+     0.855,
+     0.010641854753569392
+    ],
+    [
+     0.86,
+     0.012602452989039429
+    ],
+    [
+     0.865,
+     0.014909638597132997
+    ],
+    [
+     0.87,
+     0.017622126964603867
+    ],
+    [
+     0.875,
+     0.02080815324575442
+    ],
+    [
+     0.88,
+     0.024546947420740508
+    ],
+    [
+     0.885,
+     0.028930427436445857
+    ],
+    [
+     0.89,
+     0.0340651411429621
+    ],
+    [
+     0.895,
+     0.040074491851233913
+    ],
+    [
+     0.9,
+     0.047101286972462485
+    ],
+    [
+     0.905,
+     0.055310654420255706
+    ],
+    [
+     0.91,
+     0.06489337733226094
+    ],
+    [
+     0.915,
+     0.07606970427700996
+    ],
+    [
+     0.92,
+     0.08909369954058512
+    ],
+    [
+     0.925,
+     0.10425820643278834
+    ],
+    [
+     0.93,
+     0.121900505920753
+    ],
+    [
+     0.935,
+     0.1424087634081782
+    ],
+    [
+     0.94,
+     0.16622936826240908
+    ],
+    [
+     0.945,
+     0.19387528389563521
+    ],
+    [
+     0.95,
+     0.22593554099256555
+    ],
+    [
+     0.955,
+     0.2630860230246195
+    ],
+    [
+     0.96,
+     0.3061017116986515
+    ],
+    [
+     0.965,
+     0.3558705806765121
+    ],
+    [
+     0.97,
+     0.4134093490135644
+    ],
+    [
+     0.975,
+     0.4798813315685538
+    ],
+    [
+     0.98,
+     0.5566166524310581
+    ],
+    [
+     0.985,
+     0.6451351195242123
+    ],
+    [
+     0.99,
+     0.7471720943315961
+    ],
+    [
+     0.995,
+     0.8647077305675337
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "at_0975": 0.4798813315685538,
+   "at_095": 0.22593554099256555,
+   "at_070": 3.219905755813174e-05
+  },
+  "v5": {
+   "n": 30,
+   "lb": 0.8,
+   "max_misses": 2,
+   "curve": [
+    [
+     0.6,
+     4.738351012681047e-05
+    ],
+    [
+     0.605,
+     5.8419422289977276e-05
+    ],
+    [
+     0.61,
+     7.186896279852711e-05
+    ],
+    [
+     0.615,
+     8.822475753431312e-05
+    ],
+    [
+     0.62,
+     0.00010807245312721807
+    ],
+    [
+     0.625,
+     0.00013210675712281195
+    ],
+    [
+     0.63,
+     0.0001611499501748826
+    ],
+    [
+     0.635,
+     0.00019617319692016069
+    ],
+    [
+     0.64,
+     0.00023832101553676537
+    ],
+    [
+     0.645,
+     0.0002889393009096967
+    ],
+    [
+     0.65,
+     0.00034960733250125086
+    ],
+    [
+     0.655,
+     0.0004221742350111212
+    ],
+    [
+     0.66,
+     0.0005088003971331106
+    ],
+    [
+     0.665,
+     0.0006120043904354959
+    ],
+    [
+     0.67,
+     0.0007347159656863933
+    ],
+    [
+     0.675,
+     0.0008803357366749966
+    ],
+    [
+     0.68,
+     0.0010528021903586
+    ],
+    [
+     0.685,
+     0.0012566666853275385
+    ],
+    [
+     0.69,
+     0.0014971771161421048
+    ],
+    [
+     0.695,
+     0.0017803709267181554
+    ],
+    [
+     0.7,
+     0.0021131781488865323
+    ],
+    [
+     0.705,
+     0.0025035351193542664
+    ],
+    [
+     0.71,
+     0.002960509485901998
+    ],
+    [
+     0.715,
+     0.0034944370475936764
+    ],
+    [
+     0.72,
+     0.004117070879324837
+    ],
+    [
+     0.725,
+     0.004841743062877481
+    ],
+    [
+     0.73,
+     0.005683539178846923
+    ],
+    [
+     0.735,
+     0.006659485499786473
+    ],
+    [
+     0.74,
+     0.0077887485574647955
+    ],
+    [
+     0.745,
+     0.00909284642840375
+    ],
+    [
+     0.75,
+     0.010595870683420876
+    ],
+    [
+     0.755,
+     0.012324717469766966
+    ],
+    [
+     0.76,
+     0.014309325629217943
+    ],
+    [
+     0.765,
+     0.016582919092453897
+    ],
+    [
+     0.77,
+     0.019182250019449246
+    ],
+    [
+     0.775,
+     0.022147838267795796
+    ],
+    [
+     0.78,
+     0.025524201756803654
+    ],
+    [
+     0.785,
+     0.029360071146770292
+    ],
+    [
+     0.79,
+     0.033708580963423135
+    ],
+    [
+     0.795,
+     0.03862742786293986
+    ],
+    [
+     0.8,
+     0.044178985151997065
+    ],
+    [
+     0.805,
+     0.050430360953101334
+    ],
+    [
+     0.81,
+     0.05745338554669274
+    ],
+    [
+     0.815,
+     0.06532451144404294
+    ],
+    [
+     0.82,
+     0.07412460767378373
+    ],
+    [
+     0.825,
+     0.08393862763643407
+    ],
+    [
+     0.83,
+     0.09485512774623586
+    ],
+    [
+     0.835,
+     0.10696561200615919
+    ],
+    [
+     0.84,
+     0.12036367573979727
+    ],
+    [
+     0.845,
+     0.1351439200487841
+    ],
+    [
+     0.85,
+     0.15140060732360866
+    ],
+    [
+     0.855,
+     0.1692260274944357
+    ],
+    [
+     0.86,
+     0.1887085448972723
+    ],
+    [
+     0.865,
+     0.20993029693409454
+    ],
+    [
+     0.87,
+     0.23296451847206315
+    ],
+    [
+     0.875,
+     0.2578724705813137
+    ],
+    [
+     0.88,
+     0.2846999592670976
+    ],
+    [
+     0.885,
+     0.3134734399295842
+    ],
+    [
+     0.89,
+     0.3441957171260685
+    ],
+    [
+     0.895,
+     0.3768412677025277
+    ],
+    [
+     0.9,
+     0.41135123955950553
+    ],
+    [
+     0.905,
+     0.447628209471951
+    ],
+    [
+     0.91,
+     0.4855308229719029
+    ],
+    [
+     0.915,
+     0.5248684890680443
+    ],
+    [
+     0.92,
+     0.5653963645627736
+    ],
+    [
+     0.925,
+     0.6068109393324581
+    ],
+    [
+     0.93,
+     0.6487466279614778
+    ],
+    [
+     0.935,
+     0.6907738878323855
+    ],
+    [
+     0.94,
+     0.7323995229740363
+    ],
+    [
+     0.945,
+     0.7730700010701995
+    ],
+    [
+     0.95,
+     0.81217881314696
+    ],
+    [
+     0.955,
+     0.8490791475029651
+    ],
+    [
+     0.96,
+     0.8831034382506104
+    ],
+    [
+     0.965,
+     0.9135916922683501
+    ],
+    [
+     0.97,
+     0.939930905478882
+    ],
+    [
+     0.975,
+     0.961608360566218
+    ],
+    [
+     0.98,
+     0.9782821654563826
+    ],
+    [
+     0.985,
+     0.9898730587745367
+    ],
+    [
+     0.99,
+     0.9966822906811174
+    ],
+    [
+     0.995,
+     0.999541302826381
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "at_0975": 0.961608360566218,
+   "at_095": 0.81217881314696,
+   "at_070": 0.0021131781488865323
+  },
+  "power_n": [
+   [
+    29,
+    0,
+    0.4798813315685538
+   ],
+   [
+    30,
+    0,
+    0.4678842982793399
+   ],
+   [
+    40,
+    0,
+    0.36323243988788034
+   ],
+   [
+    46,
+    1,
+    0.6800903942564628
+   ],
+   [
+    50,
+    1,
+    0.6435113104702979
+   ],
+   [
+    60,
+    1,
+    0.5557091266938127
+   ],
+   [
+    64,
+    2,
+    0.7846925257960515
+   ],
+   [
+    76,
+    3,
+    0.8771058663463152
+   ],
+   [
+    90,
+    4,
+    0.9244881129220178
+   ]
+  ]
+ },
+ "gate": {
+  "metrics": {
+   "a/b115_control_alarms": {
+    "hi": 0.0,
+    "lo": 0.0,
+    "measured": 0,
+    "ok": true
+   },
+   "a/b115_f10": {
+    "hi": 5.0,
+    "lo": 4.0,
+    "measured": 5,
+    "ok": true
+   },
+   "a/b115_f20": {
+    "hi": 5.0,
+    "lo": 5.0,
+    "measured": 5,
+    "ok": true
+   },
+   "a/b130_f10": {
+    "hi": 1.0,
+    "lo": 0.0,
+    "measured": 1,
+    "ok": true
+   },
+   "a/b130_f20": {
+    "hi": 5.0,
+    "lo": 1.9750000000000005,
+    "measured": 5,
+    "ok": true
+   },
+   "a/mean_v1_med": {
+    "hi": 3070.539431612732,
+    "lo": 3059.305002673996,
+    "measured": 3015.8308492026144,
+    "ok": false
+   },
+   "a/p95_v1_med": {
+    "hi": 3632.2968749999995,
+    "lo": 3604.5729166666665,
+    "measured": 3467.7777777777774,
+    "ok": false
+   },
+   "a/ratio_q50": {
+    "hi": 1.004544695650098,
+    "lo": 0.9955598578046406,
+    "measured": 0.9987100019381813,
+    "ok": true
+   },
+   "a/ratio_q99": {
+    "hi": 1.0881633906685557,
+    "lo": 1.0633478535866259,
+    "measured": 1.0728525347232039,
+    "ok": true
+   },
+   "b/b115_control_alarms": {
+    "hi": 0.0,
+    "lo": 0.0,
+    "measured": 0,
+    "ok": true
+   },
+   "b/b115_f10": {
+    "hi": 5.0,
+    "lo": 4.0,
+    "measured": 5,
+    "ok": true
+   },
+   "b/b115_f20": {
+    "hi": 5.0,
+    "lo": 5.0,
+    "measured": 5,
+    "ok": true
+   },
+   "b/b130_f10": {
+    "hi": 1.0,
+    "lo": 0.0,
+    "measured": 0,
+    "ok": true
+   },
+   "b/b130_f20": {
+    "hi": 5.0,
+    "lo": 1.0,
+    "measured": 2,
+    "ok": true
+   },
+   "b/mean_v1_med": {
+    "hi": 3069.1177306651266,
+    "lo": 3060.5069400283446,
+    "measured": 3012.068593615186,
+    "ok": false
+   },
+   "b/p95_v1_med": {
+    "hi": 3630.471726190476,
+    "lo": 3606.859375,
+    "measured": 3552.083333333332,
+    "ok": false
+   },
+   "b/ratio_q50": {
+    "hi": 1.0041144479650566,
+    "lo": 0.9966152426173193,
+    "measured": 1.0001325344698857,
+    "ok": true
+   },
+   "b/ratio_q99": {
+    "hi": 1.0810092515668959,
+    "lo": 1.0581008328139245,
+    "measured": 1.0780197090372026,
+    "ok": true
+   }
+  },
+  "verdict": {
+   "decision_ok": true,
+   "failed": [
+    "a/mean_v1_med",
+    "a/p95_v1_med",
+    "b/mean_v1_med",
+    "b/p95_v1_med"
+   ],
+   "level_ok": false
+  },
+  "calibration": {
+   "dashboard|a|0.1": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.0,
+     "f05": 0.0
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.275
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.285
+    }
+   },
+   "dashboard|a|0.3": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.0,
+     "f05": 0.0
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.395
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.4
+    }
+   },
+   "dashboard|b|0.1": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.0,
+     "f05": 0.0
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.35
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 1.0,
+     "f05": 0.355
+    }
+   },
+   "dashboard|b|0.3": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.0,
+     "f05": 0.0
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.99,
+     "f05": 0.36
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.99,
+     "f05": 0.395
+    }
+   },
+   "heavy-reports|a|0.1": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.985,
+     "f05": 0.195
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.985,
+     "f05": 0.195
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.95,
+     "f05": 0.27
+    }
+   },
+   "heavy-reports|a|0.3": {
+    "B": {
+     "fa_ub95": 1.2166497726130652,
+     "alarms": 72,
+     "f10": 0.545,
+     "f05": 0.295
+    },
+    "BF": {
+     "fa_ub95": 1.2166497726130652,
+     "alarms": 72,
+     "f10": 0.545,
+     "f05": 0.295
+    },
+    "D": {
+     "fa_ub95": 0.06588700719986912,
+     "alarms": 1,
+     "f10": 0.04,
+     "f05": 0.0
+    }
+   },
+   "heavy-reports|b|0.1": {
+    "B": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.98,
+     "f05": 0.23
+    },
+    "BF": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.98,
+     "f05": 0.23
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.97,
+     "f05": 0.375
+    }
+   },
+   "heavy-reports|b|0.3": {
+    "B": {
+     "fa_ub95": 1.0945133550200628,
+     "alarms": 64,
+     "f10": 0.555,
+     "f05": 0.36
+    },
+    "BF": {
+     "fa_ub95": 1.0945133550200628,
+     "alarms": 64,
+     "f10": 0.555,
+     "f05": 0.36
+    },
+    "D": {
+     "fa_ub95": 0.04160739268824987,
+     "alarms": 0,
+     "f10": 0.05,
+     "f05": 0.005
+    }
+   }
+  },
+  "final": {
+   "dashboard|0.1": {
+    "eligible": [
+     "B",
+     "BF",
+     "D"
+    ],
+    "predict_h3_fail": false,
+    "rule": "D",
+    "why": "seleção na calibração"
+   },
+   "dashboard|0.3": {
+    "eligible": [
+     "B",
+     "BF",
+     "D"
+    ],
+    "predict_h3_fail": false,
+    "rule": "D",
+    "why": "seleção na calibração"
+   },
+   "heavy-reports|0.1": {
+    "eligible": [
+     "B",
+     "BF"
+    ],
+    "predict_h3_fail": false,
+    "rule": "B",
+    "why": "seleção na calibração"
+   },
+   "heavy-reports|0.3": {
+    "eligible": [],
+    "predict_h3_fail": true,
+    "rule": "B",
+    "why": "nenhuma elegível: B, H3 deve falhar"
+   }
+  }
+ },
+ "linha-do-tempo": [
+  {
+   "commit": "b19c4b5",
+   "date": "2026-10-29T09:35:47-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): pré-registro v1 da calibração e avaliação do limite"
+  },
+  {
+   "commit": "fa3425d",
+   "date": "2026-10-29T10:02:20-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): pré-registro v2, controle de cluster de 30 h"
+  },
+  {
+   "commit": "538f139",
+   "date": "2026-11-04T14:22:42-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "results(triage): controle de cluster completo (30 h de minutos válidos) e pré-registro v3"
+  },
+  {
+   "commit": "b7cac44",
+   "date": "2026-11-05T16:19:03-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): PRE-REGISTRO v4 antes de qualquer dado de cluster e antes do portão"
+  },
+  {
+   "commit": "983488f",
+   "date": "2026-11-05T16:20:56-03:00",
+   "kind": "offline",
+   "path": "triage/phase2",
+   "subject": "feat(triage): consequência do portão aplicada em código e saídas da Fase 2"
+  },
+  {
+   "commit": "45abbeb",
+   "date": "2026-11-05T16:21:17-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): resultado offline da Fase 2 na v4 e PROXIMO-PASSO atualizado"
+  },
+  {
+   "commit": "fba7bbc",
+   "date": "2026-11-05T17:22:04-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): PRE-REGISTRO v5 antes de qualquer dado de cluster"
+  },
+  {
+   "commit": "775b180",
+   "date": "2026-11-07T19:30:47-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "feat(triage): resultado da avaliação v5 em cluster (H1, H2, H3 passam; H5 no dashboard)"
+  },
+  {
+   "commit": "775b180",
+   "date": "2026-11-07T19:30:47-03:00",
+   "kind": "dados",
+   "path": "triage/results/eval-v5",
+   "subject": "feat(triage): resultado da avaliação v5 em cluster (H1, H2, H3 passam; H5 no dashboard)"
+  },
+  {
+   "commit": "7a784dd",
+   "date": "2026-11-07T21:39:51-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "feat(triage): registra o máximo de checagens falhas e escreve a v6 do pré-registro"
+  },
+  {
+   "commit": "9a14709",
+   "date": "2026-11-07T21:55:02-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "docs(triage): congela o plano FLAGGER-V6 pelo hash e versiona o piloto descartável"
+  },
+  {
+   "commit": "ac4c944",
+   "date": "2026-11-08T12:02:42-03:00",
+   "kind": "prereg",
+   "path": "triage/PRE-REGISTRO.md",
+   "subject": "feat(triage): resultado da comparação com o Flagger real (v6)"
+  },
+  {
+   "commit": "ac4c944",
+   "date": "2026-11-08T12:02:42-03:00",
+   "kind": "dados",
+   "path": "triage/results/flagger-v6",
+   "subject": "feat(triage): resultado da comparação com o Flagger real (v6)"
+  }
+ ],
+ "mutacao": [
+  {
+   "commit": "7a784dd",
+   "date": "2026-11-07T21:39:51-03:00",
+   "subject": "feat(triage): registra o máximo de checagens falhas e escreve a v6 do pré-registro",
+   "text": "Mutação 2/3 (1 equivalente)",
+   "pairs": [
+    [
+     2,
+     3
+    ]
+   ]
+  },
+  {
+   "commit": "91ce382",
+   "date": "2026-11-07T20:28:14-03:00",
+   "subject": "fix(triage): espera pela fase Progressing ignora o status velho do Flagger",
+   "text": "Mutação 20/20",
+   "pairs": [
+    [
+     20,
+     20
+    ]
+   ]
+  },
+  {
+   "commit": "8434b6b",
+   "date": "2026-11-07T20:25:37-03:00",
+   "subject": "fix(triage): Flagger no namespace clusterLocal e pré-voo mede o caminho pelo Service",
+   "text": "Mutação 6/6 nas checagens novas",
+   "pairs": [
+    [
+     6,
+     6
+    ]
+   ]
+  },
+  {
+   "commit": "caa303a",
+   "date": "2026-11-07T19:45:03-03:00",
+   "subject": "feat(triage): orquestrador e analisador do teste com o Flagger real",
+   "text": "Mutação: runner 19/20 e analisador 14/15 (1 equivalente em cada)",
+   "pairs": [
+    [
+     19,
+     20
+    ],
+    [
+     14,
+     15
+    ]
+   ]
+  },
+  {
+   "commit": "f601cd1",
+   "date": "2026-11-07T19:34:50-03:00",
+   "subject": "feat(triage): laboratório do Flagger real: manifestos, A/B e seletor do coletor configurável",
+   "text": "Mutação 7/7",
+   "pairs": [
+    [
+     7,
+     7
+    ]
+   ]
+  },
+  {
+   "commit": "eadb737",
+   "date": "2026-11-06T10:01:28-03:00",
+   "subject": "feat(triage): analisador da avaliação v5 escrito antes dos dados",
+   "text": "Mutação 13/13",
+   "pairs": [
+    [
+     13,
+     13
+    ]
+   ]
+  },
+  {
+   "commit": "c84b1a5",
+   "date": "2026-11-05T17:21:19-03:00",
+   "subject": "feat(triage): plano EVAL-V5 (σ=0,1) e out_dir relativo à raiz do repositório",
+   "text": "Mutação 2/2",
+   "pairs": [
+    [
+     2,
+     2
+    ]
+   ]
+  },
+  {
+   "commit": "1a2cf05",
+   "date": "2026-11-05T17:20:43-03:00",
+   "subject": "feat(triage): análise por versão estilo mercado e detecção por execução",
+   "text": "Mutação 14/14",
+   "pairs": [
+    [
+     14,
+     14
+    ]
+   ]
+  },
+  {
+   "commit": "983488f",
+   "date": "2026-11-05T16:20:56-03:00",
+   "subject": "feat(triage): consequência do portão aplicada em código e saídas da Fase 2",
+   "text": "Mutação 5/5",
+   "pairs": [
+    [
+     5,
+     5
+    ]
+   ]
+  },
+  {
+   "commit": "c395269",
+   "date": "2026-11-05T16:17:50-03:00",
+   "subject": "feat(triage): Fase 2 offline: dashboard, regras BF e D, seleção na calibração e portão σ=0,1",
+   "text": "Mutação: decision_curve 24/24, gate_measure 5/5",
+   "pairs": [
+    [
+     24,
+     24
+    ],
+    [
+     5,
+     5
+    ]
+   ]
+  },
+  {
+   "commit": "0ed3917",
+   "date": "2026-11-05T11:19:08-03:00",
+   "subject": "fix(triage): manifesto por cluster, verificado no início do bloco e sem suprimir erro",
+   "text": "Mutação 8/9 (1 equivalente: o teste de tamanho é redundante com o hash do prefixo)",
+   "pairs": [
+    [
+     8,
+     9
+    ]
+   ]
+  },
+  {
+   "commit": "d92d43d",
+   "date": "2026-11-05T11:16:51-03:00",
+   "subject": "fix(triage): impressão digital cobre runner e app; constantes de descarte no hash",
+   "text": "Mutação: runner 5/5, coletor 2/2",
+   "pairs": [
+    [
+     5,
+     5
+    ],
+    [
+     2,
+     2
+    ]
+   ]
+  },
+  {
+   "commit": "b17a840",
+   "date": "2026-11-05T11:15:45-03:00",
+   "subject": "fix(triage): DUP_S passa de 30 para 55 s",
+   "text": "Mutação 3/3",
+   "pairs": [
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  {
+   "commit": "2b8cefc",
+   "date": "2026-11-05T11:14:48-03:00",
+   "subject": "fix(triage): replay passa a razão relativa explícita em vez de trocar o global",
+   "text": "Mutação: detector 7/7, agente 2/2, replay 3/3",
+   "pairs": [
+    [
+     7,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  {
+   "commit": "90188cc",
+   "date": "2026-11-05T11:13:26-03:00",
+   "subject": "fix(triage): coletor recusa amostra sem as duas versões das duas features",
+   "text": "Mutação 4/4",
+   "pairs": [
+    [
+     4,
+     4
+    ]
+   ]
+  },
+  {
+   "commit": "2677be1",
+   "date": "2026-11-05T11:12:44-03:00",
+   "subject": "fix(triage): pré-voo exige uma réplica em app-service-v1 e v2",
+   "text": "Mutação 3/3",
+   "pairs": [
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  {
+   "commit": "6050853",
+   "date": "2026-11-05T11:12:29-03:00",
+   "subject": "fix(triage): retomada de controle exige condição inalterada desde o t0",
+   "text": "Mutação 10/10",
+   "pairs": [
+    [
+     10,
+     10
+    ]
+   ]
+  },
+  {
+   "commit": "a2aeb3a",
+   "date": "2026-11-05T11:10:28-03:00",
+   "subject": "fix(triage): controle compara contador monotônico de mudanças do admin",
+   "text": "Mutação: runner 3/3, app 3/3",
+   "pairs": [
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  {
+   "commit": "bf7158a",
+   "date": "2026-11-05T09:33:35-03:00",
+   "subject": "fix(triage): faixa de falha do runner usa rótulos em (t_on, t_off]",
+   "text": "Mutação 6/6",
+   "pairs": [
+    [
+     6,
+     6
+    ]
+   ]
+  },
+  {
+   "commit": "7d351d9",
+   "date": "2026-11-05T09:32:48-03:00",
+   "subject": "fix(triage): replay recusa regra D com feature fora de --limits",
+   "text": "Mutação 4/4",
+   "pairs": [
+    [
+     4,
+     4
+    ]
+   ]
+  },
+  {
+   "commit": "675ee1a",
+   "date": "2026-11-05T09:32:13-03:00",
+   "subject": "fix(triage): regra D usa o total +Inf do histograma como n e base_n",
+   "text": "Mutação 5/5",
+   "pairs": [
+    [
+     5,
+     5
+    ]
+   ]
+  },
+  {
+   "commit": "4190a66",
+   "date": "2026-11-05T09:31:34-03:00",
+   "subject": "fix(triage): regra D trata base da v1 fraca como janela insuficiente",
+   "text": "Mutação 7/7",
+   "pairs": [
+    [
+     7,
+     7
+    ]
+   ]
+  }
+ ],
+ "caminho-medicoes": {
+  "fonte": "saída do terminal durante o diagnóstico do piloto do Flagger, 2026-11-07, cluster a; 8 requisições GET /api/v1/fast-data em sequência, tempo em ms",
+  "antes": {
+   "gerador_para_service_app_fl": [
+    12,
+    3563,
+    3535,
+    2,
+    10000,
+    3,
+    504,
+    2520,
+    8498,
+    1565
+   ],
+   "gerador_para_service_primary": [
+    10112,
+    7860,
+    3,
+    2498,
+    4472,
+    1096,
+    2615,
+    3,
+    10006,
+    4873
+   ],
+   "dentro_do_conteiner_127_0_0_1": [
+    8,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "gerador_para_ip_do_pod": [
+    57,
+    2,
+    1,
+    6,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pod_de_teste_sem_carga_para_service_primary": [
+    127,
+    10025,
+    10025,
+    3,
+    3,
+    2,
+    2,
+    2
+   ],
+   "pod_de_teste_sem_carga_para_app_service_do_lab": [
+    24,
+    4,
+    5,
+    3,
+    2,
+    8,
+    3,
+    5
+   ]
+  },
+  "estatisticas_envoy_pod_de_teste": {
+   "endpoint_do_pod_local": {
+    "cx_connect_fail": 0,
+    "rq_success": 8
+   },
+   "endpoint_de_outro_cluster_mesmo_ip_de_faixa_sobreposta": {
+    "cx_connect_fail": 2,
+    "rq_success": 0,
+    "health_flags": "healthy"
+   },
+   "connect_timeout": "10s"
+  },
+  "depois": {
+   "pod_de_teste_sem_carga_para_service_primary": [
+    112,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "pod_de_teste_sem_carga_para_service_app_fl": [
+    109,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "gerador_para_service_app_fl_cluster_a": [
+    12,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "gerador_para_service_app_fl_cluster_b": [
+    11,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ }
+}

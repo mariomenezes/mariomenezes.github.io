@@ -9,7 +9,7 @@ image: /assets/img/gray-failure-canary-istio/cover-pt.png
 
 *[Read in English]({{ "/en/2026/10/28/gray-failure-canary-istio/" | relative_url }})*
 
-<p class="status"><span class="pill">Estudo em andamento</span> <span>Versão 2 · 28 de outubro de 2026 · <a href="#o-que-mudou">o que mudou</a></span></p>
+<p class="status"><span class="pill">Estudo em andamento</span> <span>Versão 3 · 8 de novembro de 2026 · <a href="#o-que-mudou">o que mudou</a></span></p>
 
 Uma versão canary pode estar quebrada para **uma** funcionalidade e saudável para todo o resto. A análise de canary mais comum olha a versão inteira: taxa de erro e p95 da v2 contra a v1. Este post registra um experimento de laboratório que mede o que essa visão deixa passar, e o que muda quando a detecção é feita por `(cluster, versão, feature)`.
 
@@ -36,6 +36,10 @@ Uma versão canary pode estar quebrada para **uma** funcionalidade e saudável p
 - **Não há IA na decisão.** Tudo é regra fixa sobre métricas do Prometheus.
 
 ## O que mudou nesta versão {#o-que-mudou}
+
+<div class="callout">
+<p><strong>Versão 3 (8 de novembro).</strong> A primeira avaliação com dados que eu não tinha visto ao desenhar as regras: 120 execuções com falha e 30 cluster-horas de controle, com hipóteses e critérios gravados no Git antes. O <code>dashboard</code>, que esta versão dava como cego, passou a ser detectado com uma regra própria (fração de requisições lentas). Está no <a href="#resultado-6">Resultado 6</a>. A comparação com o Flagger instalado de verdade ganhou <a href="{{ "/pt/2026/11/08/flagger-real-detector-por-feature/" | relative_url }}">um post próprio</a>. As seções abaixo, da versão 2, ficam como estavam.</p>
+</div>
 
 <div class="callout">
 <p>Voltei aos dados brutos por janela e reanalisei todas as rodadas. Três coisas mudaram:</p>
@@ -298,6 +302,34 @@ Janelas individuais com falha ainda podem ficar abaixo do limiar (21% das janela
 
 Zero alarmes não quer dizer taxa zero. Com esse volume, o limite superior de 95% é de cerca de 0,37 alarme falso por hora-cluster em cada condição.
 
+## Resultado 6: avaliação fora da amostra, com as regras escolhidas antes {#resultado-6}
+
+Até a versão 2, as regras foram desenhadas olhando os mesmos dados em que eu as medi. Para a versão 3, gravei no Git, antes de coletar: as hipóteses, os critérios de aceite, a regra de cada feature (escolhida por simulação, só com a semente de calibração) e o plano de execução, congelado por hash [1]. Depois rodei tudo de uma vez nos dois clusters.
+
+- 120 execuções com falha (15 por cluster em 4 cenários), 0 descartes; controle de 15 h por cluster (1.800 janelas de 60 s), com ruído σ = 0,1.
+- Regra por feature: no `heavy-reports`, a regra B (p95 relativo, a mesma da versão 2); no `dashboard`, a regra D, que compara a fração de requisições acima de 250 ms na v2 com a da v1 no mesmo minuto, com teste de duas proporções e diferença mínima de 5 pontos percentuais.
+
+<figure class="fig">
+<img src="{{ "/assets/img/gray-failure-canary-istio/v5-metodos-pt.svg" | relative_url }}" alt="Barras de execuções detectadas em 30 por cenário e método. dashboard 10% e 20%: regra B 0, regra BF 30, regra D 30, análise por versão 0, estilo Flagger 0. heavy-reports 10%: B 30, BF 30, D 25, por versão 30, estilo Flagger 30. heavy-reports 20%: todos 30." loading="lazy">
+<figcaption>Execuções detectadas em 30. A regra que funciona no <code>heavy-reports</code> (B) é cega no <code>dashboard</code>, e a análise por versão também. Contorno grosso: a regra escolhida antes dos dados para cada feature.</figcaption>
+</figure>
+
+| Hipótese (critério gravado antes) | Resultado |
+|---|---|
+| H1: detecção por feature, limite inferior unicaudal de 95% ≥ 0,80 em 30 execuções | **passa**: `dash10` 30/30 e `heavy10` 30/30 (limite 0,905); `dash20` e `heavy20` também 30/30 |
+| H2: nenhum alarme na feature que não recebeu a falha | **passa**: 0 violações |
+| H3: falso alarme abaixo de 0,1 por cluster-hora (limite superior de 95%) | **passa, no limite**: 0 alarmes em 30 cluster-horas por feature dão 0,0999 |
+| H5: por feature detecta mais que por versão, nas mesmas execuções | **confirmada no `dashboard`** (30 contra 0, McNemar com Holm, p < 0,0001); **sem diferença no `heavy-reports`** (todos 30/30), como previsto antes |
+
+<figure class="fig">
+<img src="{{ "/assets/img/gray-failure-canary-istio/v5-ttd-pt.svg" | relative_url }}" alt="Minutos até detecção por cenário: dashboard 10% 29 execuções em 3 minutos e 1 em 6; dashboard 20% 30 em 3; heavy-reports 10% 21 em 3 e o resto entre 4 e 8; heavy-reports 20% 30 em 3." loading="lazy">
+<figcaption>Minutos desde o início da falha até o alarme, pela regra escolhida. Três janelas seguidas exigem pelo menos 3 minutos; quase tudo sai no mínimo. A cauda do <code>heavy-reports</code> 10% é onde o p95 fica mais perto do limiar.</figcaption>
+</figure>
+
+Leitura: o resultado mais útil não é o 30 de 30, é a linha do `dashboard` com a regra B. A mesma regra que funciona numa feature lenta não enxerga uma feature rápida, e escolher a regra por feature, antes dos dados, foi o que tornou o `dashboard` detectável. O H3 passou por pouco: com zero alarmes, 30 cluster-horas dão exatamente o limite; um único alarme teria reprovado.
+
+O que esta rodada não testou: ruído σ = 0,3 no cluster (a simulação previa que a regra B teria cerca de um alarme falso por hora no `heavy-reports`, então ficou de fora, como limitação declarada), e mais de uma réplica por versão. A forma como escrevi os critérios antes dos dados, e o que isso mudou, está no [post sobre o pré-registro]({{ "/pt/2026/11/08/pre-registro-experimento-kubernetes/" | relative_url }}).
+
 ## Pegadinhas do ambiente
 
 - **Pod CIDRs iguais nos dois clusters.** Em multi-primary, o sidecar passou a balancear metade das requisições para IPs de pods do outro cluster, que eram inalcançáveis. Resultado: 32% de erro e p95 de 10 s. Mitigado com `clusterLocal` para o serviço. O correto é usar CIDRs distintos.
@@ -312,20 +344,24 @@ Zero alarmes não quer dizer taxa zero. Com esse volume, o limite superior de 95
 - Uso "gray failure" para degradação parcial, por feature, dentro de um canary, no espírito de [Huang et al. (HotOS 2017)](https://www.microsoft.com/en-us/research/publication/gray-failure-achilles-heel-cloud-scale-systems/): um sistema que parece saudável para os próprios health checks enquanto está degradado para os usuários. O laboratório reproduz a degradação parcial. Não reproduz um único pod com mau comportamento escondido atrás de checks saudáveis.
 - Amostras pequenas: 10 de 10 detecções dão um limite inferior de 95% de cerca de 74% para a taxa real (unilateral; 69% bilateral).
 - A mistura foi a mesma nas duas versões. Uma mistura diferente entre versões não foi testada.
-- **Features rápidas continuam sem detecção de latência.** Com `dashboard` lento em 20% das requisições (+0,5 s), o p95 foi para 447–909 ms. Ficou abaixo do piso de 1000 ms, e nenhuma regra disparou. O piso precisa ser por feature.
+- ~~**Features rápidas continuam sem detecção de latência.**~~ Resolvido na versão 3 com a regra D (fração de requisições lentas): `dashboard` 30/30 nas falhas de 10% e 20%. Com a regra B, segue cego (0/30).
 - **Falhas abaixo de cerca de 5% das requisições de uma feature estão fora do alcance de um p95 de 60 s** com esse volume.
-- Nada disso foi comparado ainda com Flagger ou outra ferramenta de análise de canary. Não estou afirmando que essa abordagem é melhor. Separar por endpoint ou por feature também não é uma ideia nova. O que este post traz são as medições.
+- A comparação com o Flagger instalado foi feita depois, em [outro post]({{ "/pt/2026/11/08/flagger-real-detector-por-feature/" | relative_url }}), só com a análise por versão dele. Argo Rollouts e Kayenta não foram testados. Separar por endpoint ou por feature não é uma ideia nova; o que estes posts trazem são as medições.
 
 ## Próximos passos
 
-1. Piso por feature e delta relativo, para que `dashboard` também seja detectável.
+1. ~~Piso por feature e delta relativo, para que `dashboard` também seja detectável.~~ Feito na versão 3 (regra D).
 2. Degradar um único pod, com três ou mais réplicas por versão, e medir alarmes falsos.
 3. Medir ruído acima de σ=0,1 e uma mistura diferente entre versões.
-4. Comparar com o Flagger no mesmo cenário de falha parcial. O Flagger faz rollback do canary inteiro; aqui a pergunta é se dá para isolar só a feature afetada.
+4. ~~Comparar com o Flagger no mesmo cenário de falha parcial.~~ Feito, com a análise por versão; falta o Flagger com métrica por feature.
 5. Testar a fração de requisições acima de uma latência fixa, em vez do p95, para falhas abaixo de 5%.
 6. Mitigação por feature: desviar só a feature degradada para a v1 e bloquear a promoção do canary. Primeiro em modo sombra, só registrando o que seria feito.
 
 Sobre IA: ela não entra na detecção nem na decisão. Se entrar, vai ser só para escrever a explicação depois de o evento ter sido detectado por regra, e só se mostrar valor medido.
+
+## Referências
+
+1. Pré-registro do experimento. [`labs/gray-failure-canary-istio/code/triage/PRE-REGISTRO.md`](https://github.com/mariomenezes/mariomenezes.github.io/blob/main/labs/gray-failure-canary-istio/code/triage/PRE-REGISTRO.md). Dados, código e figuras da versão 3: [`labs/gray-failure-canary-istio/`](https://github.com/mariomenezes/mariomenezes.github.io/tree/main/labs/gray-failure-canary-istio).
 
 ---
 

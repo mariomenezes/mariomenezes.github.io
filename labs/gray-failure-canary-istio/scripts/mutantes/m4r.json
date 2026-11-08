@@ -1,0 +1,3 @@
+[["        if a.get(\"active\") or a.get(\"changes\") != hist0[ver]:", "        if a.get(\"active\") or len(a.get(\"history\", [])) != len(a.get(\"history\", [])):"],
+ ["        if a.get(\"active\") or a.get(\"changes\") != hist0[ver]:", "        if a.get(\"active\") or a.get(\"changes\") < hist0[ver]:"],
+ ["chk(isinstance(a.get(\"changes\"), int),", "chk(True,"]]

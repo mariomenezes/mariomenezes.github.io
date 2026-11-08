@@ -1,0 +1,10 @@
+[["    if since:\n        return", "    if False:\n        return"],
+ ["if r[\"at\"] >= t]", "if r[\"at\"] > t + 1e9]"],
+ ["            journal_rollout(plan, cluster, deps.now(), name, changes)\n", ""],
+ ["        journal_rollout(self.plan, self.cluster, self.deps.now(), name, pairs)\n", ""],
+ ["        if admin_call(ctx.kube, ver, \"GET\").get(\"changes\") != st[\"hist0\"][ver]:", "        if False:"],
+ ["        if why:  # a condição", "        if False:  # a condição"],
+ ["\"t0\": t0, \"resumed\": resumed,", "\"t0\": t0, \"resumed\": False,"],
+ ["            \"sigma_v2\": env[\"app-service-v2\"].get(\"SLOW_JITTER_SIGMA\")}", "            \"sigma_v2\": env[\"app-service-v1\"].get(\"SLOW_JITTER_SIGMA\")}"],
+ ["json.dump({\"t0\": t0, \"hist0\": hist0, \"created\": ctx.deps.now()}, f)", "json.dump({\"t0\": t0, \"hist0\": hist0, \"created\": ctx.deps.now() + 1e9}, f)"],
+ ["            os.unlink(state)\n            return _discard", "            return _discard"]]

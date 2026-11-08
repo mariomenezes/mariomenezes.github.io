@@ -1,0 +1,93 @@
+[
+ {
+  "commit": "b19c4b5",
+  "date": "2026-10-29T09:35:47-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): pré-registro v1 da calibração e avaliação do limite"
+ },
+ {
+  "commit": "fa3425d",
+  "date": "2026-10-29T10:02:20-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): pré-registro v2, controle de cluster de 30 h"
+ },
+ {
+  "commit": "538f139",
+  "date": "2026-11-04T14:22:42-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "results(triage): controle de cluster completo (30 h de minutos válidos) e pré-registro v3"
+ },
+ {
+  "commit": "b7cac44",
+  "date": "2026-11-05T16:19:03-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): PRE-REGISTRO v4 antes de qualquer dado de cluster e antes do portão"
+ },
+ {
+  "commit": "983488f",
+  "date": "2026-11-05T16:20:56-03:00",
+  "kind": "offline",
+  "path": "triage/phase2",
+  "subject": "feat(triage): consequência do portão aplicada em código e saídas da Fase 2"
+ },
+ {
+  "commit": "45abbeb",
+  "date": "2026-11-05T16:21:17-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): resultado offline da Fase 2 na v4 e PROXIMO-PASSO atualizado"
+ },
+ {
+  "commit": "fba7bbc",
+  "date": "2026-11-05T17:22:04-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): PRE-REGISTRO v5 antes de qualquer dado de cluster"
+ },
+ {
+  "commit": "775b180",
+  "date": "2026-11-07T19:30:47-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "feat(triage): resultado da avaliação v5 em cluster (H1, H2, H3 passam; H5 no dashboard)"
+ },
+ {
+  "commit": "775b180",
+  "date": "2026-11-07T19:30:47-03:00",
+  "kind": "dados",
+  "path": "triage/results/eval-v5",
+  "subject": "feat(triage): resultado da avaliação v5 em cluster (H1, H2, H3 passam; H5 no dashboard)"
+ },
+ {
+  "commit": "7a784dd",
+  "date": "2026-11-07T21:39:51-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "feat(triage): registra o máximo de checagens falhas e escreve a v6 do pré-registro"
+ },
+ {
+  "commit": "9a14709",
+  "date": "2026-11-07T21:55:02-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "docs(triage): congela o plano FLAGGER-V6 pelo hash e versiona o piloto descartável"
+ },
+ {
+  "commit": "ac4c944",
+  "date": "2026-11-08T12:02:42-03:00",
+  "kind": "prereg",
+  "path": "triage/PRE-REGISTRO.md",
+  "subject": "feat(triage): resultado da comparação com o Flagger real (v6)"
+ },
+ {
+  "commit": "ac4c944",
+  "date": "2026-11-08T12:02:42-03:00",
+  "kind": "dados",
+  "path": "triage/results/flagger-v6",
+  "subject": "feat(triage): resultado da comparação com o Flagger real (v6)"
+ }
+]

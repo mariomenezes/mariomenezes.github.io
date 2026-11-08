@@ -1,0 +1,6 @@
+[["    return t_on < label <= t_off", "    return t_on <= label <= t_off"],
+ ["    return t_on < label <= t_off", "    return t_on < label < t_off"],
+ ["    return t_on < label <= t_off", "    return t_on <= label < t_off"],
+ ["    return t_on < label <= t_off", "    return t_on + 60 < label <= t_off"],
+ ["    return t_on < label <= t_off", "    return t_on < label <= t_off + 60"],
+ ["if in_fault(m, t_on, t_off)]", "if in_fault(m, t_on, t_off) or True]"]]

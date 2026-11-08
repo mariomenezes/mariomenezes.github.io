@@ -1,0 +1,77 @@
+# Dois jobs para acrescentar em scrape_configs do prometheus-config (os clusters a e b):
+# probe-flagger: sidecar do gerador (lado cliente, com o rótulo feature), que o nosso coletor lê;
+#   o workload vira "versão": app-fl-primary = v1 (base), app-fl = v2 (canary).
+# app-flagger: sidecars do app (lado do destino), que o Flagger lê.
+- job_name: 'probe-flagger'
+  metric_relabel_configs:
+  - source_labels: [__name__, feature]
+    regex: 'istio_request[a-z_]*;(dashboard|heavy-reports)'
+    target_label: feature_ok
+    replacement: '${1}'
+  - source_labels: [__name__, feature_ok]
+    regex: 'istio_request[a-z_]*;'
+    target_label: feature
+    replacement: other
+  - action: labeldrop
+    regex: feature_ok
+  - source_labels: [__name__]
+    regex: 'istio_request.*'
+    target_label: destination_canonical_revision
+    replacement: v2
+  - source_labels: [destination_workload]
+    regex: '.*-primary'
+    target_label: destination_canonical_revision
+    replacement: v1
+  kubernetes_sd_configs:
+  - role: pod
+    namespaces:
+      names:
+      - flagger-lab
+  relabel_configs:
+  - source_labels: [__meta_kubernetes_pod_label_app]
+    action: keep
+    regex: probe-flagger
+  - source_labels: [__meta_kubernetes_pod_container_port_name]
+    action: keep
+    regex: http-envoy-prom
+  - source_labels: [__address__]
+    action: replace
+    regex: ([^:]+)(:\d+)?
+    replacement: ${1}:15090
+    target_label: __address__
+  - action: labelmap
+    regex: __meta_kubernetes_pod_label_(.+)
+  - source_labels: [__meta_kubernetes_namespace]
+    action: replace
+    target_label: namespace
+  - source_labels: [__meta_kubernetes_pod_name]
+    action: replace
+    target_label: pod
+  metrics_path: /stats/prometheus
+- job_name: 'app-flagger'
+  kubernetes_sd_configs:
+  - role: pod
+    namespaces:
+      names:
+      - flagger-lab
+  relabel_configs:
+  - source_labels: [__meta_kubernetes_pod_label_app]
+    action: keep
+    regex: app-fl.*
+  - source_labels: [__meta_kubernetes_pod_container_port_name]
+    action: keep
+    regex: http-envoy-prom
+  - source_labels: [__address__]
+    action: replace
+    regex: ([^:]+)(:\d+)?
+    replacement: ${1}:15090
+    target_label: __address__
+  - action: labelmap
+    regex: __meta_kubernetes_pod_label_(.+)
+  - source_labels: [__meta_kubernetes_namespace]
+    action: replace
+    target_label: namespace
+  - source_labels: [__meta_kubernetes_pod_name]
+    action: replace
+    target_label: pod
+  metrics_path: /stats/prometheus

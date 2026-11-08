@@ -1,0 +1,5 @@
+[["    canon = json.dumps({\"plan\": {k: v for k, v in raw.items() if k != \"out_dir\"}, \"runner\": runner_constants()},", "    canon = json.dumps({\"plan\": {k: v for k, v in raw.items() if k != \"out_dir\"}, \"runner\": {}},"],
+ ["\"MAX_DISCARDS\": MAX_DISCARDS, \"FAULT_HEAVY_RATIO\": FAULT_HEAVY_RATIO}", "\"MAX_DISCARDS\": MAX_DISCARDS}"],
+ ["    return {\"TOLERANCE_S\": TOLERANCE_S, \"SETTLE_S\": SETTLE_S,", "    return {\"TOLERANCE_S\": TOLERANCE_S, \"SETTLE_S\": 75,"],
+ ["if sc.kind == \"control\" else FAULT_HEAVY_RATIO)", "if sc.kind == \"control\" else \"0.3\")"],
+ [", \"runner_constants\": runner_constants()}", "}"]]

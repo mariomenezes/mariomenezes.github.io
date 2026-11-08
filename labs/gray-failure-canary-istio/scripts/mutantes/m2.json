@@ -1,0 +1,4 @@
+[["        if missing:\n", "        if False:\n"],
+ ["missing = [f for f in features if f not in limits]", "missing = [f for f in features if f in limits]"],
+ ["missing = [f for f in features if f not in limits]", "missing = [f for f in features[:1] if f not in limits]"],
+ ["    if rule == detector.RULE_D:\n        missing", "    if rule != detector.RULE_A:\n        missing"]]

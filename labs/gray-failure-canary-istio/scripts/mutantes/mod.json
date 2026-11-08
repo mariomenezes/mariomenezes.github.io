@@ -1,0 +1,2 @@
+[["    if not os.path.isabs(plan.out_dir):", "    if False:"],
+ ["os.path.join(os.path.dirname(HERE), plan.out_dir)", "os.path.join(HERE, plan.out_dir)"]]

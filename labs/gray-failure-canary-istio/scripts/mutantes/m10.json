@@ -1,0 +1,3 @@
+[["DUP_S = 55.0\n", "DUP_S = 30.0\n"],
+ ["DUP_S = 55.0\n", "DUP_S = 61.0\n"],
+ ["        if last is not None and t - last < DUP_S:", "        if last is not None and t - last <= DUP_S:"]]

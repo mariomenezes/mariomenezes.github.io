@@ -1,0 +1,4 @@
+[["    if missing:\n        raise ValueError(f\"amostra incompleta", "    if False:\n        raise ValueError(f\"amostra incompleta"],
+ ["EXPECTED = ((\"v1\", \"dashboard\"), (\"v1\", \"heavy-reports\"), (\"v2\", \"dashboard\"), (\"v2\", \"heavy-reports\"))", "EXPECTED = ((\"v1\", \"dashboard\"), (\"v1\", \"heavy-reports\"), (\"v2\", \"heavy-reports\"))"],
+ ["EXPECTED = ((\"v1\", \"dashboard\"), (\"v1\", \"heavy-reports\"), (\"v2\", \"dashboard\"), (\"v2\", \"heavy-reports\"))", "EXPECTED = ((\"v1\", \"dashboard\"), (\"v2\", \"dashboard\"), (\"v2\", \"heavy-reports\"))"],
+ ["if (v, f) not in wins]", "if (v, f) in wins]"]]

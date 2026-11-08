@@ -1,0 +1,124 @@
+{
+ "metrics": {
+  "a/b115_control_alarms": {
+   "hi": 0.0,
+   "lo": 0.0,
+   "measured": 0,
+   "ok": true
+  },
+  "a/b115_f10": {
+   "hi": 5.0,
+   "lo": 4.0,
+   "measured": 5,
+   "ok": true
+  },
+  "a/b115_f20": {
+   "hi": 5.0,
+   "lo": 5.0,
+   "measured": 5,
+   "ok": true
+  },
+  "a/b130_f10": {
+   "hi": 1.0,
+   "lo": 0.0,
+   "measured": 1,
+   "ok": true
+  },
+  "a/b130_f20": {
+   "hi": 5.0,
+   "lo": 1.9750000000000005,
+   "measured": 5,
+   "ok": true
+  },
+  "a/mean_v1_med": {
+   "hi": 3070.539431612732,
+   "lo": 3059.305002673996,
+   "measured": 3015.8308492026144,
+   "ok": false
+  },
+  "a/p95_v1_med": {
+   "hi": 3632.2968749999995,
+   "lo": 3604.5729166666665,
+   "measured": 3467.7777777777774,
+   "ok": false
+  },
+  "a/ratio_q50": {
+   "hi": 1.004544695650098,
+   "lo": 0.9955598578046406,
+   "measured": 0.9987100019381813,
+   "ok": true
+  },
+  "a/ratio_q99": {
+   "hi": 1.0881633906685557,
+   "lo": 1.0633478535866259,
+   "measured": 1.0728525347232039,
+   "ok": true
+  },
+  "b/b115_control_alarms": {
+   "hi": 0.0,
+   "lo": 0.0,
+   "measured": 0,
+   "ok": true
+  },
+  "b/b115_f10": {
+   "hi": 5.0,
+   "lo": 4.0,
+   "measured": 5,
+   "ok": true
+  },
+  "b/b115_f20": {
+   "hi": 5.0,
+   "lo": 5.0,
+   "measured": 5,
+   "ok": true
+  },
+  "b/b130_f10": {
+   "hi": 1.0,
+   "lo": 0.0,
+   "measured": 0,
+   "ok": true
+  },
+  "b/b130_f20": {
+   "hi": 5.0,
+   "lo": 1.0,
+   "measured": 2,
+   "ok": true
+  },
+  "b/mean_v1_med": {
+   "hi": 3069.1177306651266,
+   "lo": 3060.5069400283446,
+   "measured": 3012.068593615186,
+   "ok": false
+  },
+  "b/p95_v1_med": {
+   "hi": 3630.471726190476,
+   "lo": 3606.859375,
+   "measured": 3552.083333333332,
+   "ok": false
+  },
+  "b/ratio_q50": {
+   "hi": 1.0041144479650566,
+   "lo": 0.9966152426173193,
+   "measured": 1.0001325344698857,
+   "ok": true
+  },
+  "b/ratio_q99": {
+   "hi": 1.0810092515668959,
+   "lo": 1.0581008328139245,
+   "measured": 1.0780197090372026,
+   "ok": true
+  }
+ },
+ "replicates": 200,
+ "seed": 1,
+ "verdict": {
+  "decision_ok": true,
+  "failed": [
+   "a/mean_v1_med",
+   "a/p95_v1_med",
+   "b/mean_v1_med",
+   "b/p95_v1_med"
+  ],
+  "level_ok": false
+ }
+}

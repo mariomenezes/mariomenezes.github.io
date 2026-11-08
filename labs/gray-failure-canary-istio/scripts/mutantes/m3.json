@@ -1,0 +1,5 @@
+[["            if rule == detector.RULE_D:\n", "            if False:\n"],
+ ["            if rule == detector.RULE_D:\n", "            if True:\n"],
+ ["                n = total\n", "                n = slow\n"],
+ ["            total, slow = slow_count(w[\"buckets\"], limit)", "            slow, total = slow_count(w[\"buckets\"], limit)"],
+ ["_window(w, (limits or {}).get(w[\"feature\"]), res, rule)", "_window(w, (limits or {}).get(w[\"feature\"]), res, detector.RULE_B)"]]

@@ -1,0 +1,6 @@
+[["        chk(pr[\"max_ms\"] <= PATH_MAX_MS and pr[\"errors\"] == 0,", "        chk(pr[\"errors\"] == 0,"],
+ ["        chk(pr[\"max_ms\"] <= PATH_MAX_MS and pr[\"errors\"] == 0,", "        chk(pr[\"max_ms\"] <= PATH_MAX_MS,"],
+ ["        chk(pr[\"max_ms\"] <= PATH_MAX_MS and pr[\"errors\"] == 0,", "        chk(pr[\"max_ms\"] < PATH_MAX_MS and pr[\"errors\"] == 0,"],
+ ["PATH_MAX_MS = 1000 ", "PATH_MAX_MS = 5000 "],
+ ["    except (KubeError, ValueError, KeyError) as exc:\n        bad.append(f\"caminho não pôde ser medido: {exc}\")", "    except (KubeError, ValueError, KeyError) as exc:\n        pass"],
+ ["f\"deploy/{LOADGEN}\", \"-c\", \"probe\", \"--\", \"python3\", \"-c\", PATH_SCRIPT", "f\"deploy/{LOADGEN}\", \"-c\", \"probe\", \"--\", \"python3\", \"-c\", PATH_SCRIPT.replace('app-fl.flagger-lab', 'x')"]]

@@ -1,0 +1,3 @@
+[["            b = sum(1 for k in pk if pk[k] and not mk.get(k, False))", "            b = sum(1 for k in pk if pk[k])"],
+ ["            cc = sum(1 for k in pk if not pk[k] and mk.get(k, False))", "            cc = sum(1 for k in pk if mk.get(k, False))"],
+ ["        h5[k][\"reject\"] = p < ALPHA", "        h5[k][\"reject\"] = h5[k][\"p\"] < ALPHA"]]

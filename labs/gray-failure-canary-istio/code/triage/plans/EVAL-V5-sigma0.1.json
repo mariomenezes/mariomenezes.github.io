@@ -1,0 +1,26 @@
+{
+  "name": "EVAL-V5-sigma0.1",
+  "namespace": "lab-apps",
+  "out_dir": "triage/results/eval-v5",
+  "prereg": "PRE-REGISTRO.md v5",
+  "sigma": 0.1,
+  "clusters": {
+    "a": {"context": "home/cluster-a", "prom_port": 9151, "heavy_ratio_original": "0.3"},
+    "b": {"context": "home/cluster-b", "prom_port": 9152, "heavy_ratio_original": "0.5"}
+  },
+  "scenarios": [
+    {"id": "dash10", "kind": "fault", "feature": "dashboard",
+     "params": {"fast_delay_fraction": 0.1, "fast_delay_s": 0.5},
+     "reps": 15, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "heavy10", "kind": "fault", "feature": "heavy-reports",
+     "params": {"slow_extra_fraction": 0.1, "slow_extra_s": 1.5},
+     "reps": 15, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "dash20", "kind": "fault", "feature": "dashboard",
+     "params": {"fast_delay_fraction": 0.2, "fast_delay_s": 0.5},
+     "reps": 15, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "heavy20", "kind": "fault", "feature": "heavy-reports",
+     "params": {"slow_extra_fraction": 0.2, "slow_extra_s": 1.5},
+     "reps": 15, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "ctrl", "kind": "control", "minutes": 900}
+  ]
+}

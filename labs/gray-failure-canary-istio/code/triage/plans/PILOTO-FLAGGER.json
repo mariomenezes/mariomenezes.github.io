@@ -1,0 +1,19 @@
+{
+  "name": "PILOTO-FLAGGER-descartavel",
+  "namespace": "flagger-lab",
+  "out_dir": "triage/results/pilot-flagger",
+  "prereg": "PILOTO DESCARTAVEL: nao entra na comparacao v6",
+  "clusters": {
+    "a": {"context": "home/cluster-a", "prom_port": 9151},
+    "b": {"context": "home/cluster-b", "prom_port": 9152}
+  },
+  "scenarios": [
+    {"id": "dash10", "kind": "fault", "feature": "dashboard",
+     "params": {"fast_delay_fraction": 0.1, "fast_delay_s": 0.5},
+     "reps": 1, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "heavy10", "kind": "fault", "feature": "heavy-reports",
+     "params": {"slow_extra_fraction": 0.1, "slow_extra_s": 1.5},
+     "reps": 1, "baseline_min": 3, "fault_min": 8, "after_min": 3},
+    {"id": "ctrl", "kind": "control", "reps": 1, "baseline_min": 3, "fault_min": 8, "after_min": 3}
+  ]
+}

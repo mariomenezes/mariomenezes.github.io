@@ -1,0 +1,4 @@
+[["    job = os.environ.get(\"TRIAGE_PROM_JOB\", \"probe-generator\")", "    job = \"probe-generator\""],
+ ["    ns = os.environ.get(\"TRIAGE_PROM_NAMESPACE\", NAMESPACE)", "    ns = NAMESPACE"],
+ ["    svc = f'destination_service_name=~\"{svc_re}\"' if svc_re else", "    svc = f'destination_service_name=\"{svc_re}\"' if svc_re else"],
+ ["    svc_re = os.environ.get(\"TRIAGE_PROM_SERVICE\")", "    svc_re = None"]]

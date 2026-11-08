@@ -1,0 +1,70 @@
+# Gerador de carga do laboratório do Flagger: mesmo código e mistura do lab, mais o header
+# x-canary em metade das requisições (A/B do Flagger: o header roteia ao canary, o resto
+# ao primary: equivale ao split 50/50 do lab).
+# Pré-requisito: kubectl -n flagger-lab create configmap probe-generator-config --from-file=probe_generator.py=probes/probe_generator.py
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe-flagger
+  namespace: flagger-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: probe-flagger
+  template:
+    metadata:
+      labels:
+        app: probe-flagger
+      annotations:
+        proxy.istio.io/config: |
+          extraStatTags:
+          - feature
+        sidecar.istio.io/statsHistogramBuckets: '{"istiocustom":[1,5,10,25,50,100,250,500,1000,2000,2500,2750,3000,3250,3500,3750,4000,4250,4750,5000,7500,10000,30000]}'
+    spec:
+      containers:
+      - name: probe
+        image: python:3.12-slim
+        command: ["python", "/app/probe_generator.py"]
+        env:
+        - name: CLUSTER_NAME
+          value: "flagger-lab"
+        - name: APP_URL
+          value: "http://app-fl.flagger-lab.svc.cluster.local:8080"
+        - name: PROBE_INTERVAL
+          value: "1"
+        - name: HEAVY_RATIO
+          value: "0.3"
+        - name: WORKERS
+          value: "8"
+        - name: CANARY_HEADER_RATIO
+          value: "0.5"
+        - name: RESULT_FILE
+          value: "/tmp/probe_results.json"
+        resources:
+          requests: { cpu: 50m, memory: 64Mi }
+          limits:   { cpu: 500m, memory: 128Mi }
+        volumeMounts:
+        - name: probe-src
+          mountPath: /app
+      volumes:
+      - name: probe-src
+        configMap:
+          name: probe-generator-config
+---
+apiVersion: telemetry.istio.io/v1
+kind: Telemetry
+metadata:
+  name: feature-dimension
+  namespace: flagger-lab
+spec:
+  metrics:
+  - overrides:
+    - match: { metric: REQUEST_COUNT, mode: CLIENT }
+      tagOverrides:
+        feature: { operation: UPSERT, value: "request.headers['x-feature-context']" }
+    - match: { metric: REQUEST_DURATION, mode: CLIENT }
+      tagOverrides:
+        feature: { operation: UPSERT, value: "request.headers['x-feature-context']" }
+    providers:
+    - name: prometheus

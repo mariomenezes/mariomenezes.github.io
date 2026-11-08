@@ -1,0 +1,10 @@
+[["H1_LB = 0.80", "H1_LB = 0.90"],
+ ["    return windows > 0 and poisson_upper(alarms, windows / 60.0) < H3_UB", "    return windows > 0 and poisson_upper(alarms, windows / 60.0) <= H3_UB + 0.01"],
+ ["        prev = max(prev, min(1.0, (m - i) * p))", "        prev = min(1.0, (m - i) * p)"],
+ ["        prev = max(prev, min(1.0, (m - i) * p))", "        prev = max(prev, min(1.0, m * p))"],
+ ["PRIMARY = {\"heavy-reports\": \"B\", \"dashboard\": \"D\"}", "PRIMARY = {\"heavy-reports\": \"B\", \"dashboard\": \"BF\"}"],
+ ["            b = sum(1 for k in pk if pk[k] and not mk.get(k, False))", "            b = sum(1 for k in pk if pk[k])"],
+ ["            cc = sum(1 for k in pk if not pk[k] and mk.get(k, False))", "            cc = sum(1 for k in pk if mk.get(k, False))"],
+ ["                ctrl_windows += len(samples)", "                ctrl_windows += len(samples) - 1"],
+ ["                if other != feat:", "                if other == feat:"],
+ ["        h5[k][\"reject\"] = p < ALPHA", "        h5[k][\"reject\"] = raw_p[k] < ALPHA"]]

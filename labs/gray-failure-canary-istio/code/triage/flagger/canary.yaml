@@ -1,0 +1,56 @@
+# Análise por versão, no modo A/B do Flagger (header x-canary -> canary), congelada na v6:
+# 16 iterações de 1 min; reverte com 5 checagens falhas acumuladas; sucesso >= 99% e p99 do
+# canary / p99 do primary <= 1,15 (a versão relativa e mais forte do que um limite absoluto).
+apiVersion: flagger.app/v1beta1
+kind: MetricTemplate
+metadata:
+  name: p99-ratio
+  namespace: flagger-lab
+spec:
+  provider:
+    type: prometheus
+    address: http://prometheus.observability:9090
+  query: |
+    histogram_quantile(0.99, sum(rate(istio_request_duration_milliseconds_bucket{reporter="destination",destination_workload_namespace="{{ namespace }}",destination_workload="{{ target }}"}[{{ interval }}])) by (le))
+    /
+    histogram_quantile(0.99, sum(rate(istio_request_duration_milliseconds_bucket{reporter="destination",destination_workload_namespace="{{ namespace }}",destination_workload="{{ target }}-primary"}[{{ interval }}])) by (le))
+---
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: app-fl
+  namespace: flagger-lab
+spec:
+  provider: istio
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: app-fl
+  progressDeadlineSeconds: 1800
+  service:
+    port: 8080
+    portName: http
+    timeout: 10s
+    retries:
+      attempts: 2
+      perTryTimeout: 5s
+  analysis:
+    interval: 1m
+    iterations: 16
+    threshold: 5
+    match:
+    - headers:
+        x-canary:
+          exact: "insider"
+    metrics:
+    - name: request-success-rate
+      thresholdRange:
+        min: 99
+      interval: 1m
+    - name: p99-ratio
+      templateRef:
+        name: p99-ratio
+        namespace: flagger-lab
+      thresholdRange:
+        max: 1.15
+      interval: 1m

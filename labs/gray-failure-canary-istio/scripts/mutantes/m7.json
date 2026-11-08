@@ -1,0 +1,3 @@
+[["        chk(dep[n][\"replicas\"] == 1, f\"{n}: replicas", "        chk(True, f\"{n}: replicas"],
+ ["        chk(dep[n][\"replicas\"] == 1, f\"{n}: replicas", "        chk(dep[n][\"replicas\"] >= 1, f\"{n}: replicas"],
+ ["    for n in (\"app-service-v1\", \"app-service-v2\"):  # kubectl exec", "    for n in (\"app-service-v1\",):  # kubectl exec"]]

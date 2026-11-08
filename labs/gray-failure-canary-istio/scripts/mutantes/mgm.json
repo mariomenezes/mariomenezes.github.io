@@ -1,0 +1,5 @@
+[["    for s in samples[1:]:", "    for s in samples:"],
+ ["            if w[\"v1\"][\"p95_ms\"] > 0:\n                ratios.append(w[\"v2\"][\"p95_ms\"] / w[\"v1\"][\"p95_ms\"])", "            if w[\"v1\"][\"p95_ms\"] > 0:\n                ratios.append(w[\"v1\"][\"p95_ms\"] / w[\"v2\"][\"p95_ms\"])"],
+ ["            for name, r in ((\"b115\", 1.15), (\"b130\", 1.30)):", "            for name, r in ((\"b115\", 1.15), (\"b130\", 1.15)):"],
+ ["        for tag, frac in ((\"f20\", \"0.2\"), (\"f10\", \"0.1\")):", "        for tag, frac in ((\"f20\", \"0.1\"), (\"f10\", \"0.2\")):"],
+ ["            p95_v1.append(w[\"v1\"][\"p95_ms\"])", "            p95_v1.append(w[\"v2\"][\"p95_ms\"])"]]

@@ -1,0 +1,5 @@
+[["            if not verdict[\"decision_ok\"]:\n", "            if False:\n"],
+ ["                     if verdict[\"level_ok\"] or n not in LEVEL_SENSITIVE.get(f, ())]", "                     if n not in LEVEL_SENSITIVE.get(f, ())]"],
+ ["                     if verdict[\"level_ok\"] or n not in LEVEL_SENSITIVE.get(f, ())]", "                     if verdict[\"level_ok\"] or n != \"D\"]"],
+ ["                               \"predict_h3_fail\": name is None,", "                               \"predict_h3_fail\": False,"],
+ ["            out[f\"{f}|{s}\"] = {\"rule\": name or \"B\",", "            out[f\"{f}|{s}\"] = {\"rule\": name or \"D\","]]

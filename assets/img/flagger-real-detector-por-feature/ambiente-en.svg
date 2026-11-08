@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="483.302408pt" height="320.923079pt" viewBox="0 0 483.302408 320.923079" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-08T15:59:53.201850</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 320.923079 
+L 483.302408 320.923079 
+L 483.302408 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 15.34608 282.837413 
+L 229.01184 282.837413 
+L 229.01184 39.622133 
+L 15.34608 39.622133 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #eaf0f8"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 26.256672 129.179909 
+L 218.101248 129.179909 
+Q 220.828896 129.179909 220.828896 126.452261 
+L 220.828896 84.628325 
+Q 220.828896 81.900677 218.101248 81.900677 
+L 26.256672 81.900677 
+Q 23.529024 81.900677 23.529024 84.628325 
+L 23.529024 126.452261 
+Q 23.529024 129.179909 26.256672 129.179909 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #c44e52; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 26.256672 183.732869 
+L 218.101248 183.732869 
+Q 220.828896 183.732869 220.828896 181.005221 
+L 220.828896 139.181285 
+Q 220.828896 136.453637 218.101248 136.453637 
+L 26.256672 136.453637 
+Q 23.529024 136.453637 23.529024 139.181285 
+L 23.529024 181.005221 
+Q 23.529024 183.732869 26.256672 183.732869 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #dd8452; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 26.256672 238.285829 
+L 115.814448 238.285829 
+Q 118.542096 238.285829 118.542096 235.558181 
+L 118.542096 193.734245 
+Q 118.542096 191.006597 115.814448 191.006597 
+L 26.256672 191.006597 
+Q 23.529024 191.006597 23.529024 193.734245 
+L 23.529024 235.558181 
+Q 23.529024 238.285829 26.256672 238.285829 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #4c72b0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 128.543472 238.285829 
+L 218.101248 238.285829 
+Q 220.828896 238.285829 220.828896 235.558181 
+L 220.828896 193.734245 
+Q 220.828896 191.006597 218.101248 191.006597 
+L 128.543472 191.006597 
+Q 125.815824 191.006597 125.815824 193.734245 
+L 125.815824 235.558181 
+Q 125.815824 238.285829 128.543472 238.285829 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #8c8c8c; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 242.65008 282.837413 
+L 456.31584 282.837413 
+L 456.31584 39.622133 
+L 242.65008 39.622133 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #eaf0f8"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 253.560672 129.179909 
+L 445.405248 129.179909 
+Q 448.132896 129.179909 448.132896 126.452261 
+L 448.132896 84.628325 
+Q 448.132896 81.900677 445.405248 81.900677 
+L 253.560672 81.900677 
+Q 250.833024 81.900677 250.833024 84.628325 
+L 250.833024 126.452261 
+Q 250.833024 129.179909 253.560672 129.179909 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #c44e52; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 253.560672 183.732869 
+L 445.405248 183.732869 
+Q 448.132896 183.732869 448.132896 181.005221 
+L 448.132896 139.181285 
+Q 448.132896 136.453637 445.405248 136.453637 
+L 253.560672 136.453637 
+Q 250.833024 136.453637 250.833024 139.181285 
+L 250.833024 181.005221 
+Q 250.833024 183.732869 253.560672 183.732869 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #dd8452; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 253.560672 238.285829 
+L 343.118448 238.285829 
+Q 345.846096 238.285829 345.846096 235.558181 
+L 345.846096 193.734245 
+Q 345.846096 191.006597 343.118448 191.006597 
+L 253.560672 191.006597 
+Q 250.833024 191.006597 250.833024 193.734245 
+L 250.833024 235.558181 
+Q 250.833024 238.285829 253.560672 238.285829 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #4c72b0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 355.847472 238.285829 
+L 445.405248 238.285829 
+Q 448.132896 238.285829 448.132896 235.558181 
+L 448.132896 193.734245 
+Q 448.132896 191.006597 445.405248 191.006597 
+L 355.847472 191.006597 
+Q 353.119824 191.006597 353.119824 193.734245 
+L 353.119824 235.558181 
+Q 353.119824 238.285829 355.847472 238.285829 
+z
+" clip-path="url(#pd83c9a16f2)" style="fill: #ffffff; stroke: #8c8c8c; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="10.8" y="21.437813" transform="rotate(-0 10.8 21.437813)">One host, two clusters, the same lab twice</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="22.1652" y="53.260373" transform="rotate(-0 22.1652 53.260373)">Cluster a</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="22.1652" y="67.807829" transform="rotate(-0 22.1652 67.807829)">Kubernetes 1.36 (k0s) · Istio 1.31.1</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="122.17896" y="102.48824" transform="rotate(-0 122.17896 102.48824)">Flagger 1.45.0</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="122.17896" y="117.100597" transform="rotate(-0 122.17896 117.100597)">decides promote or roll back</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="122.17896" y="156.934266" transform="rotate(-0 122.17896 156.934266)">app-fl-primary  |  app-fl (canary)</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="122.17896" y="171.523655" transform="rotate(-0 122.17896 171.523655)">same app, σ=0.1, 1 pod each</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="71.03556" y="211.02259" transform="rotate(-0 71.03556 211.02259)">load generator</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="71.03556" y="225.634947" transform="rotate(-0 71.03556 225.634947)">2 pods × 8 workers</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="173.32236" y="211.02259" transform="rotate(-0 173.32236 211.02259)">Prometheus</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="173.32236" y="225.634947" transform="rotate(-0 173.32236 225.634947)">72 h retention</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="24.43824" y="269.199173" transform="rotate(-0 24.43824 269.199173)">50% with x-canary</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #0f1b2d" x="249.4692" y="53.260373" transform="rotate(-0 249.4692 53.260373)">Cluster b</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="249.4692" y="67.807829" transform="rotate(-0 249.4692 67.807829)">Kubernetes 1.36 (k0s) · Istio 1.31.1</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="349.48296" y="102.48824" transform="rotate(-0 349.48296 102.48824)">Flagger 1.45.0</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="349.48296" y="117.100597" transform="rotate(-0 349.48296 117.100597)">decides promote or roll back</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="349.48296" y="156.934266" transform="rotate(-0 349.48296 156.934266)">app-fl-primary  |  app-fl (canary)</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="349.48296" y="171.523655" transform="rotate(-0 349.48296 171.523655)">same app, σ=0.1, 1 pod each</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="298.33956" y="211.02259" transform="rotate(-0 298.33956 211.02259)">load generator</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="298.33956" y="225.634947" transform="rotate(-0 298.33956 225.634947)">2 pods × 8 workers</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #0f1b2d" x="400.62636" y="211.02259" transform="rotate(-0 400.62636 211.02259)">Prometheus</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; fill: #4b5563" x="400.62636" y="225.634947" transform="rotate(-0 400.62636 225.634947)">72 h retention</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="251.74224" y="269.199173" transform="rotate(-0 251.74224 269.199173)">50% with x-canary</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-anchor: start; fill: #4b5563" x="15.34608" y="307.840853" transform="rotate(-0 15.34608 307.840853)">Proxmox host: 2 VMs, one k0s node each  ·  runner + collector: outside the cluster, port-forward</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd83c9a16f2">
+   <rect x="10.8" y="17.002613" width="454.608" height="277.2"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,7 @@
+[["    return RELATIVE_RATIO_LIMIT if ratio is None else ratio", "    return RELATIVE_RATIO_LIMIT"],
+ ["    return RELATIVE_RATIO_LIMIT if ratio is None else ratio", "    return 1.15 if ratio is None else ratio"],
+ ["        return _relative_slow(w.p95_ms, w.baseline_p95_ms, ratio)", "        return _relative_slow(w.p95_ms, w.baseline_p95_ms)"],
+ ["_relative_slow(w.mean_ms, w.baseline_mean_ms, ratio)", "_relative_slow(w.mean_ms, w.baseline_mean_ms)"],
+ ["        return _feature_slow(w.p95_ms, w.baseline_p95_ms, feature, ratio)", "        return _feature_slow(w.p95_ms, w.baseline_p95_ms, feature)"],
+ ["    return value > _ratio(ratio) * baseline and", "    return value > _ratio(None) * baseline and"],
+ ["        if is_degraded(w, self.rule, self.feature, self.ratio):", "        if is_degraded(w, self.rule, self.feature):"]]

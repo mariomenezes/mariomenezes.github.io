@@ -1,0 +1,50 @@
+# Alvo do Flagger: mesmo código e mesmo ambiente do app-service do lab (σ = 0,1, atraso base 3 s).
+# Pré-requisito: kubectl -n flagger-lab create configmap app-service-src --from-file=app_server.py=app/app_server.py
+# O Flagger cria app-fl-primary, os Services e o VirtualService; este Deployment vira o canary.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-fl
+  namespace: flagger-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-fl
+  template:
+    metadata:
+      labels:
+        app: app-fl
+      annotations:
+        sidecar.istio.io/inject: "true"
+        # mesmos buckets do gerador: o p99 do destino que o Flagger lê tem a mesma resolução
+        sidecar.istio.io/statsHistogramBuckets: '{"istiocustom":[1,5,10,25,50,100,250,500,1000,2000,2500,2750,3000,3250,3500,3750,4000,4250,4750,5000,7500,10000,30000]}'
+        bench/rev: "init"
+    spec:
+      containers:
+      - name: app
+        image: python:3.12-slim
+        command: ["python", "/src/app_server.py"]
+        env:
+        - name: VERSION
+          value: "fl"
+        - name: SLOW_DELAY_S
+          value: "3"
+        - name: SLOW_JITTER_SIGMA
+          value: "0.1"
+        ports:
+        - containerPort: 8080
+          name: http
+        readinessProbe:
+          httpGet: { path: /healthz, port: 8080 }
+          periodSeconds: 5
+        resources:
+          requests: { cpu: 50m, memory: 64Mi }
+          limits:   { cpu: 500m, memory: 256Mi }
+        volumeMounts:
+        - name: src
+          mountPath: /src
+      volumes:
+      - name: src
+        configMap:
+          name: app-service-src

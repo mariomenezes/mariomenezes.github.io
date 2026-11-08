@@ -1,0 +1,3 @@
+[["        self._changes += 1\n", "\n"],
+ ["        self._changes += 1\n", "        self._changes += 1 if event == \"set\" else 0\n"],
+ ["                \"changes\": self._changes,", "                \"changes\": len(self._history),"]]
