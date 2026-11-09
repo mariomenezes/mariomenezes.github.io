@@ -278,73 +278,40 @@ def grade(ax, x0, y0, hits, n=30, cols=6, size=0.36, gap=0.1, cor=REF, vazio="#5
                                edgecolor=cor if hit else vazio, linewidth=1.6))
 
 
-def linkedin_card(lang):
-    """Cartão vertical 1080x1350 para o feed do LinkedIn (fundo escuro, números grandes, as 30 execuções)."""
-    T = {"pt": dict(tag="LABORATÓRIO · KUBERNETES · ISTIO",
-                    t="Uma falha em uma só função\ndo app passou pelo Flagger\nem 30 de 30 versões",
+def capa_flagger(lang):
+    """Capa horizontal 1200x627 (prévia do link e imagem do post no LinkedIn), com o mesmo conteúdo do cartão vertical."""
+    T = {"pt": dict(t="Uma falha em uma só função do app\npassou pelo Flagger em 30 de 30 versões",
                     sub="10% das requisições da tela rápida com +0,5 s, só na versão nova",
                     fl="Flagger", fls="métricas da versão inteira", me_="Meu detector", mes="métricas por função",
                     cap="detectou a falha em",
-                    hv="Lentidão no relatório lento: Flagger 30/30 · meu 28/30",
-                    ctrl="Sem falha: 0 alarmes falsos nos dois (30 execuções)",
-                    note="Flagger 1.45, análise por versão: p99 canary ÷ primary ≤ 1,15.\nMétrica por função no Flagger não testada. Laboratório, não produção.",
-                    url="mariomenezes.github.io"),
-         "en": dict(tag="LAB · KUBERNETES · ISTIO",
-                    t="A fault in just one function\nof the app got past Flagger\nin 30 of 30 versions",
+                    l1="Lentidão no relatório lento: Flagger 30/30 · meu 28/30",
+                    l2="Sem falha: 0 alarmes falsos nos dois (30 execuções)",
+                    note="Laboratório, não produção · métrica por função no Flagger não testada"),
+         "en": dict(t="A fault in just one function of the app\ngot past Flagger in 30 of 30 versions",
                     sub="10% of the fast screen's requests with +0.5 s, only in the new version",
                     fl="Flagger", fls="whole-version metrics", me_="My detector", mes="per-function metrics",
                     cap="detected the fault in",
-                    hv="Slowdown on the slow report: Flagger 30/30 · mine 28/30",
-                    ctrl="No fault: 0 false alarms for both (30 runs)",
-                    note="Flagger 1.45, per-version analysis: canary ÷ primary p99 ≤ 1.15.\nPer-function metric in Flagger not tested. A lab, not production.",
-                    url="mariomenezes.github.io")}[lang]
-    fl = D["flagger"]["scenarios"]
-    fig = plt.figure(figsize=(10.8, 13.5), dpi=100)
-    fig.patch.set_facecolor(ESCURO)
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, 10.8); ax.set_ylim(0, 13.5); ax.axis("off")
-    ax.text(0.7, 12.75, T["tag"], color="#8FA3BF", fontsize=17, fontweight="bold")
-    ax.text(0.7, 12.3, T["t"], color="white", fontsize=40, fontweight="bold", va="top", linespacing=1.15)
-    ax.text(0.7, 9.65, T["sub"], color="#C9D3E0", fontsize=18.5)
-    # dois blocos
-    for k, (x0, name, sub, hits, cor, numcor) in enumerate((
-            (0.7, T["fl"], T["fls"], fl["dash10"]["flagger"][0], NEUTRO, "#FF8A8D"),
-            (5.75, T["me_"], T["mes"], fl["dash10"]["ours"][0], FOCO, FOCO))):
-        ax.add_patch(Rectangle((x0 - 0.15, 3.15), 4.65, 6.0, facecolor="#16263D", edgecolor="none"))
-        ax.text(x0 + 0.1, 8.6, name, color="white", fontsize=26, fontweight="bold")
-        ax.text(x0 + 0.1, 8.12, sub, color="#C9D3E0", fontsize=16)
-        ax.text(x0 + 0.1, 7.55, T["cap"], color="#8FA3BF", fontsize=15)
-        ax.text(x0 + 0.1, 6.5, f"{hits}/30", color=numcor, fontsize=74, fontweight="bold")
-        grade(ax, x0 + 0.15, 5.75, hits, cor=cor, size=0.46, gap=0.14, cols=6)
-    # a grade tem 5 linhas: de y=5,6 até ~3,0; ajusta o fundo
-    ax.text(0.7, 2.75, T["hv"], color="white", fontsize=19)
-    ax.text(0.7, 2.2, T["ctrl"], color="white", fontsize=19)
-    ax.text(0.7, 1.35, T["note"], color="#8FA3BF", fontsize=14, va="top", linespacing=1.4)
-    ax.text(0.7, 0.35, T["url"], color="#8FA3BF", fontsize=16, fontweight="bold")
-    with plt.rc_context({"savefig.bbox": None}):
-        fig.savefig(path(SLUG_FL, "linkedin", lang, "png"), dpi=100, facecolor=ESCURO)
-    plt.close(fig)
-
-
-def capa_flagger(lang):
-    T = {"pt": ("Flagger real contra\ndetector por feature", "Falha numa só função do app",
-                "Flagger", "meu detector", "promoveu as 30", "detectou as 30"),
-         "en": ("Real Flagger vs a\nper-feature detector", "A fault in just one app function",
-                "Flagger", "my detector", "promoted all 30", "caught all 30")}[lang]
+                    l1="Slowdown on the slow report: Flagger 30/30 · mine 28/30",
+                    l2="No fault: 0 false alarms for both (30 runs)",
+                    note="A lab, not production · per-function metric in Flagger not tested")}[lang]
     fl = D["flagger"]["scenarios"]
     fig = plt.figure(figsize=(12, 6.27), dpi=100)
     fig.patch.set_facecolor(ESCURO)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, 12); ax.set_ylim(0, 6.27); ax.axis("off")
-    ax.text(0.55, 5.55, T[0], color="white", fontsize=31, fontweight="bold", va="top", linespacing=1.1)
-    ax.text(0.55, 3.55, T[1], color="#C9D3E0", fontsize=20)
-    ax.text(0.55, 0.45, "mariomenezes.github.io", color="#8FA3BF", fontsize=14)
-    for x0, name, sub, hits, cor, numcor in ((6.75, T[2], T[4], fl["dash10"]["flagger"][0], NEUTRO, "#FF8A8D"),
-                                             (9.4, T[3], T[5], fl["dash10"]["ours"][0], FOCO, FOCO)):
-        ax.text(x0, 5.45, f"{hits}/30", color=numcor, fontsize=40, fontweight="bold")
-        ax.text(x0, 4.85, name, color="white", fontsize=15, fontweight="bold")
-        ax.text(x0, 4.5, sub, color="#C9D3E0", fontsize=12)
-        grade(ax, x0, 3.75, hits, cor=cor, size=0.31, gap=0.09, cols=6)
+    ax.text(0.5, 5.85, T["t"], color="white", fontsize=27, fontweight="bold", va="top", linespacing=1.18)
+    ax.text(0.5, 4.72, T["sub"], color="#C9D3E0", fontsize=14.5)
+    for x0, name, sub, hits, cor, numcor in ((0.5, T["fl"], T["fls"], fl["dash10"]["flagger"][0], NEUTRO, "#FF8A8D"),
+                                             (6.3, T["me_"], T["mes"], fl["dash10"]["ours"][0], FOCO, FOCO)):
+        ax.add_patch(Rectangle((x0 - 0.2, 1.45), 5.3, 3.0, facecolor="#16263D", edgecolor="none"))
+        ax.text(x0, 4.1, name, color="white", fontsize=19, fontweight="bold")
+        ax.text(x0, 3.75, sub, color="#C9D3E0", fontsize=11.5)
+        ax.text(x0, 3.4, T["cap"], color="#8FA3BF", fontsize=11)
+        ax.text(x0, 2.05, f"{hits}/30", color=numcor, fontsize=54, fontweight="bold")
+        grade(ax, x0 + 2.8, 4.0, hits, cor=cor, size=0.30, gap=0.08, cols=6)
+    ax.text(0.5, 1.0, T["l1"], color="white", fontsize=13.5)
+    ax.text(0.5, 0.62, T["l2"], color="white", fontsize=13.5)
+    ax.text(0.5, 0.2, "mariomenezes.github.io  ·  " + T["note"], color="#8FA3BF", fontsize=10.5)
     with plt.rc_context({"savefig.bbox": None}):
         fig.savefig(path(SLUG_FL, "cover", lang, "png"), dpi=100, facecolor=ESCURO)
     plt.close(fig)
@@ -748,9 +715,8 @@ def main():
         fig_ep_req(lang)
         fig_mut(lang)
     capas()
-    for lang in LANGS:  # depois de capas(): substitui a capa genérica do post do Flagger
+    for lang in LANGS:  # depois de capas(): substitui a capa genérica; esta capa horizontal serve também de imagem no LinkedIn
         capa_flagger(lang)
-        linkedin_card(lang)
     print("figuras geradas em", OUT)
 
 
