@@ -220,6 +220,77 @@ def fig_fl_tempo(lang):
     salvar(fig, path(SLUG_FL, "tempo", lang))
 
 
+def fig_fl_arquitetura(lang):
+    """Arquitetura do teste: tráfego A/B, injeção da falha e as duas leituras de métricas (Flagger e detector)."""
+    T = {"pt": dict(t="Arquitetura do teste: o mesmo tráfego, duas formas de decidir",
+                    cl="Cluster a (o cluster b é idêntico)",
+                    gen=("Gerador de carga", ["2 pods", "30% relatório lento"]),
+                    env=("Sidecar Envoy", ["metade das requisições", "com x-canary"]),
+                    pri=("app-fl-primary", ["versão atual"]),
+                    can=("app-fl (canary)", ["versão nova,", "com a falha"]),
+                    prom=("Prometheus", ["as mesmas requisições,", "lidas de dois lados"]),
+                    fla=("Flagger 1.45", ["versão inteira:", "p99 canary ÷ primary", "e taxa de sucesso"]),
+                    run=("Runner", ["liga a falha pelo", "admin do app:", "10% do dashboard,", "+0,5 s por 8 min"]),
+                    det=("Detector", ["coleta métricas", "por função (cliente)"]),
+                    o1="→ promove ou reverte", o2="→ alarme por função",
+                    a1="sem header", a2="x-canary", m1="cliente, por função", m2="destino, versão inteira",
+                    pf="port-forward"),
+         "en": dict(t="Test architecture: the same traffic, two ways to decide",
+                    cl="Cluster a (cluster b is identical)",
+                    gen=("Load generator", ["2 pods", "30% slow report"]),
+                    env=("Envoy sidecar", ["half the requests", "with x-canary"]),
+                    pri=("app-fl-primary", ["current version"]),
+                    can=("app-fl (canary)", ["new version,", "with the fault"]),
+                    prom=("Prometheus", ["the same requests,", "read from two sides"]),
+                    fla=("Flagger 1.45", ["whole version:", "canary ÷ primary p99", "and success rate"]),
+                    run=("Runner", ["turns the fault on via", "the app admin:", "10% of dashboard,", "+0.5 s for 8 min"]),
+                    det=("Detector", ["collects metrics", "per function (client)"]),
+                    o1="→ promotes or rolls back", o2="→ per-function alarm",
+                    a1="no header", a2="x-canary", m1="client, per function", m2="destination, whole version",
+                    pf="port-forward")}[lang]
+
+    def desenhar():
+        fig, ax = tela(h=4.75)
+
+        def cx(x, y, w, h, spec, cor, tam=8.8):
+            ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.06", linewidth=1.6,
+                                        edgecolor=cor, facecolor="#FFFFFF"))
+            ax.text(x + w / 2, y + h - 0.26, spec[0], ha="center", va="center", fontsize=tam, fontweight="bold", color=ESCURO)
+            for i, ln in enumerate(spec[1]):
+                ax.text(x + w / 2, y + h - 0.56 - 0.22 * i, ln, ha="center", va="center", fontsize=tam - 1.7, color=TEXTO2)
+
+        ax.add_patch(FancyBboxPatch((0.08, 0.05), 7.7, 5.2, boxstyle="round,pad=0.02,rounding_size=0.1", linewidth=1,
+                                    edgecolor="#c7d2e3", facecolor=FAIXA_REF))
+        ax.text(0.22, 5.0, T["cl"], fontsize=9.5, color=TEXTO2, fontweight="bold", va="center")
+        ax.text(0.08, 5.55, T["t"], fontsize=12.5, fontweight="bold", color=ESCURO, va="center")
+        cx(0.2, 3.15, 1.98, 1.15, T["gen"], REF)
+        cx(2.55, 3.15, 1.95, 1.15, T["env"], REF)
+        cx(5.6, 3.85, 1.95, 0.85, T["pri"], REF)
+        cx(5.6, 2.45, 1.95, 1.0, T["can"], FOCO)
+        seta(ax, (2.18, 3.72), (2.55, 3.72))
+        seta(ax, (4.5, 4.0), (5.6, 4.28), T["a1"], tam=8, off=(0, 0.1))
+        seta(ax, (4.5, 3.45), (5.6, 3.0), T["a2"], tam=8, off=(0, -0.3))
+        cx(8.2, 2.2, 1.7, 1.6, T["run"], ALARME)
+        seta(ax, (8.2, 3.0), (7.55, 3.0), "", cor=ALARME, ls="--")
+        cx(3.1, 0.65, 2.4, 1.05, T["prom"], NEUTRO)
+        seta(ax, (3.35, 3.15), (3.9, 1.7), T["m1"], ls="--", tam=7.8, off=(-0.9, 0.05))
+        seta(ax, (6.5, 2.45), (5.1, 1.7), T["m2"], ls="--", tam=7.8, off=(0.55, 0.12))
+        cx(0.3, 0.55, 2.3, 1.3, T["fla"], ALARME)
+        seta(ax, (3.1, 1.2), (2.6, 1.2))
+        ax.text(1.6, 0.28, T["o1"], fontsize=8.8, color=ESCURO, ha="center", fontweight="bold")
+        cx(8.2, 0.65, 1.7, 1.05, T["det"], FOCO)
+        seta(ax, (5.5, 1.17), (8.2, 1.17), T["pf"], ls="--", tam=7.8, off=(0, 0.06))
+        ax.text(9.05, 0.35, T["o2"], fontsize=8.8, color=ESCURO, ha="center", fontweight="bold")
+        return fig
+
+    salvar(desenhar(), path(SLUG_FL, "arquitetura", lang))
+    fig = desenhar()  # a mesma figura em PNG horizontal (1200 px de largura) para o LinkedIn
+    fig.patch.set_facecolor("white")
+    with plt.rc_context({"savefig.bbox": None}):
+        fig.savefig(path(SLUG_FL, "arquitetura", lang, "png"), dpi=146, facecolor="white")
+    plt.close(fig)
+
+
 def fig_fl_viu(lang):
     """Uma execução real de dash10: o que o detector por feature viu e o que a análise por versão viu."""
     T = {"pt": dict(t="Mesma execução, dois olhares: um vê a falha, o outro não",
@@ -705,6 +776,7 @@ def main():
         fig_fl_grade(lang)
         fig_fl_tempo(lang)
         fig_fl_viu(lang)
+        fig_fl_arquitetura(lang)
         fig_pr_linha(lang)
         fig_pr_previsto(lang)
         fig_29_poder(lang)

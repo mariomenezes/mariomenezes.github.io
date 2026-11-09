@@ -62,18 +62,10 @@ Na [avaliação anterior]({{ "/pt/2026/10/28/gray-failure-canary-istio/" | relat
 
 O Flagger cria `app-fl-primary` (a versão estável) e passa a tratar o Deployment `app-fl` como canary. Usei o modo A/B dele: requisições com o header `x-canary: insider` vão para o canary, as outras para o primary. O gerador põe o header em metade das requisições, o que reproduz o 50/50 do laboratório original.
 
-<pre class="mermaid">
-flowchart LR
-  G["gerador (50% com x-canary)"] --> S["sidecar Envoy"]
-  S -->|"sem header"| P["app-fl-primary"]
-  S -->|"x-canary"| C["app-fl (canary)"]
-  P -. "métricas do destino" .-> M["Prometheus"]
-  C -. "métricas do destino" .-> M
-  S -. "métricas do cliente, por feature" .-> M
-  M --> F["Flagger: p99 canary/primary e sucesso"]
-  M --> D["detector por feature"]
-  F --> R["promove ou reverte"]
-</pre>
+<figure class="fig">
+<img src="{{ "/assets/img/flagger-real-detector-por-feature/arquitetura-pt.svg" | relative_url }}" alt="Diagrama de arquitetura. Dentro do cluster: o gerador de carga manda requisições ao sidecar Envoy, que envia as sem header ao app-fl-primary (versão atual) e as com o header x-canary ao app-fl (canary, versão nova com a falha). O Prometheus lê as métricas dos dois lados: do cliente, por função, e do destino, da versão inteira. O Flagger lê o Prometheus e promove ou reverte a versão. Fora do cluster, o runner liga a falha pelo endpoint admin do app, e o detector lê o Prometheus por port-forward e dá o alarme por função." loading="lazy">
+<figcaption>As mesmas requisições, lidas de dois lados do Prometheus. O Flagger usa as métricas do destino, da versão inteira, e decide promover ou reverter. O meu detector usa as do cliente, com o rótulo de função, e só dá o alarme. O runner e o detector rodam fora do cluster. O cluster b é idêntico.</figcaption>
+</figure>
 
 A análise do Flagger foi congelada antes dos dados:
 
