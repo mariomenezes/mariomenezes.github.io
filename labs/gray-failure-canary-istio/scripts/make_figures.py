@@ -220,6 +220,136 @@ def fig_fl_tempo(lang):
     salvar(fig, path(SLUG_FL, "tempo", lang))
 
 
+def fig_fl_viu(lang):
+    """Uma execução real de dash10: o que o detector por feature viu e o que a análise por versão viu."""
+    T = {"pt": dict(t="Mesma execução, dois olhares: um vê a falha, o outro não",
+                    s="Uma execução real do dashboard 10% (cluster a). Cada ponto é um minuto",
+                    top="Meu detector: % do dashboard acima de 250 ms", v1="v1 (atual)", v2="v2 (canary)",
+                    det="alarme no 3º minuto", bot="Versão inteira, a conta da análise do Flagger: p99 canary ÷ p99 primary", lim="limite 1,15",
+                    prom="nunca passa do limite; o Flagger promoveu a versão", x="minutos desde o início da falha",
+                    falha="falha ligada (10% do dashboard +0,5 s)"),
+         "en": dict(t="Same run, two views: one sees the fault, the other does not",
+                    s="One real dashboard 10% run (cluster a). Each dot is one minute",
+                    top="My detector: % of dashboard above 250 ms", v1="v1 (current)", v2="v2 (canary)",
+                    det="alarm in minute 3", bot="Whole version, the math of Flagger's analysis: canary p99 ÷ primary p99", lim="1.15 limit",
+                    prom="never crosses the limit; Flagger promoted the version", x="minutes since the fault started",
+                    falha="fault on (10% of dashboard +0.5 s)")}[lang]
+    S = D["showcase"]
+    rows = S["rows"]
+    xs = [r["t"] - 0.5 for r in rows]  # rótulo m cobre [m-1, m): ponto no meio da janela
+    fig, (a1, a2) = plt.subplots(2, 1, figsize=(LARGURA, 5.6), sharex=True, gridspec_kw={"hspace": 0.35})
+    for ax in (a1, a2):
+        ax.axvspan(0, S["fault_min"], color=FAIXA, zorder=0)
+    a1.plot(xs, [100 * r["frac_v1"] for r in rows], color=REF, marker="o", lw=2, ms=5, label=T["v1"])
+    a1.plot(xs, [100 * r["frac_v2"] for r in rows], color=FOCO, marker="o", lw=2.4, ms=6, label=T["v2"])
+    dx = S["ours_label_min"] - 0.5
+    dy = 100 * next(r["frac_v2"] for r in rows if r["t"] == S["ours_label_min"])
+    a1.annotate(T["det"], xy=(dx, dy), xytext=(dx - 1.2, dy + 8), fontsize=10.5, color=ESCURO, fontweight="bold",
+                arrowprops=dict(arrowstyle="->", color=ESCURO))
+    a1.scatter([dx], [dy], s=140, facecolor="none", edgecolor=ALARME, linewidth=2, zorder=4)
+    a1.set_ylim(-1, 20)
+    a1.set_ylabel("%")
+    a1.text(0.0, 1.04, T["top"], transform=a1.transAxes, fontsize=11.5, fontweight="bold", color=ESCURO)
+    a1.text(8.7, 1.2, T["v1"], fontsize=10.5, color=REF, fontweight="bold")
+    a1.text(5.0, 16.3, T["v2"], fontsize=10.5, color=FOCO, fontweight="bold")
+    a1.text(0.15, 18.3, T["falha"], fontsize=9.5, color=TEXTO2)
+    a2.plot(xs, [r["p99_ratio"] for r in rows], color=NEUTRO, marker="o", lw=2, ms=5)
+    a2.axhline(1.15, color=ALARME, ls="--", lw=1.5)
+    a2.text(8.6, 1.165, T["lim"], fontsize=10, color=ALARME)
+    a2.text(1.0, 0.86, T["prom"], fontsize=10.5, color=ESCURO, fontweight="bold")
+    a2.set_ylim(0.8, 1.25)
+    a2.text(0.0, 1.04, T["bot"], transform=a2.transAxes, fontsize=11.5, fontweight="bold", color=ESCURO)
+    a2.set_xlabel(T["x"])
+    a2.set_xlim(-3.7, 11.2)
+    fig.text(0.125, 1.0, T["t"], fontsize=14, fontweight="bold", color=ESCURO, va="bottom")
+    fig.text(0.125, 0.965, T["s"], fontsize=11, color=TEXTO2, va="bottom")
+    if lang == "pt":
+        virgula(a1, a2, y=True)
+    salvar(fig, path(SLUG_FL, "o-que-cada-um-viu", lang))
+
+
+def grade(ax, x0, y0, hits, n=30, cols=6, size=0.36, gap=0.1, cor=REF, vazio="#5B6B82"):
+    """30 quadrados (5 linhas × 6 colunas): cheios = detectou."""
+    for i in range(n):
+        r, c = divmod(i, cols)
+        x, y = x0 + c * (size + gap), y0 - r * (size + gap)
+        hit = i < hits
+        ax.add_patch(Rectangle((x, y), size, size, facecolor=cor if hit else "none",
+                               edgecolor=cor if hit else vazio, linewidth=1.6))
+
+
+def linkedin_card(lang):
+    """Cartão vertical 1080x1350 para o feed do LinkedIn (fundo escuro, números grandes, as 30 execuções)."""
+    T = {"pt": dict(tag="LABORATÓRIO · KUBERNETES · ISTIO",
+                    t="Uma falha em uma só função\ndo app passou pelo Flagger\nem 30 de 30 versões",
+                    sub="10% das requisições da tela rápida com +0,5 s, só na versão nova",
+                    fl="Flagger", fls="métricas da versão inteira", me_="Meu detector", mes="métricas por função",
+                    cap="detectou a falha em",
+                    hv="Lentidão no relatório lento: Flagger 30/30 · meu 28/30",
+                    ctrl="Sem falha: 0 alarmes falsos nos dois (30 execuções)",
+                    note="Flagger 1.45, análise por versão: p99 canary ÷ primary ≤ 1,15.\nMétrica por função no Flagger não testada. Laboratório, não produção.",
+                    url="mariomenezes.github.io"),
+         "en": dict(tag="LAB · KUBERNETES · ISTIO",
+                    t="A fault in just one function\nof the app got past Flagger\nin 30 of 30 versions",
+                    sub="10% of the fast screen's requests with +0.5 s, only in the new version",
+                    fl="Flagger", fls="whole-version metrics", me_="My detector", mes="per-function metrics",
+                    cap="detected the fault in",
+                    hv="Slowdown on the slow report: Flagger 30/30 · mine 28/30",
+                    ctrl="No fault: 0 false alarms for both (30 runs)",
+                    note="Flagger 1.45, per-version analysis: canary ÷ primary p99 ≤ 1.15.\nPer-function metric in Flagger not tested. A lab, not production.",
+                    url="mariomenezes.github.io")}[lang]
+    fl = D["flagger"]["scenarios"]
+    fig = plt.figure(figsize=(10.8, 13.5), dpi=100)
+    fig.patch.set_facecolor(ESCURO)
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, 10.8); ax.set_ylim(0, 13.5); ax.axis("off")
+    ax.text(0.7, 12.75, T["tag"], color="#8FA3BF", fontsize=17, fontweight="bold")
+    ax.text(0.7, 12.3, T["t"], color="white", fontsize=40, fontweight="bold", va="top", linespacing=1.15)
+    ax.text(0.7, 9.65, T["sub"], color="#C9D3E0", fontsize=18.5)
+    # dois blocos
+    for k, (x0, name, sub, hits, cor, numcor) in enumerate((
+            (0.7, T["fl"], T["fls"], fl["dash10"]["flagger"][0], NEUTRO, "#FF8A8D"),
+            (5.75, T["me_"], T["mes"], fl["dash10"]["ours"][0], FOCO, FOCO))):
+        ax.add_patch(Rectangle((x0 - 0.15, 3.15), 4.65, 6.0, facecolor="#16263D", edgecolor="none"))
+        ax.text(x0 + 0.1, 8.6, name, color="white", fontsize=26, fontweight="bold")
+        ax.text(x0 + 0.1, 8.12, sub, color="#C9D3E0", fontsize=16)
+        ax.text(x0 + 0.1, 7.55, T["cap"], color="#8FA3BF", fontsize=15)
+        ax.text(x0 + 0.1, 6.5, f"{hits}/30", color=numcor, fontsize=74, fontweight="bold")
+        grade(ax, x0 + 0.15, 5.75, hits, cor=cor, size=0.46, gap=0.14, cols=6)
+    # a grade tem 5 linhas: de y=5,6 até ~3,0; ajusta o fundo
+    ax.text(0.7, 2.75, T["hv"], color="white", fontsize=19)
+    ax.text(0.7, 2.2, T["ctrl"], color="white", fontsize=19)
+    ax.text(0.7, 1.35, T["note"], color="#8FA3BF", fontsize=14, va="top", linespacing=1.4)
+    ax.text(0.7, 0.35, T["url"], color="#8FA3BF", fontsize=16, fontweight="bold")
+    with plt.rc_context({"savefig.bbox": None}):
+        fig.savefig(path(SLUG_FL, "linkedin", lang, "png"), dpi=100, facecolor=ESCURO)
+    plt.close(fig)
+
+
+def capa_flagger(lang):
+    T = {"pt": ("Flagger real contra\ndetector por feature", "Falha numa só função do app",
+                "Flagger", "meu detector", "promoveu as 30", "detectou as 30"),
+         "en": ("Real Flagger vs a\nper-feature detector", "A fault in just one app function",
+                "Flagger", "my detector", "promoted all 30", "caught all 30")}[lang]
+    fl = D["flagger"]["scenarios"]
+    fig = plt.figure(figsize=(12, 6.27), dpi=100)
+    fig.patch.set_facecolor(ESCURO)
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, 12); ax.set_ylim(0, 6.27); ax.axis("off")
+    ax.text(0.55, 5.55, T[0], color="white", fontsize=31, fontweight="bold", va="top", linespacing=1.1)
+    ax.text(0.55, 3.55, T[1], color="#C9D3E0", fontsize=20)
+    ax.text(0.55, 0.45, "mariomenezes.github.io", color="#8FA3BF", fontsize=14)
+    for x0, name, sub, hits, cor, numcor in ((6.75, T[2], T[4], fl["dash10"]["flagger"][0], NEUTRO, "#FF8A8D"),
+                                             (9.4, T[3], T[5], fl["dash10"]["ours"][0], FOCO, FOCO)):
+        ax.text(x0, 5.45, f"{hits}/30", color=numcor, fontsize=40, fontweight="bold")
+        ax.text(x0, 4.85, name, color="white", fontsize=15, fontweight="bold")
+        ax.text(x0, 4.5, sub, color="#C9D3E0", fontsize=12)
+        grade(ax, x0, 3.75, hits, cor=cor, size=0.31, gap=0.09, cols=6)
+    with plt.rc_context({"savefig.bbox": None}):
+        fig.savefig(path(SLUG_FL, "cover", lang, "png"), dpi=100, facecolor=ESCURO)
+    plt.close(fig)
+
+
 # ------------------------------------------------------------------ pré-registro
 
 SLUG_PR = "pre-registro-experimento-kubernetes"
@@ -607,6 +737,7 @@ def main():
         fig_fl_ambiente(lang)
         fig_fl_grade(lang)
         fig_fl_tempo(lang)
+        fig_fl_viu(lang)
         fig_pr_linha(lang)
         fig_pr_previsto(lang)
         fig_29_poder(lang)
@@ -617,6 +748,9 @@ def main():
         fig_ep_req(lang)
         fig_mut(lang)
     capas()
+    for lang in LANGS:  # depois de capas(): substitui a capa genérica do post do Flagger
+        capa_flagger(lang)
+        linkedin_card(lang)
     print("figuras geradas em", OUT)
 
 

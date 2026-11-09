@@ -106,6 +106,11 @@ Contei acerto quando o método age dentro da falha: o Flagger reverte, ou o dete
 
 No `dashboard`, o Flagger passou pelas 16 iterações de análise sem nenhuma checagem falha em 30 de 30 revisões, e promoveu a versão com a falha ativa. Era o esperado: a métrica dele é da versão inteira, e 7% do tráfego total ficando 0,5 s mais lento não muda nem a taxa de sucesso nem o p99, que é dominado pelos 3 s de `heavy-reports`.
 
+<figure class="fig">
+<img src="{{ "/assets/img/flagger-real-detector-por-feature/o-que-cada-um-viu-pt.svg" | relative_url }}" alt="Uma execução real, minuto a minuto. Em cima, a porcentagem de requisições do dashboard acima de 250 ms: a v1 fica em 0% o tempo todo; a v2 sobe para 6 a 15% durante os 8 minutos de falha, e o alarme sai no 3º minuto. Embaixo, a razão entre o p99 do canary e o do primary, a mesma conta da análise do Flagger, calculada dos dados do cliente: oscila entre 0,95 e 1,07, nunca passa do limite de 1,15, e a versão é promovida." loading="lazy">
+<figcaption>Uma execução real, minuto a minuto. O sinal do detector por feature (em cima) sai do zero assim que a falha liga; a razão de p99 da versão inteira (embaixo) fica perto de 1 e nunca chega ao limite. O painel de baixo é a mesma conta que a análise do Flagger faz, calculada por mim com os dados coletados do lado do cliente: o Flagger registra só o resultado, não o valor de cada checagem. O resultado dele nesta execução: 0 checagens falhas, versão promovida.</figcaption>
+</figure>
+
 O detector por feature detectou as 30, em 3 minutos na mediana. A regra usada no `dashboard` (regra D) compara a fração de requisições acima de 250 ms na v2 com a da v1 no mesmo minuto, com um teste de duas proporções. Ela foi escolhida antes dos dados, por simulação, porque a regra do p95 relativo é cega aqui: o piso dela, de 1 s, fica acima da falha.
 
 | Cenário | Flagger real | Detector por feature | Por versão (emulado) | Estilo Flagger (emulado) |

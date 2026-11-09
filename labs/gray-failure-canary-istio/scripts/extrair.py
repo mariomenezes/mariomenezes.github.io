@@ -150,11 +150,35 @@ def gate_section():
             "final": p2.get("final_selection")}
 
 
+def showcase_section(tmp, cluster="a", rep=1):
+    """Uma execução de dash10 do Flagger real, minuto a minuto: o sinal do detector por feature
+    (fração do dashboard acima de 250 ms, v1 e v2) e a razão de p99 agregada canary/primary
+    calculada dos mesmos dados (a emulação da análise do Flagger, que concordou 59/60 com ele)."""
+    d = os.path.join(tmp, "flagger-v6")
+    r = next(x for x in runs(d, cluster) if x["scenario"] == "dash10" and x["rep"] == rep and x["status"] == "ok")
+    s = load_samples(os.path.join(d, cluster, r["file"])).samples
+    aggw = me._agg_windows(s)
+    rows = []
+    for x, aw in zip(s, aggw):
+        t = (_epoch(x["ts"]) - r["t_on"]) / 60
+        w = {(y["version"], y["feature"]): y for y in x["windows"]}
+        frac = {}
+        for v in ("v1", "v2"):
+            b = w[(v, "dashboard")]["buckets"]
+            frac[v] = (b["+Inf"] - b["250"]) / b["+Inf"] if b["+Inf"] else None
+        rows.append({"t": t, "frac_v1": frac["v1"], "frac_v2": frac["v2"],
+                     "p99_ratio": (aw.p95_ms / aw.baseline_p95_ms) if aw and aw.baseline_p95_ms else None})
+    det = me.detect(s, r["t_on"], r["t_off"], "feature:D", feature="dashboard", limits=LIM)
+    return {"cluster": cluster, "rep": rep, "rows": rows, "fault_min": (r["t_off"] - r["t_on"]) / 60,
+            "ours_label_min": (det["first_label"] - r["t_on"]) / 60 if det["first_label"] else None,
+            "flagger_phase": r["flagger_phase"], "failed_checks_max": r.get("failed_checks_max")}
+
+
 def main():
     with tempfile.TemporaryDirectory() as tmp:
         untar(tmp)
         out = {"v5": v5_section(tmp), "flagger": flagger_section(tmp), "path": path_section(tmp),
-               "power": power_section(), "gate": gate_section()}
+               "power": power_section(), "gate": gate_section(), "showcase": showcase_section(tmp)}
     for name in ("linha-do-tempo.json", "mutacao.json", "caminho-medicoes.json"):
         p = os.path.join(DATA, name)
         if os.path.exists(p):

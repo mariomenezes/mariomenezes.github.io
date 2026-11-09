@@ -106,6 +106,11 @@ A run counts as a hit when the method acts during the fault: Flagger rolls back,
 
 On `dashboard`, Flagger went through the 16 analysis iterations with no failed check in 30 of 30 revisions, and promoted the version with the fault active. That was expected: its metric covers the whole version, and 7% of total traffic getting 0.5 s slower changes neither the success rate nor the p99, which is dominated by the 3 s of `heavy-reports`.
 
+<figure class="fig">
+<img src="{{ "/assets/img/flagger-real-detector-por-feature/o-que-cada-um-viu-en.svg" | relative_url }}" alt="One real run, minute by minute. Top: the percentage of dashboard requests above 250 ms: v1 stays at 0% the whole time; v2 rises to 6 to 15% during the 8 fault minutes, and the alarm fires in minute 3. Bottom: the ratio between canary p99 and primary p99, the same math as Flagger's analysis, computed from client-side data: it moves between 0.95 and 1.07, never crosses the 1.15 limit, and the version is promoted." loading="lazy">
+<figcaption>One real run, minute by minute. The per-feature detector's signal (top) leaves zero as soon as the fault turns on; the whole-version p99 ratio (bottom) stays near 1 and never reaches the limit. The bottom panel is the same math Flagger's analysis does, computed by me from the client-side data: Flagger records only the outcome, not the value of each check. Its outcome in this run: 0 failed checks, version promoted.</figcaption>
+</figure>
+
 The per-feature detector caught all 30, in a median of 3 minutes. The rule used on `dashboard` (rule D) compares the fraction of requests above 250 ms in v2 with that of v1 in the same minute, with a two-proportion test. It was chosen before the data, by simulation, because the relative p95 rule is blind here: its 1 s floor sits above the fault.
 
 | Scenario | Real Flagger | Per-feature detector | Per version (emulated) | Flagger-style (emulated) |
