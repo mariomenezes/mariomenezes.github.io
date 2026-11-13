@@ -2,8 +2,8 @@
 title: "LAB-00: what fits in a DevOps homelab"
 lang: en
 permalink: /en/2026/11/13/homelab-apresentacao/
-description: "22 services on 3 machines, two of them Celerons with under 4 GB of RAM, plus 32 GB of VRAM for local models. The map of the lab behind this series."
-resumo: "The map of my homelab: 22 services on 3 machines, two of them Celerons with under 4 GB of RAM, plus 32 GB of VRAM for local models. Financially it makes no sense; I do it anyway."
+description: "22 services on 3 machines, two of them Celerons with 4 GB of RAM, plus 32 GB of VRAM for local models. The map of the lab behind this series."
+resumo: "The map of my homelab: 22 services on 3 machines, two of them Celerons with 4 GB of RAM, plus 32 GB of VRAM for local models. Financially it makes no sense; I do it anyway."
 image: /assets/img/homelab-apresentacao/cover-en.png
 ---
 
@@ -23,14 +23,14 @@ This post is the map. The next 11 show what I measured on it, including what wen
 <div class="tiles">
 <div class="tile"><div class="tile-value">22</div><div class="tile-label">running services (20 LXC + 2 VMs)</div></div>
 <div class="tile"><div class="tile-value">3</div><div class="tile-label">Proxmox nodes, plus 1 guest workstation</div></div>
-<div class="tile"><div class="tile-value">70 GB</div><div class="tile-label">of RAM across the 3 nodes</div></div>
+<div class="tile"><div class="tile-value">72 GB</div><div class="tile-label">of installed RAM across the 3 nodes</div></div>
 <div class="tile"><div class="tile-value">32 GB</div><div class="tile-label">of VRAM in the rack (2 × 16 GB)</div></div>
 </div>
 
 ## Summary
 
-- The three nodes add up to 16 threads and about 70 GB of RAM. Two of them are Celeron N4020 machines with 3.7 GB: they run 16 light services and nothing else.
-- All the heavy load sits on one node (Ryzen 5 5600G, 62.7 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
+- The three nodes add up to 16 threads and 72 GB of installed RAM. Two of them are Celeron N4020 machines with 4 GB each: they run 16 light services and nothing else.
+- All the heavy load sits on one node (Ryzen 5 5600G, 64 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
 - The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on.
 - The network is gigabit. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
 - The two Kubernetes "clusters" are single-node VMs on the same host. The Istio multicluster setup is real, the scale is not.
@@ -41,11 +41,13 @@ This post is the map. The next 11 show what I measured on it, including what wen
 | Item | Node A | Node B | Node C |
 |---|---|---|---|
 | CPU | Celeron N4020, 2 cores | Celeron N4020, 2 cores | Ryzen 5 5600G, 6 cores / 12 threads |
-| RAM | 3.7 GB | 3.7 GB | 62.7 GB |
+| Installed RAM | 4 GB (1 × DDR4) | 4 GB (1 × DDR4) | 64 GB (4 × 16 GB DDR4-2400) |
 | Disk | 120 GB SSD | 480 GB SSD | 2 × 1 TB NVMe + 240 GB SSD |
 | Proxmox VE | 8.4.21 (kernel 6.8.12) | 8.4.21 (kernel 6.8.12) | 8.4.19 (kernel 6.14.11) |
 | Running | 9 LXC | 7 LXC | 4 LXC + 2 VMs |
 | GPU | none | none | 2 × Radeon RX 9060 XT, 16 GB each |
+
+The operating system sees less than the installed RAM: 3.65 GiB on nodes A and B and 62.7 GiB on Node C. The difference is memory reserved by the firmware and the kernel; on Node C, `dmesg` reports about 131 MiB from the firmware and 1.30 GiB reserved by the kernel.
 
 Model software: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 and the `amdgpu` driver that ships with the kernel. Extra storage over NFS from a NAS. Network: gigabit between all nodes.
 
