@@ -32,7 +32,9 @@ Este post é o mapa. Os próximos 11 mostram o que medi nele, incluindo o que de
 - Os três nós somam 16 threads e 72 GB de RAM instalada. Dois deles são Celeron N4020 com 4 GB cada: rodam 16 serviços leves e nada mais.
 - Toda a carga pesada está em um nó (Ryzen 5 5600G, 64 GB): duas GPUs para modelos locais, o roteador semântico, o monitoramento e as duas VMs dos clusters Kubernetes. **Esse nó nem sempre fica ligado.** Os dois menores ficam ligados 24 horas por dia.
 - A GPU mais rápida (RX 7900 XTX, 24 GB) **não faz parte do laboratório**: é a minha workstation. Ela entra no roteador quando está ligada.
-- A rede é gigabit. Existe um switch de 10 Gb (Grandstream GWN7832, 12 portas SFP+) parado, sem uso: os nós têm placas de 1 Gb, então nada aqui aproveitaria o 10G.
+- A rede é gigabit, com um roteador MikroTik RB3011 e VLANs que separam cinco redes: dispositivos móveis, servidores, administração, segurança e IoT. Existe um switch de 10 Gb (Grandstream GWN7832, 12 portas SFP+) parado, sem uso: os nós têm placas de 1 Gb, então nada aqui aproveitaria o 10G.
+- O NAS é um Ubiquiti UNVR, um gravador de vídeo de rede de 4 baias, convertido em NAS: Linux com RAID 1 em dois pools (dois HDs e dois SSDs).
+- Um MacBook Air com a tela quebrada e sem saída de vídeo pelas portas USB-C faz dois papéis: roda o Jellyfin (servidor de mídia) e é a minha workstation remota. É nele que eu centralizo o trabalho, acesso de fora, conecto o VS Code e uso um assistente de IA com várias skills e MCPs, com contas somente leitura no Kubernetes para a gerência. Ele e o NAS não entram na contagem de 22 serviços, que são guests do Proxmox.
 - Os dois "clusters" Kubernetes são VMs de nó único no mesmo host. O multicluster do Istio é real, a escala não.
 - O consumo de energia já está medido por tomada inteligente: em 13/11, às 20h, o rack inteiro gastava 172 W, dos quais 75 W eram do Nó C. Os números mensais e o custo saem no post 10.
 
@@ -48,6 +50,17 @@ Este post é o mapa. Os próximos 11 mostram o que medi nele, incluindo o que de
 | GPU | nenhuma | nenhuma | 2 × Radeon RX 9060 XT, 16 GB cada |
 
 O sistema enxerga menos do que a RAM instalada: 3,65 GiB nos nós A e B e 62,7 GiB no Nó C. A diferença é memória reservada pelo firmware e pelo kernel; no Nó C, o `dmesg` informa cerca de 131 MiB do firmware e 1,30 GiB reservados pelo kernel.
+
+### Rede e equipamentos de apoio
+
+| Equipamento | Papel |
+|---|---|
+| MikroTik RB3011UiAS-RM | roteador e VLANs |
+| Grandstream GWN7802P | switch gerenciável |
+| Grandstream GWN7832 | switch L3 de agregação, 12 portas SFP+ de 10 Gb, parado |
+| Ubiquiti UNVR (convertido) | NAS de 4 baias: RAID 1 de 2 HDs de 3 TB e RAID 1 de 2 SSDs de 960 GB |
+| MacBook Air (Apple M1, 8 GB) | servidor de mídia (Jellyfin) e workstation remota (VS Code, assistente de IA com MCPs, contas somente leitura no Kubernetes); tela quebrada e sem vídeo pelas portas USB-C |
+| Workstation pessoal (desktop) | RX 7900 XTX de 24 GB; fora do laboratório |
 
 Software dos modelos: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 e driver `amdgpu` do próprio kernel. Armazenamento extra por NFS, de um NAS. Rede: gigabit entre todos os nós.
 
@@ -96,6 +109,7 @@ Regras da série: todo número tem script e dado bruto; resultado negativo entra
 - A contagem de 22 serviços considera guests ligados em 13/11/2026, com o Nó C ligado. Os 16 serviços dos nós A e B ficam ligados 24 horas por dia. Os 6 do Nó C só existem quando ele está ligado, e ele nem sempre está: pelo consumo na tomada, em outubro ele ficou ligado o equivalente a cerca de um terço do mês (estimativa, a 75 W). Outros guests estão parados e ficam fora.
 - Os números de RAM e disco são dos hospedeiros, não dos guests.
 - O cluster "b" não foi inspecionado nesta data; as versões acima são do cluster "a".
+- Não testei o isolamento entre as VLANs: descrevo a separação, não a verifiquei com testes.
 - Não medi temperatura nem disponibilidade ao longo do tempo. O consumo de energia foi medido só em tomada inteligente, sem carga de inferência.
 
 ## Referências

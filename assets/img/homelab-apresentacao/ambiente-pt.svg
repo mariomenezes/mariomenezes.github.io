@@ -8,7 +8,7 @@
 <rect x="20" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
 <text x="40" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Nó A</text>
 <text x="40" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
-<text x="40" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 núcleos · 3,7 GB RAM</text>
+<text x="40" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 núcleos · 4 GB RAM</text>
 <text x="40" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">SSD 120 GB</text>
 <text x="40" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">9 serviços (LXC)</text>
 <text x="40" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">proxy, DNS, senhas,</text>
@@ -16,7 +16,7 @@
 <rect x="310" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
 <text x="330" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Nó B</text>
 <text x="330" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
-<text x="330" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 núcleos · 3,7 GB RAM</text>
+<text x="330" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 núcleos · 4 GB RAM</text>
 <text x="330" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">SSD 480 GB</text>
 <text x="330" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">7 serviços (LXC)</text>
 <text x="330" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">fotos, nuvem,</text>
@@ -24,15 +24,17 @@
 <rect x="600" y="170" width="380" height="330" rx="14" fill="none" stroke="#DD8452" stroke-width="3"/>
 <text x="620" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#DD8452">Nó C</text>
 <text x="620" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Ryzen 5 5600G · 6 núcleos</text>
-<text x="620" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">62,7 GB RAM · 2 NVMe 1 TB + SSD</text>
+<text x="620" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">64 GB RAM · 2 NVMe 1 TB + SSD</text>
 <text x="620" y="308" font-family="Inter, sans-serif" font-size="19" fill="#DD8452">2× RX 9060 XT · 32 GB VRAM</text>
 <text x="620" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">LLM local + roteador semântico</text>
 <text x="620" y="372" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">2 VMs k0s (clusters a e b)</text>
 <text x="620" y="404" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">Prometheus + Grafana</text>
 <rect x="20" y="540" width="960" height="56" rx="10" fill="none" stroke="#4C72B0" stroke-width="3"/>
-<text x="40" y="576" font-family="JetBrains Mono, monospace" font-size="22" fill="#C9D3E0">Rede gigabit · switch 10 GbE parado</text>
-<rect x="760" y="548" width="200" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
-<text x="782" y="575" font-family="JetBrains Mono, monospace" font-size="20" fill="#8C8C8C">NAS (NFS)</text>
+<text x="40" y="575" font-family="JetBrains Mono, monospace" font-size="19" fill="#C9D3E0">Gigabit · 5 VLANs · 10 GbE parado</text>
+<rect x="495" y="548" width="150" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
+<text x="510" y="574" font-family="JetBrains Mono, monospace" font-size="18" fill="#8C8C8C">NAS UNVR</text>
+<rect x="660" y="548" width="305" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
+<text x="676" y="574" font-family="JetBrains Mono, monospace" font-size="18" fill="#8C8C8C">Mac · Jellyfin · remoto</text>
 <line x1="155" y1="440" x2="155" y2="540" stroke="#4C72B0" stroke-width="3"/>
 <line x1="445" y1="440" x2="445" y2="540" stroke="#4C72B0" stroke-width="3"/>
 <line x1="790" y1="500" x2="790" y2="540" stroke="#4C72B0" stroke-width="3"/>

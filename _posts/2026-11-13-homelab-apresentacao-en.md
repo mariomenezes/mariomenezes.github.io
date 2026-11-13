@@ -32,7 +32,9 @@ This post is the map. The next 11 show what I measured on it, including what wen
 - The three nodes add up to 16 threads and 72 GB of installed RAM. Two of them are Celeron N4020 machines with 4 GB each: they run 16 light services and nothing else.
 - All the heavy load sits on one node (Ryzen 5 5600G, 64 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
 - The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on.
-- The network is gigabit. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
+- The network is gigabit, with a MikroTik RB3011 router and VLANs that split five networks: mobile devices, servers, administration, security and IoT. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
+- The NAS is a Ubiquiti UNVR, a 4-bay network video recorder, converted into a NAS: Linux with RAID 1 on two pools (two HDDs and two SSDs).
+- A MacBook Air with a broken screen and no video output over its USB-C ports plays two roles: it runs Jellyfin (media server) and it is my remote workstation. It is where I centralize my work, reach in from outside, connect VS Code and use an AI assistant with many skills and MCPs, with read-only Kubernetes accounts for management. It and the NAS are not part of the 22-service count, which are Proxmox guests.
 - The two Kubernetes "clusters" are single-node VMs on the same host. The Istio multicluster setup is real, the scale is not.
 - Power draw is now measured with a smart plug: on 2026-11-13 at 8 pm the whole rack drew 172 W, of which 75 W was Node C. Monthly figures and cost come in post 10.
 
@@ -48,6 +50,17 @@ This post is the map. The next 11 show what I measured on it, including what wen
 | GPU | none | none | 2 × Radeon RX 9060 XT, 16 GB each |
 
 The operating system sees less than the installed RAM: 3.65 GiB on nodes A and B and 62.7 GiB on Node C. The difference is memory reserved by the firmware and the kernel; on Node C, `dmesg` reports about 131 MiB from the firmware and 1.30 GiB reserved by the kernel.
+
+### Network and supporting equipment
+
+| Equipment | Role |
+|---|---|
+| MikroTik RB3011UiAS-RM | router and VLANs |
+| Grandstream GWN7802P | managed switch |
+| Grandstream GWN7832 | L3 aggregation switch, 12 × 10 Gb SFP+ ports, idle |
+| Ubiquiti UNVR (converted) | 4-bay NAS: RAID 1 of 2 × 3 TB HDDs and RAID 1 of 2 × 960 GB SSDs |
+| MacBook Air (Apple M1, 8 GB) | media server (Jellyfin) and remote workstation (VS Code, AI assistant with MCPs, read-only Kubernetes accounts); broken screen, no video over USB-C |
+| Personal workstation (desktop) | 24 GB RX 7900 XTX; outside the lab |
 
 Model software: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 and the `amdgpu` driver that ships with the kernel. Extra storage over NFS from a NAS. Network: gigabit between all nodes.
 
@@ -96,6 +109,7 @@ Series rules: every number has a script and raw data; negative results go in the
 - The count of 22 services is guests running on 2026-11-13, with Node C on. The 16 services on nodes A and B run 24 hours a day. The 6 on Node C only exist while it is on, and it is not always on: from plug consumption, in October it was on the equivalent of about a third of the month (estimate, at 75 W). Other guests are stopped and left out.
 - RAM and disk figures are for the hosts, not the guests.
 - Cluster "b" was not inspected on this date; the versions above are from cluster "a".
+- I did not test isolation between the VLANs: I describe the separation, I did not verify it with tests.
 - I did not measure temperature or availability over time. Power was measured only with a smart plug, with no inference load.
 
 ## References
