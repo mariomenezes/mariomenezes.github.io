@@ -30,11 +30,11 @@ This post is the map. The next 11 show what I measured on it, including what wen
 ## Summary
 
 - The three nodes add up to 16 threads and about 70 GB of RAM. Two of them are Celeron N4020 machines with 3.7 GB: they run 16 light services and nothing else.
-- All the heavy load sits on one node (Ryzen 5 5600G, 62.7 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs.
+- All the heavy load sits on one node (Ryzen 5 5600G, 62.7 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
 - The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on.
 - The network is gigabit. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
 - The two Kubernetes "clusters" are single-node VMs on the same host. The Istio multicluster setup is real, the scale is not.
-- What I have **not** measured yet: the power draw of the whole thing. That is post 10.
+- Power draw is now measured with a smart plug: on 2026-11-13 at 8 pm the whole rack drew 172 W, of which 75 W was Node C. Monthly figures and cost come in post 10.
 
 ## Environment
 
@@ -91,10 +91,10 @@ Series rules: every number has a script and raw data; negative results go in the
 
 ## Limits
 
-- The count of 22 services is guests running on 2026-11-13. Others are stopped and left out.
+- The count of 22 services is guests running on 2026-11-13, with Node C on. The 16 services on nodes A and B run 24 hours a day. The 6 on Node C only exist while it is on, and it is not always on: from plug consumption, in October it was on the equivalent of about a third of the month (estimate, at 75 W). Other guests are stopped and left out.
 - RAM and disk figures are for the hosts, not the guests.
 - Cluster "b" was not inspected on this date; the versions above are from cluster "a".
-- I did not measure power draw, temperature or availability over time.
+- I did not measure temperature or availability over time. Power was measured only with a smart plug, with no inference load.
 
 ## References
 

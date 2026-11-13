@@ -30,11 +30,11 @@ Este post é o mapa. Os próximos 11 mostram o que medi nele, incluindo o que de
 ## Resumo
 
 - Os três nós somam 16 threads e cerca de 70 GB de RAM. Dois deles são Celeron N4020 com 3,7 GB: rodam 16 serviços leves e nada mais.
-- Toda a carga pesada está em um nó (Ryzen 5 5600G, 62,7 GB): duas GPUs para modelos locais, o roteador semântico, o monitoramento e as duas VMs dos clusters Kubernetes.
+- Toda a carga pesada está em um nó (Ryzen 5 5600G, 62,7 GB): duas GPUs para modelos locais, o roteador semântico, o monitoramento e as duas VMs dos clusters Kubernetes. **Esse nó nem sempre fica ligado.** Os dois menores ficam ligados 24 horas por dia.
 - A GPU mais rápida (RX 7900 XTX, 24 GB) **não faz parte do laboratório**: é a minha workstation. Ela entra no roteador quando está ligada.
 - A rede é gigabit. Existe um switch de 10 Gb (Grandstream GWN7832, 12 portas SFP+) parado, sem uso: os nós têm placas de 1 Gb, então nada aqui aproveitaria o 10G.
 - Os dois "clusters" Kubernetes são VMs de nó único no mesmo host. O multicluster do Istio é real, a escala não.
-- O que **não** medi ainda: o consumo de energia do conjunto. É o post 10.
+- O consumo de energia já está medido por tomada inteligente: em 13/11, às 20h, o rack inteiro gastava 172 W, dos quais 75 W eram do Nó C. Os números mensais e o custo saem no post 10.
 
 ## Ambiente
 
@@ -91,10 +91,10 @@ Regras da série: todo número tem script e dado bruto; resultado negativo entra
 
 ## Limites
 
-- A contagem de 22 serviços considera guests ligados em 13/11/2026. Outros estão parados e ficam fora.
+- A contagem de 22 serviços considera guests ligados em 13/11/2026, com o Nó C ligado. Os 16 serviços dos nós A e B ficam ligados 24 horas por dia. Os 6 do Nó C só existem quando ele está ligado, e ele nem sempre está: pelo consumo na tomada, em outubro ele ficou ligado o equivalente a cerca de um terço do mês (estimativa, a 75 W). Outros guests estão parados e ficam fora.
 - Os números de RAM e disco são dos hospedeiros, não dos guests.
 - O cluster "b" não foi inspecionado nesta data; as versões acima são do cluster "a".
-- Não medi consumo de energia, temperatura nem disponibilidade ao longo do tempo.
+- Não medi temperatura nem disponibilidade ao longo do tempo. O consumo de energia foi medido só em tomada inteligente, sem carga de inferência.
 
 ## Referências
 
