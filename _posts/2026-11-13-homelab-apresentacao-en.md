@@ -9,11 +9,11 @@ image: /assets/img/homelab-apresentacao/cover-en.png
 
 *[Leia em português]({{ "/pt/2026/11/13/homelab-apresentacao/" | relative_url }})*
 
-<span class="pill">LAB series · post 00 of 11 · state as of 2026-11-13</span>
+<span class="pill">LAB series · post 00 of 12 · state as of 2026-11-13</span>
 
 Financially, this lab makes no sense. No return closes the power and hardware bill. I keep it for four reasons: privacy (my data and my models stay at home), learning, fun and, now and then, a good dose of grey hair.
 
-This post is the map. The next 11 show what I measured on it, including what went wrong. Nothing here is production: it is a lab.
+This post is the map. The next 12 show what I measured on it, including what went wrong. Nothing here is production: it is a lab.
 
 <figure class="fig">
 <img src="{{ '/assets/img/homelab-apresentacao/rack-aberto-16x9.jpg' | relative_url }}" alt="The lab rack with the door open: chassis, patch panel with blue cables, router, Grandstream GWN7832 switch and the four-bay NAS." loading="lazy">
@@ -31,9 +31,9 @@ This post is the map. The next 11 show what I measured on it, including what wen
 
 - The three nodes add up to 16 threads and 72 GB of installed RAM. Two of them are Celeron N4020 machines with 4 GB each: they run 16 light services and nothing else.
 - All the heavy load sits on one node (Ryzen 5 5600G, 64 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
-- The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on.
+- The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on and is also my game-streaming server: it runs Sunshine, and I play from anywhere in the house with Moonlight. One of the clients is a Celeron mini PC, like the nodes, that boots straight into a light Wayland compositor dedicated to that. It deserves a post of its own.
 - The network is gigabit, with a MikroTik RB3011 router and VLANs that split five networks: mobile devices, servers, administration, security and IoT. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
-- The NAS is a Ubiquiti UNVR, a 4-bay network video recorder, converted into a NAS: Linux with RAID 1 on two pools (two HDDs and two SSDs).
+- The NAS is a Ubiquiti UNVR, a 4-bay network video recorder, converted into a NAS: Linux with two pools, one of slow storage (two HDDs) and one fast (two SSDs), both on RAID 1.
 - A MacBook Air with a broken screen and no video output over its USB-C ports plays two roles: it runs Jellyfin (media server) and it is my remote workstation. It is where I centralize my work, reach in from outside, connect VS Code and use an AI assistant with many skills and MCPs, with read-only Kubernetes accounts for management. It and the NAS are not part of the 22-service count, which are Proxmox guests.
 - The two Kubernetes "clusters" are single-node VMs on the same host. The Istio multicluster setup is real, the scale is not.
 - Power draw is now measured with a smart plug: on 2026-11-13 at 8 pm the whole rack drew 172 W, of which 75 W was Node C. Monthly figures and cost come in post 10.
@@ -60,7 +60,7 @@ The operating system sees less than the installed RAM: 3.65 GiB on nodes A and B
 | Grandstream GWN7832 | L3 aggregation switch, 12 × 10 Gb SFP+ ports, idle |
 | Ubiquiti UNVR (converted) | 4-bay NAS: RAID 1 of 2 × 3 TB HDDs and RAID 1 of 2 × 960 GB SSDs |
 | MacBook Air (Apple M1, 8 GB) | media server (Jellyfin) and remote workstation (VS Code, AI assistant with MCPs, read-only Kubernetes accounts); broken screen, no video over USB-C |
-| Personal workstation (desktop) | 24 GB RX 7900 XTX; outside the lab |
+| Personal workstation (desktop) | Ryzen 7 7800X3D, MSI B650M board, 24 GB RX 7900 XTX, 1 TB NVMe, Ubuntu 26.04; game-streaming server (Sunshine); outside the lab |
 
 Model software: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 and the `amdgpu` driver that ships with the kernel. Extra storage over NFS from a NAS. Network: gigabit between all nodes.
 
@@ -100,7 +100,7 @@ Kubernetes cluster "a" (versions read on 2026-11-13): k0s 1.36.4 with one node, 
 
 ## The series
 
-Twelve posts, two per week, always in pt-BR and en: the per-feature detector, the lab that was dev and prod at once, the GPU stuck at 100%, Vulkan versus HIP, what happens when the main GPU drops, 128k tokens of context on 2 × 16 GB, the 208 share failures, Proxmox in read-only mode, the search index cleanup, the lab's energy use and, finally, where the router got it wrong.
+Thirteen posts, two per week, always in pt-BR and en: the per-feature detector, the lab that was dev and prod at once, the GPU stuck at 100%, Vulkan versus HIP, what happens when the main GPU drops, 128k tokens of context on 2 × 16 GB, the 208 share failures, Proxmox in read-only mode, the search index cleanup, the lab's energy use, where the router got it wrong and, finally, the Celeron that became a game client.
 
 Series rules: every number has a script and raw data; negative results go in the summary; no IPs, hostnames or personal services.
 
