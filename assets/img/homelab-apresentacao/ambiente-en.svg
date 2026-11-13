@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-label="Environment diagram: three Proxmox nodes, a NAS and the personal workstation outside the lab." style="width:100%;height:auto">
+<rect width="1000" height="640" fill="#0F1B2D"/>
+<rect x="560" y="10" width="420" height="104" rx="14" fill="none" stroke="#8C8C8C" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="580" y="42" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#8C8C8C">Personal workstation (outside the lab)</text>
+<text x="580" y="72" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">RX 7900 XTX 24 GB</text>
+<text x="580" y="98" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">joins the router when powered on</text>
+<line x1="770" y1="110" x2="770" y2="168" stroke="#8C8C8C" stroke-width="3" stroke-dasharray="6 6"/>
+<rect x="20" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
+<text x="40" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Node A</text>
+<text x="40" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
+<text x="40" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 cores · 3.7 GB RAM</text>
+<text x="40" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">120 GB SSD</text>
+<text x="40" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">9 services (LXC)</text>
+<text x="40" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">proxy, DNS, passwords,</text>
+<text x="40" y="404" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">sync, media</text>
+<rect x="310" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
+<text x="330" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Node B</text>
+<text x="330" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
+<text x="330" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 cores · 3.7 GB RAM</text>
+<text x="330" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">480 GB SSD</text>
+<text x="330" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">7 services (LXC)</text>
+<text x="330" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">photos, cloud,</text>
+<text x="330" y="404" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">alerts, media</text>
+<rect x="600" y="170" width="380" height="330" rx="14" fill="none" stroke="#DD8452" stroke-width="3"/>
+<text x="620" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#DD8452">Node C</text>
+<text x="620" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Ryzen 5 5600G · 6 cores</text>
+<text x="620" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">62.7 GB RAM · 2 NVMe 1 TB + SSD</text>
+<text x="620" y="308" font-family="Inter, sans-serif" font-size="19" fill="#DD8452">2× RX 9060 XT · 32 GB VRAM</text>
+<text x="620" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">local LLM + semantic router</text>
+<text x="620" y="372" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">2 k0s VMs (clusters a and b)</text>
+<text x="620" y="404" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">Prometheus + Grafana</text>
+<rect x="20" y="540" width="960" height="56" rx="10" fill="none" stroke="#4C72B0" stroke-width="3"/>
+<text x="40" y="576" font-family="JetBrains Mono, monospace" font-size="22" fill="#C9D3E0">Gigabit network · idle 10 GbE switch</text>
+<rect x="760" y="548" width="200" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
+<text x="782" y="575" font-family="JetBrains Mono, monospace" font-size="20" fill="#8C8C8C">NAS (NFS)</text>
+<line x1="155" y1="440" x2="155" y2="540" stroke="#4C72B0" stroke-width="3"/>
+<line x1="445" y1="440" x2="445" y2="540" stroke="#4C72B0" stroke-width="3"/>
+<line x1="790" y1="500" x2="790" y2="540" stroke="#4C72B0" stroke-width="3"/>
+</svg>
