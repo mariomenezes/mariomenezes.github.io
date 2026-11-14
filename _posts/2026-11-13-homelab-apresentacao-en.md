@@ -20,6 +20,11 @@ This post is the map. The next 12 show what I measured on it, including what wen
 <figcaption>The rack, front view. Machine labels were blurred. What to look at: the 12-port SFP+ (10 Gb) Grandstream switch, just above the NAS, has no node connected to it.</figcaption>
 </figure>
 
+<figure class="fig">
+<img src="{{ '/assets/img/homelab-apresentacao/rack-frontal-alto.jpg' | relative_url }}" alt="The whole rack, front view, top to bottom: power strip, patch panel with blue cables, router, switches, the four-bay NAS, shelves with mini PCs and a laptop, and a 4U chassis with a lock." loading="lazy" style="max-width:420px;margin:0 auto">
+<figcaption>The whole rack, front view. Top to bottom: power, network, NAS, shelves with mini PCs and a laptop, and a 4U chassis. Machine labels were blurred.</figcaption>
+</figure>
+
 <div class="tiles">
 <div class="tile"><div class="tile-value">22</div><div class="tile-label">running services (20 LXC + 2 VMs)</div></div>
 <div class="tile"><div class="tile-value">3</div><div class="tile-label">Proxmox nodes, plus 1 guest workstation</div></div>
@@ -87,8 +92,8 @@ Model software: llama.cpp, ROCm and the `amdgpu` driver that ships with the kern
 Kubernetes cluster "a": k0s with one node, Cilium, Istio, Flagger, cert-manager, Prometheus, Jaeger and OpenTelemetry Collector.
 
 <figure class="fig">
-<img src="{{ '/assets/img/homelab-apresentacao/ambiente-en.svg' | relative_url }}" alt="Environment diagram: three Proxmox nodes (two Celerons and one Ryzen with two GPUs), a NAS and, outside the lab, the personal workstation with the RX 7900 XTX.">
-<figcaption>The three nodes and the guest workstation. What to look at: all the AI and cluster load is on Node C. The dashed box is outside the lab.</figcaption>
+<img src="{{ '/assets/img/homelab-apresentacao/ambiente-en.svg' | relative_url }}" alt="Environment diagram. The internet enters the MikroTik RB3011 router, which feeds two Grandstream switches, one of them an idle 10 Gb unit. Five VLANs leave the router: mobile devices, servers, administration, security and IoT. The servers VLAN holds nodes A, B and C and the Ubiquiti UNVR NAS. Outside the lab are the workstation with the RX 7900 XTX, the MacBook Air and the Celeron Moonlight client.">
+<figcaption>Lab hardware and network. The router opens five VLANs and the three nodes and the NAS sit on the servers VLAN. Node C is the only one that is not always on, and the 10 Gb switch is idle. Dashed boxes are outside the lab.</figcaption>
 </figure>
 
 ### Inside

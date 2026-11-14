@@ -20,6 +20,11 @@ Este post é o mapa. Os próximos 12 mostram o que medi nele, incluindo o que de
 <figcaption>O rack, de frente. Os rótulos de máquina foram borrados. O que olhar: o switch Grandstream de 12 portas SFP+ (10 Gb), logo acima do NAS, não tem nenhum nó ligado a ele.</figcaption>
 </figure>
 
+<figure class="fig">
+<img src="{{ '/assets/img/homelab-apresentacao/rack-frontal-alto.jpg' | relative_url }}" alt="O rack inteiro, de frente, do topo à base: régua de energia, painel de patch com cabos azuis, roteador, switches, o NAS de quatro baias, prateleiras com mini PCs e um notebook, e um chassi de 4U com chave." loading="lazy" style="max-width:420px;margin:0 auto">
+<figcaption>O rack inteiro, de frente. De cima para baixo: energia, rede, NAS, prateleiras de mini PCs e notebook, e um chassi de 4U. Os rótulos de máquina foram borrados.</figcaption>
+</figure>
+
 <div class="tiles">
 <div class="tile"><div class="tile-value">22</div><div class="tile-label">serviços ligados (20 LXC + 2 VMs)</div></div>
 <div class="tile"><div class="tile-value">3</div><div class="tile-label">nós Proxmox, mais 1 workstation convidada</div></div>
@@ -87,8 +92,8 @@ Software dos modelos: llama.cpp, ROCm e o driver `amdgpu` do próprio kernel. Ar
 Cluster Kubernetes "a": k0s com um nó, Cilium, Istio, Flagger, cert-manager, Prometheus, Jaeger e OpenTelemetry Collector.
 
 <figure class="fig">
-<img src="{{ '/assets/img/homelab-apresentacao/ambiente-pt.svg' | relative_url }}" alt="Diagrama do ambiente: três nós Proxmox (dois Celeron e um Ryzen com duas GPUs), um NAS e, fora do laboratório, a workstation pessoal com a RX 7900 XTX.">
-<figcaption>Os três nós e a workstation convidada. O que olhar: toda a carga de IA e dos clusters está no Nó C. A caixa tracejada está fora do laboratório.</figcaption>
+<img src="{{ '/assets/img/homelab-apresentacao/ambiente-pt.svg' | relative_url }}" alt="Diagrama do ambiente. A internet entra no roteador MikroTik RB3011, que alimenta dois switches Grandstream, um deles de 10 Gb parado. Do roteador saem cinco VLANs: dispositivos móveis, servidores, administração, segurança e IoT. Na VLAN de servidores ficam os nós A, B e C e o NAS Ubiquiti UNVR. Fora do laboratório estão a workstation com a RX 7900 XTX, o MacBook Air e o cliente Moonlight em Celeron.">
+<figcaption>Hardware e rede do laboratório. O roteador abre cinco VLANs e os três nós e o NAS ficam na VLAN de servidores. O Nó C é o único que nem sempre fica ligado, e o switch de 10 Gb está parado. As caixas tracejadas ficam fora do laboratório.</figcaption>
 </figure>
 
 ### Por dentro
