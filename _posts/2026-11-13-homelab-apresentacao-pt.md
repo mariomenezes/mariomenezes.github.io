@@ -1,9 +1,9 @@
 ---
-title: "LAB-00: o que cabe num homelab de DevOps"
+title: "LAB-00: o que roda no meu homelab de DevOps"
 lang: pt-BR
 permalink: /pt/2026/11/13/homelab-apresentacao/
-description: "22 serviços em 3 máquinas, duas delas com Celeron e 4 GB de RAM, mais 32 GB de VRAM para modelos locais. O mapa do laboratório que alimenta esta série."
-resumo: "O mapa do meu homelab: 22 serviços em 3 máquinas, duas delas com Celeron e 4 GB de RAM, mais 32 GB de VRAM para modelos locais. Financeiramente não faz sentido; faço mesmo assim."
+description: "Fotos, arquivos, mídia, câmeras (Frigate), IA local, monitoramento e dois clusters Kubernetes: o que roda em 3 nós Proxmox, um NAS e uma workstation, com 22 serviços ligados e 72 GB de RAM."
+resumo: "O que roda no meu homelab: fotos, arquivos, mídia, câmeras (Frigate), IA local, monitoramento e dois clusters Kubernetes, em 3 nós Proxmox, um NAS e uma workstation. Financeiramente não faz sentido; faço mesmo assim."
 image: /assets/img/homelab-apresentacao/cover-pt.png
 ---
 
@@ -31,12 +31,30 @@ Este post é o mapa. Os próximos 12 mostram o que medi nele, incluindo o que de
 
 - Os três nós somam 16 threads e 72 GB de RAM instalada. Dois deles são Celeron N4020 com 4 GB cada: rodam 16 serviços leves e nada mais.
 - Toda a carga pesada está em um nó (Ryzen 5 5600G, 64 GB): duas GPUs para modelos locais, o roteador semântico, o monitoramento e as duas VMs dos clusters Kubernetes. **Esse nó nem sempre fica ligado.** Os dois menores ficam ligados 24 horas por dia.
+- O Frigate (NVR com detecção de objetos) é um dos serviços mais importantes para mim e está desligado hoje, justamente porque mora no Nó C.
 - A GPU mais rápida (RX 7900 XTX, 24 GB) **não faz parte do laboratório**: é a minha workstation. Ela entra no roteador quando está ligada e também é o meu servidor de streaming de jogos: roda o Sunshine, e eu jogo de qualquer ponto da casa com o Moonlight. Um dos clientes é um mini PC com Celeron, igual aos nós, que dá boot direto num compositor Wayland leve e dedicado a isso. Ele merece um post só dele.
 - A rede é gigabit, com um roteador MikroTik RB3011 e VLANs que separam cinco redes: dispositivos móveis, servidores, administração, segurança e IoT. Existe um switch de 10 Gb (Grandstream GWN7832, 12 portas SFP+) parado, sem uso: os nós têm placas de 1 Gb, então nada aqui aproveitaria o 10G.
 - O NAS é um Ubiquiti UNVR, um gravador de vídeo de rede de 4 baias, convertido em NAS: Linux com dois pools, um de armazenamento lento (dois HDs) e um rápido (dois SSDs), ambos em RAID 1.
 - Um MacBook Air com a tela quebrada e sem saída de vídeo pelas portas USB-C faz dois papéis: roda o Jellyfin (servidor de mídia) e é a minha workstation remota. É nele que eu centralizo o trabalho, acesso de fora, conecto o VS Code e uso um assistente de IA com várias skills e MCPs, com contas somente leitura no Kubernetes para a gerência. Ele e o NAS não entram na contagem de 22 serviços, que são guests do Proxmox.
 - Os dois "clusters" Kubernetes são VMs de nó único no mesmo host. O multicluster do Istio é real, a escala não.
 - O consumo de energia já está medido por tomada inteligente: em 13/11, às 20h, o rack inteiro gastava 172 W, dos quais 75 W eram do Nó C. Os números mensais e o custo saem no post 10.
+
+## O que roda aqui
+
+Estes são os serviços que eu uso de verdade, agrupados pelo que fazem. Os 22 serviços da contagem são os que estavam ligados em 13/11/2026. O Frigate fica fora dessa conta porque está desligado hoje, mas entra aqui porque é um dos serviços mais importantes para mim.
+
+| Camada | O que roda | Onde |
+|---|---|---|
+| Dados pessoais | Immich (fotos), Nextcloud (arquivos) e Syncthing (sincronização das minhas notas), com os dados no NAS | Nós A e B |
+| Mídia | Jellyfin e a automação da biblioteca (legendas, pedidos, organização) | Mac e nós A e B |
+| Vigilância | **Frigate**, um NVR com detecção de objetos e acesso à GPU do nó, para as câmeras de segurança | Nó C (hoje desligado) |
+| IA local | llama.cpp com um modelo de 35 bilhões de parâmetros, roteador semântico com failover e busca semântica (RAG) sobre as minhas notas | Nó C e workstation |
+| Rede e acesso | proxy reverso, DNS com bloqueio de anúncios, gerenciador de senhas e um painel de entrada | Nó A |
+| Observabilidade | Prometheus, Grafana (9 dashboards), Jaeger e avisos no celular (ntfy) | Nós B e C |
+| Plataforma | dois clusters k0s com Cilium, Istio multicluster e Flagger, e um registro de contêineres | Nó C (clusters) e Nó A (registro) |
+| Jogos | Sunshine na workstation e Moonlight nos clientes, de qualquer cômodo da casa | Workstation |
+
+O Frigate mora no Nó C, que nem sempre fica ligado (veja os Limites). Por isso ele está parado hoje, apesar de ser um serviço que eu quero ligado.
 
 ## Ambiente
 
@@ -83,13 +101,6 @@ Cluster Kubernetes "a" (versões lidas em 13/11/2026): k0s 1.36.4 com um nó, Ci
 <figcaption>A workstation convidada, com a RX 7900 XTX de 24 GB.</figcaption>
 </figure>
 
-## Quatro camadas
-
-1. **IA local.** Um modelo de 35 bilhões de parâmetros (Qwen3.6-35B-A3B, quantização Q4_K_M) dividido nas duas GPUs de 16 GB, atrás de um roteador semântico que também usa a workstation quando ela está ligada.
-2. **Operação.** Prometheus, Grafana e avisos no celular.
-3. **Dados e sincronização.** Busca semântica sobre as minhas notas e sincronização entre sub-redes.
-4. **Experimentos.** Dois clusters k0s com Istio multicluster, onde rodam os estudos de detecção de falha.
-
 ## O que já deu errado (os cabelos brancos)
 
 | Sintoma | Causa | Post |
@@ -109,6 +120,7 @@ Regras da série: todo número tem script e dado bruto; resultado negativo entra
 - A contagem de 22 serviços considera guests ligados em 13/11/2026, com o Nó C ligado. Os 16 serviços dos nós A e B ficam ligados 24 horas por dia. Os 6 do Nó C só existem quando ele está ligado, e ele nem sempre está: pelo consumo na tomada, em outubro ele ficou ligado o equivalente a cerca de um terço do mês (estimativa, a 75 W). Outros guests estão parados e ficam fora.
 - Os números de RAM e disco são dos hospedeiros, não dos guests.
 - O cluster "b" não foi inspecionado nesta data; as versões acima são do cluster "a".
+- Sobre o Frigate, só descrevo o que está configurado: não medi nada dele (número de câmeras, retenção, carga) e ele está desligado.
 - Não testei o isolamento entre as VLANs: descrevo a separação, não a verifiquei com testes.
 - Não medi temperatura nem disponibilidade ao longo do tempo. O consumo de energia foi medido só em tomada inteligente, sem carga de inferência.
 
@@ -118,6 +130,8 @@ Regras da série: todo número tem script e dado bruto; resultado negativo entra
 - k0s: <https://k0sproject.io/>
 - Istio multicluster: <https://istio.io/latest/docs/setup/install/multicluster/>
 - llama.cpp: <https://github.com/ggml-org/llama.cpp>
+- Frigate: <https://frigate.video/>
+- Sunshine e Moonlight: <https://github.com/LizardByte/Sunshine> e <https://moonlight-stream.org/>
 
 ---
 

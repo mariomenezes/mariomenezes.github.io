@@ -1,9 +1,9 @@
 ---
-title: "LAB-00: what fits in a DevOps homelab"
+title: "LAB-00: what runs in my DevOps homelab"
 lang: en
 permalink: /en/2026/11/13/homelab-apresentacao/
-description: "22 services on 3 machines, two of them Celerons with 4 GB of RAM, plus 32 GB of VRAM for local models. The map of the lab behind this series."
-resumo: "The map of my homelab: 22 services on 3 machines, two of them Celerons with 4 GB of RAM, plus 32 GB of VRAM for local models. Financially it makes no sense; I do it anyway."
+description: "Photos, files, media, cameras (Frigate), local AI, monitoring and two Kubernetes clusters: what runs on 3 Proxmox nodes, a NAS and a workstation, with 22 services running and 72 GB of RAM."
+resumo: "What runs in my homelab: photos, files, media, cameras (Frigate), local AI, monitoring and two Kubernetes clusters, on 3 Proxmox nodes, a NAS and a workstation. Financially it makes no sense; I do it anyway."
 image: /assets/img/homelab-apresentacao/cover-en.png
 ---
 
@@ -31,12 +31,30 @@ This post is the map. The next 12 show what I measured on it, including what wen
 
 - The three nodes add up to 16 threads and 72 GB of installed RAM. Two of them are Celeron N4020 machines with 4 GB each: they run 16 light services and nothing else.
 - All the heavy load sits on one node (Ryzen 5 5600G, 64 GB): two GPUs for local models, the semantic router, monitoring and the two Kubernetes cluster VMs. **That node is not always on.** The two smaller ones run 24 hours a day.
+- Frigate (an NVR with object detection) is one of the services that matter most to me and is off today, precisely because it lives on Node C.
 - The fastest GPU (RX 7900 XTX, 24 GB) is **not part of the lab**: it is my workstation. It joins the router when powered on and is also my game-streaming server: it runs Sunshine, and I play from anywhere in the house with Moonlight. One of the clients is a Celeron mini PC, like the nodes, that boots straight into a light Wayland compositor dedicated to that. It deserves a post of its own.
 - The network is gigabit, with a MikroTik RB3011 router and VLANs that split five networks: mobile devices, servers, administration, security and IoT. There is an idle 10 Gb switch (Grandstream GWN7832, 12 SFP+ ports), unused: the nodes have 1 Gb NICs, so nothing here would use the 10G.
 - The NAS is a Ubiquiti UNVR, a 4-bay network video recorder, converted into a NAS: Linux with two pools, one of slow storage (two HDDs) and one fast (two SSDs), both on RAID 1.
 - A MacBook Air with a broken screen and no video output over its USB-C ports plays two roles: it runs Jellyfin (media server) and it is my remote workstation. It is where I centralize my work, reach in from outside, connect VS Code and use an AI assistant with many skills and MCPs, with read-only Kubernetes accounts for management. It and the NAS are not part of the 22-service count, which are Proxmox guests.
 - The two Kubernetes "clusters" are single-node VMs on the same host. The Istio multicluster setup is real, the scale is not.
 - Power draw is now measured with a smart plug: on 2026-11-13 at 8 pm the whole rack drew 172 W, of which 75 W was Node C. Monthly figures and cost come in post 10.
+
+## What runs here
+
+These are the services I actually use, grouped by what they do. The 22 services in the count are the ones that were running on 2026-11-13. Frigate is outside that count because it is off today, but it is here because it is one of the services that matter most to me.
+
+| Layer | What runs | Where |
+|---|---|---|
+| Personal data | Immich (photos), Nextcloud (files) and Syncthing (syncing my notes), with the data on the NAS | Nodes A and B |
+| Media | Jellyfin and the library automation (subtitles, requests, organization) | Mac and nodes A and B |
+| Surveillance | **Frigate**, an NVR with object detection and access to the node's GPU, for the security cameras | Node C (off today) |
+| Local AI | llama.cpp with a 35-billion-parameter model, a semantic router with failover and semantic search (RAG) over my notes | Node C and workstation |
+| Network and access | reverse proxy, ad-blocking DNS, a password manager and a landing dashboard | Node A |
+| Observability | Prometheus, Grafana (9 dashboards), Jaeger and phone alerts (ntfy) | Nodes B and C |
+| Platform | two k0s clusters with Cilium, multicluster Istio and Flagger, plus a container registry | Node C (clusters) and Node A (registry) |
+| Games | Sunshine on the workstation and Moonlight on the clients, from any room in the house | Workstation |
+
+Frigate lives on Node C, which is not always on (see Limits). That is why it is stopped today, even though it is a service I want running.
 
 ## Environment
 
@@ -83,13 +101,6 @@ Kubernetes cluster "a" (versions read on 2026-11-13): k0s 1.36.4 with one node, 
 <figcaption>The guest workstation, with the 24 GB RX 7900 XTX.</figcaption>
 </figure>
 
-## Four layers
-
-1. **Local AI.** A 35-billion-parameter model (Qwen3.6-35B-A3B, Q4_K_M quantization) split across the two 16 GB GPUs, behind a semantic router that also uses the workstation when it is on.
-2. **Operations.** Prometheus, Grafana and phone alerts.
-3. **Data and sync.** Semantic search over my notes and sync across subnets.
-4. **Experiments.** Two k0s clusters with multicluster Istio, where the failure-detection studies run.
-
 ## What has already gone wrong (the grey hair)
 
 | Symptom | Cause | Post |
@@ -109,6 +120,7 @@ Series rules: every number has a script and raw data; negative results go in the
 - The count of 22 services is guests running on 2026-11-13, with Node C on. The 16 services on nodes A and B run 24 hours a day. The 6 on Node C only exist while it is on, and it is not always on: from plug consumption, in October it was on the equivalent of about a third of the month (estimate, at 75 W). Other guests are stopped and left out.
 - RAM and disk figures are for the hosts, not the guests.
 - Cluster "b" was not inspected on this date; the versions above are from cluster "a".
+- For Frigate I only describe what is configured: I measured nothing about it (camera count, retention, load) and it is off.
 - I did not test isolation between the VLANs: I describe the separation, I did not verify it with tests.
 - I did not measure temperature or availability over time. Power was measured only with a smart plug, with no inference load.
 
@@ -118,6 +130,8 @@ Series rules: every number has a script and raw data; negative results go in the
 - k0s: <https://k0sproject.io/>
 - Istio multicluster: <https://istio.io/latest/docs/setup/install/multicluster/>
 - llama.cpp: <https://github.com/ggml-org/llama.cpp>
+- Frigate: <https://frigate.video/>
+- Sunshine and Moonlight: <https://github.com/LizardByte/Sunshine> and <https://moonlight-stream.org/>
 
 ---
 
