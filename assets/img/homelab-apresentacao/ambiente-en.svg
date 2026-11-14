@@ -1,41 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-label="Environment diagram: three Proxmox nodes, a NAS and the personal workstation outside the lab." style="width:100%;height:auto">
-<rect width="1000" height="640" fill="#0F1B2D"/>
-<rect x="560" y="10" width="420" height="104" rx="14" fill="none" stroke="#8C8C8C" stroke-width="3" stroke-dasharray="10 8"/>
-<text x="580" y="42" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#8C8C8C">Personal workstation (outside the lab)</text>
-<text x="580" y="72" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">RX 7900 XTX 24 GB · Sunshine (games)</text>
-<text x="580" y="98" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">joins the router when powered on</text>
-<line x1="770" y1="110" x2="770" y2="168" stroke="#8C8C8C" stroke-width="3" stroke-dasharray="6 6"/>
-<rect x="20" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
-<text x="40" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Node A</text>
-<text x="40" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
-<text x="40" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 cores · 4 GB RAM</text>
-<text x="40" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">120 GB SSD</text>
-<text x="40" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">9 services (LXC)</text>
-<text x="40" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">proxy, DNS, passwords,</text>
-<text x="40" y="404" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">sync, media</text>
-<rect x="310" y="170" width="270" height="270" rx="14" fill="none" stroke="#4C72B0" stroke-width="3"/>
-<text x="330" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#7FA2D6">Node B</text>
-<text x="330" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Celeron N4020</text>
-<text x="330" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">2 cores · 4 GB RAM</text>
-<text x="330" y="308" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">480 GB SSD</text>
-<text x="330" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">7 services (LXC)</text>
-<text x="330" y="372" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">photos, cloud,</text>
-<text x="330" y="404" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">alerts, media</text>
-<rect x="600" y="170" width="380" height="330" rx="14" fill="none" stroke="#DD8452" stroke-width="3"/>
-<text x="620" y="208" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700" fill="#DD8452">Node C</text>
-<text x="620" y="244" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">Ryzen 5 5600G · 6 cores</text>
-<text x="620" y="276" font-family="Inter, sans-serif" font-size="19" fill="#C9D3E0">64 GB RAM · 2 NVMe 1 TB + SSD</text>
-<text x="620" y="308" font-family="Inter, sans-serif" font-size="19" fill="#DD8452">2× RX 9060 XT · 32 GB VRAM</text>
-<text x="620" y="340" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">local LLM + semantic router</text>
-<text x="620" y="372" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">2 k0s VMs (clusters a and b)</text>
-<text x="620" y="404" font-family="Inter, sans-serif" font-size="19" fill="#FFFFFF">Prometheus + Grafana</text>
-<rect x="20" y="540" width="960" height="56" rx="10" fill="none" stroke="#4C72B0" stroke-width="3"/>
-<text x="40" y="575" font-family="JetBrains Mono, monospace" font-size="19" fill="#C9D3E0">Gigabit · 5 VLANs · idle 10 GbE</text>
-<rect x="495" y="548" width="150" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
-<text x="510" y="574" font-family="JetBrains Mono, monospace" font-size="18" fill="#8C8C8C">UNVR NAS</text>
-<rect x="660" y="548" width="305" height="40" rx="8" fill="none" stroke="#8C8C8C" stroke-width="2"/>
-<text x="676" y="574" font-family="JetBrains Mono, monospace" font-size="18" fill="#8C8C8C">Mac · Jellyfin</text>
-<line x1="155" y1="440" x2="155" y2="540" stroke="#4C72B0" stroke-width="3"/>
-<line x1="445" y1="440" x2="445" y2="540" stroke="#4C72B0" stroke-width="3"/>
-<line x1="790" y1="500" x2="790" y2="540" stroke="#4C72B0" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" role="img" aria-label="Environment diagram. The internet enters the MikroTik RB3011 router, which feeds two Grandstream switches, one of them an idle 10 Gb unit. Five VLANs leave the router: mobile devices, servers, administration, security and IoT. The servers VLAN holds nodes A, B and C and the Ubiquiti UNVR NAS. Outside the lab are the workstation with the RX 7900 XTX, the MacBook Air and the Celeron Moonlight client." style="width:100%;height:auto">
+<rect width="1000" height="900" fill="#0F1B2D"/>
+<rect x="420" y="8" width="160" height="42" rx="12" fill="none" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="500" y="36" font-family="JetBrains Mono, monospace" font-size="18" fill="#B4BDCA" text-anchor="middle" font-weight="700">Internet</text>
+<line x1="500" y1="50" x2="500" y2="92" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="290" y="92" width="420" height="70" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="500" y="124" font-family="JetBrains Mono, monospace" font-size="20" fill="#7FA2D6" text-anchor="middle" font-weight="700">MikroTik RB3011</text>
+<text x="500" y="148" font-family="Inter, sans-serif" font-size="16" fill="#C9D3E0" text-anchor="middle">router · VLANs</text>
+<line x1="500" y1="162" x2="500" y2="186" stroke="#4C72B0" stroke-width="2.5"/>
+<line x1="250" y1="186" x2="750" y2="186" stroke="#4C72B0" stroke-width="2.5"/>
+<line x1="250" y1="186" x2="250" y2="214" stroke="#4C72B0" stroke-width="2.5"/>
+<line x1="750" y1="186" x2="750" y2="214" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="80" y="214" width="340" height="70" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="250" y="246" font-family="JetBrains Mono, monospace" font-size="18" fill="#7FA2D6" text-anchor="middle" font-weight="700">Grandstream GWN7802P</text>
+<text x="250" y="270" font-family="Inter, sans-serif" font-size="16" fill="#C9D3E0" text-anchor="middle">managed switch</text>
+<rect x="580" y="214" width="340" height="70" rx="12" fill="none" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="750" y="246" font-family="JetBrains Mono, monospace" font-size="18" fill="#B4BDCA" text-anchor="middle" font-weight="700">Grandstream GWN7832</text>
+<text x="750" y="270" font-family="Inter, sans-serif" font-size="16" fill="#B4BDCA" text-anchor="middle">12× SFP+ 10 Gb · idle</text>
+<line x1="250" y1="284" x2="250" y2="312" stroke="#4C72B0" stroke-width="2.5"/>
+<line x1="750" y1="284" x2="750" y2="312" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="6 6"/>
+<line x1="120" y1="312" x2="880" y2="312" stroke="#4C72B0" stroke-width="2.5"/>
+<line x1="100" y1="312" x2="100" y2="334" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="10" y="334" width="180" height="42" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="100" y="361" font-family="JetBrains Mono, monospace" font-size="17" fill="#7FA2D6" text-anchor="middle" font-weight="700">mobile</text>
+<line x1="295" y1="312" x2="295" y2="334" stroke="#DD8452" stroke-width="2.5"/>
+<rect x="205" y="334" width="180" height="42" rx="12" fill="#1B2A40" stroke="#DD8452" stroke-width="2.5"/>
+<text x="295" y="361" font-family="JetBrains Mono, monospace" font-size="17" fill="#DD8452" text-anchor="middle" font-weight="700">servers</text>
+<line x1="490" y1="312" x2="490" y2="334" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="400" y="334" width="180" height="42" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="490" y="361" font-family="JetBrains Mono, monospace" font-size="17" fill="#7FA2D6" text-anchor="middle" font-weight="700">admin</text>
+<line x1="685" y1="312" x2="685" y2="334" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="595" y="334" width="180" height="42" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="685" y="361" font-family="JetBrains Mono, monospace" font-size="17" fill="#7FA2D6" text-anchor="middle" font-weight="700">security</text>
+<line x1="880" y1="312" x2="880" y2="334" stroke="#4C72B0" stroke-width="2.5"/>
+<rect x="790" y="334" width="180" height="42" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="880" y="361" font-family="JetBrains Mono, monospace" font-size="17" fill="#7FA2D6" text-anchor="middle" font-weight="700">IoT</text>
+<text x="10" y="300" font-family="JetBrains Mono, monospace" font-size="15" fill="#B4BDCA">5 VLANs</text>
+<line x1="295" y1="376" x2="295" y2="408" stroke="#DD8452" stroke-width="2.5"/>
+<rect x="10" y="408" width="980" height="258" rx="12" fill="none" stroke="#DD8452" stroke-width="2.5"/>
+<rect x="24" y="432" width="215" height="210" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="38" y="462" font-family="JetBrains Mono, monospace" font-size="18" fill="#7FA2D6" font-weight="700">Node A</text>
+<text x="38" y="492" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Celeron N4020 · 2 cores</text>
+<text x="38" y="518" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">4 GB RAM · 120 GB SSD</text>
+<text x="38" y="544" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">9 services (LXC)</text>
+<text x="38" y="570" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">on 24/7</text>
+<rect x="253" y="432" width="215" height="210" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="267" y="462" font-family="JetBrains Mono, monospace" font-size="18" fill="#7FA2D6" font-weight="700">Node B</text>
+<text x="267" y="492" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Celeron N4020 · 2 cores</text>
+<text x="267" y="518" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">4 GB RAM · 480 GB SSD</text>
+<text x="267" y="544" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">7 services (LXC)</text>
+<text x="267" y="570" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">on 24/7</text>
+<rect x="482" y="432" width="262" height="210" rx="12" fill="none" stroke="#DD8452" stroke-width="2.5"/>
+<text x="496" y="462" font-family="JetBrains Mono, monospace" font-size="18" fill="#DD8452" font-weight="700">Node C</text>
+<text x="496" y="492" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Ryzen 5 5600G · 6 cores</text>
+<text x="496" y="518" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">64 GB RAM · 2 NVMe 1 TB + SSD</text>
+<text x="496" y="544" font-family="Inter, sans-serif" font-size="15" fill="#DD8452">2× RX 9060 XT · 32 GB VRAM</text>
+<text x="496" y="570" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">4 LXC + 2 VMs (k0s)</text>
+<text x="496" y="596" font-family="Inter, sans-serif" font-size="15" fill="#B4BDCA">not always on</text>
+<rect x="758" y="432" width="215" height="210" rx="12" fill="none" stroke="#4C72B0" stroke-width="2.5"/>
+<text x="772" y="462" font-family="JetBrains Mono, monospace" font-size="18" fill="#7FA2D6" font-weight="700">NAS · UNVR</text>
+<text x="772" y="492" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">4 bays · Linux + RAID 1</text>
+<text x="772" y="518" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">slow: 2 × 3 TB HDDs</text>
+<text x="772" y="544" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">fast: 2 × 960 GB SSDs</text>
+<text x="10" y="704" font-family="JetBrains Mono, monospace" font-size="16" fill="#B4BDCA" font-weight="700">Outside the lab</text>
+<rect x="10" y="716" width="340" height="160" rx="12" fill="none" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="9 7"/>
+<rect x="360" y="716" width="300" height="160" rx="12" fill="none" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="9 7"/>
+<rect x="670" y="716" width="320" height="160" rx="12" fill="none" stroke="#8C8C8C" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="24" y="748" font-family="JetBrains Mono, monospace" font-size="17" fill="#FFFFFF" font-weight="700">Workstation (desktop)</text>
+<text x="24" y="780" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Ryzen 7 7800X3D · RX 7900 XTX 24 GB</text>
+<text x="24" y="806" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">runs Sunshine (games)</text>
+<text x="24" y="832" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">joins the model router</text>
+<text x="374" y="748" font-family="JetBrains Mono, monospace" font-size="17" fill="#FFFFFF" font-weight="700">MacBook Air (M1, 8 GB)</text>
+<text x="374" y="780" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Jellyfin + remote workstation</text>
+<text x="374" y="806" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">broken screen</text>
+<text x="684" y="748" font-family="JetBrains Mono, monospace" font-size="17" fill="#FFFFFF" font-weight="700">Moonlight client</text>
+<text x="684" y="780" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">Celeron mini PC</text>
+<text x="684" y="806" font-family="Inter, sans-serif" font-size="15" fill="#C9D3E0">boots straight into Wayland</text>
 </svg>
