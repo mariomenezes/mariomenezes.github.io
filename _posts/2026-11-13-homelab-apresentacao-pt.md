@@ -46,13 +46,15 @@ Estes são os serviços que eu uso de verdade, agrupados pelo que fazem. Os 22 s
 | Camada | O que roda | Onde |
 |---|---|---|
 | Dados pessoais | Immich (fotos), Nextcloud (arquivos) e Syncthing (sincronização das minhas notas), com os dados no NAS | Nós A e B |
-| Mídia | Jellyfin e a automação da biblioteca (legendas, pedidos, organização) | Mac e nós A e B |
+| Mídia | Jellyfin, e a automação da biblioteca com Radarr, Sonarr, Prowlarr, Bazarr, Seerr e qBittorrent | Mac e nós A e B |
 | Vigilância | **Frigate**, um NVR com detecção de objetos e acesso à GPU do nó, para as câmeras de segurança | Nó C (hoje desligado) |
-| IA local | llama.cpp com um modelo de 35 bilhões de parâmetros, roteador semântico com failover e busca semântica (RAG) sobre as minhas notas | Nó C e workstation |
-| Rede e acesso | proxy reverso, DNS com bloqueio de anúncios, gerenciador de senhas e um painel de entrada | Nó A |
-| Observabilidade | Prometheus, Grafana (9 dashboards), Jaeger e avisos no celular (ntfy) | Nós B e C |
-| Plataforma | dois clusters k0s com Cilium, Istio multicluster e Flagger, e um registro de contêineres | Nó C (clusters) e Nó A (registro) |
-| Jogos | Sunshine na workstation e Moonlight nos clientes, de qualquer cômodo da casa | Workstation |
+| IA local | llama.cpp com um modelo de 35 bilhões de parâmetros, vLLM Semantic Router (roteador semântico com failover) e Qdrant (busca semântica sobre as minhas notas) | Nó C e workstation |
+| Rede e acesso | Nginx Proxy Manager (proxy reverso), Pi-hole (DNS com bloqueio de anúncios), Vaultwarden (gerenciador de senhas) e Homepage (painel de entrada) | Nó A |
+| Observabilidade | Prometheus, Grafana (9 dashboards), Jaeger, OpenTelemetry Collector e ntfy (avisos no celular) | Nós B e C |
+| Plataforma | dois clusters k0s com Cilium, Istio multicluster, Flagger e cert-manager, mais um registro de contêineres | Nó C (clusters) e Nó A (registro) |
+| Jogos | **Sunshine** (servidor de streaming de jogos) e, nos clientes, o Moonlight | Workstation, **não** nos nós do cluster |
+
+Tudo isso roda localmente, em hardware meu, dentro da rede da casa. Nenhum desses serviços é publicado na internet. O Sunshine roda na workstation e não nos nós do cluster; os clientes Moonlight ficam espalhados pela casa.
 
 O Frigate mora no Nó C, que nem sempre fica ligado (veja os Limites). Por isso ele está parado hoje, apesar de ser um serviço que eu quero ligado.
 
@@ -63,7 +65,7 @@ O Frigate mora no Nó C, que nem sempre fica ligado (veja os Limites). Por isso 
 | CPU | Celeron N4020, 2 núcleos | Celeron N4020, 2 núcleos | Ryzen 5 5600G, 6 núcleos / 12 threads |
 | RAM instalada | 4 GB (1 × DDR4) | 4 GB (1 × DDR4) | 64 GB (4 × 16 GB DDR4-2400) |
 | Disco | SSD 120 GB | SSD 480 GB | 2 × NVMe 1 TB + SSD 240 GB |
-| Proxmox VE | 8.4.21 (kernel 6.8.12) | 8.4.21 (kernel 6.8.12) | 8.4.19 (kernel 6.14.11) |
+| Hipervisor | Proxmox VE | Proxmox VE | Proxmox VE |
 | Ligados | 9 LXC | 7 LXC | 4 LXC + 2 VMs |
 | GPU | nenhuma | nenhuma | 2 × Radeon RX 9060 XT, 16 GB cada |
 
@@ -78,11 +80,11 @@ O sistema enxerga menos do que a RAM instalada: 3,65 GiB nos nós A e B e 62,7 G
 | Grandstream GWN7832 | switch L3 de agregação, 12 portas SFP+ de 10 Gb, parado |
 | Ubiquiti UNVR (convertido) | NAS de 4 baias: RAID 1 de 2 HDs de 3 TB e RAID 1 de 2 SSDs de 960 GB |
 | MacBook Air (Apple M1, 8 GB) | servidor de mídia (Jellyfin) e workstation remota (VS Code, assistente de IA com MCPs, contas somente leitura no Kubernetes); tela quebrada e sem vídeo pelas portas USB-C |
-| Workstation pessoal (desktop) | Ryzen 7 7800X3D, placa MSI B650M, RX 7900 XTX de 24 GB, NVMe de 1 TB, Ubuntu 26.04; servidor de streaming de jogos (Sunshine); fora do laboratório |
+| Workstation pessoal (desktop) | Ryzen 7 7800X3D, placa MSI B650M, RX 7900 XTX de 24 GB, NVMe de 1 TB, Ubuntu; roda o Sunshine (servidor de streaming de jogos), não os nós; fora do laboratório |
 
-Software dos modelos: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 e driver `amdgpu` do próprio kernel. Armazenamento extra por NFS, de um NAS. Rede: gigabit entre todos os nós.
+Software dos modelos: llama.cpp, ROCm e o driver `amdgpu` do próprio kernel. Armazenamento extra por NFS, de um NAS. Rede: gigabit entre todos os nós.
 
-Cluster Kubernetes "a" (versões lidas em 13/11/2026): k0s 1.36.4 com um nó, Cilium 1.16.5, Istio 1.31.1, Flagger 1.45.0, cert-manager 1.15.3, Prometheus 2.55.0, Jaeger 1.62.0 e OpenTelemetry Collector 0.160.0.
+Cluster Kubernetes "a": k0s com um nó, Cilium, Istio, Flagger, cert-manager, Prometheus, Jaeger e OpenTelemetry Collector.
 
 <figure class="fig">
 <img src="{{ '/assets/img/homelab-apresentacao/ambiente-pt.svg' | relative_url }}" alt="Diagrama do ambiente: três nós Proxmox (dois Celeron e um Ryzen com duas GPUs), um NAS e, fora do laboratório, a workstation pessoal com a RX 7900 XTX.">
@@ -119,7 +121,7 @@ Regras da série: todo número tem script e dado bruto; resultado negativo entra
 
 - A contagem de 22 serviços considera guests ligados em 13/11/2026, com o Nó C ligado. Os 16 serviços dos nós A e B ficam ligados 24 horas por dia. Os 6 do Nó C só existem quando ele está ligado, e ele nem sempre está: pelo consumo na tomada, em outubro ele ficou ligado o equivalente a cerca de um terço do mês (estimativa, a 75 W). Outros guests estão parados e ficam fora.
 - Os números de RAM e disco são dos hospedeiros, não dos guests.
-- O cluster "b" não foi inspecionado nesta data; as versões acima são do cluster "a".
+- O cluster "b" não foi inspecionado nesta data.
 - Sobre o Frigate, só descrevo o que está configurado: não medi nada dele (número de câmeras, retenção, carga) e ele está desligado.
 - Não testei o isolamento entre as VLANs: descrevo a separação, não a verifiquei com testes.
 - Não medi temperatura nem disponibilidade ao longo do tempo. O consumo de energia foi medido só em tomada inteligente, sem carga de inferência.

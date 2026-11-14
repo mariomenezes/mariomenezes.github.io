@@ -46,13 +46,15 @@ These are the services I actually use, grouped by what they do. The 22 services 
 | Layer | What runs | Where |
 |---|---|---|
 | Personal data | Immich (photos), Nextcloud (files) and Syncthing (syncing my notes), with the data on the NAS | Nodes A and B |
-| Media | Jellyfin and the library automation (subtitles, requests, organization) | Mac and nodes A and B |
+| Media | Jellyfin, and the library automation with Radarr, Sonarr, Prowlarr, Bazarr, Seerr and qBittorrent | Mac and nodes A and B |
 | Surveillance | **Frigate**, an NVR with object detection and access to the node's GPU, for the security cameras | Node C (off today) |
-| Local AI | llama.cpp with a 35-billion-parameter model, a semantic router with failover and semantic search (RAG) over my notes | Node C and workstation |
-| Network and access | reverse proxy, ad-blocking DNS, a password manager and a landing dashboard | Node A |
-| Observability | Prometheus, Grafana (9 dashboards), Jaeger and phone alerts (ntfy) | Nodes B and C |
-| Platform | two k0s clusters with Cilium, multicluster Istio and Flagger, plus a container registry | Node C (clusters) and Node A (registry) |
-| Games | Sunshine on the workstation and Moonlight on the clients, from any room in the house | Workstation |
+| Local AI | llama.cpp with a 35-billion-parameter model, vLLM Semantic Router (a semantic router with failover) and Qdrant (semantic search over my notes) | Node C and workstation |
+| Network and access | Nginx Proxy Manager (reverse proxy), Pi-hole (ad-blocking DNS), Vaultwarden (password manager) and Homepage (landing dashboard) | Node A |
+| Observability | Prometheus, Grafana (9 dashboards), Jaeger, OpenTelemetry Collector and ntfy (phone alerts) | Nodes B and C |
+| Platform | two k0s clusters with Cilium, multicluster Istio, Flagger and cert-manager, plus a container registry | Node C (clusters) and Node A (registry) |
+| Games | **Sunshine** (game-streaming server) and, on the clients, Moonlight | Workstation, **not** on the cluster nodes |
+
+All of this runs locally, on my own hardware, inside the home network. None of these services is published to the internet. Sunshine runs on the workstation, not on the cluster nodes; the Moonlight clients are scattered around the house.
 
 Frigate lives on Node C, which is not always on (see Limits). That is why it is stopped today, even though it is a service I want running.
 
@@ -63,7 +65,7 @@ Frigate lives on Node C, which is not always on (see Limits). That is why it is 
 | CPU | Celeron N4020, 2 cores | Celeron N4020, 2 cores | Ryzen 5 5600G, 6 cores / 12 threads |
 | Installed RAM | 4 GB (1 × DDR4) | 4 GB (1 × DDR4) | 64 GB (4 × 16 GB DDR4-2400) |
 | Disk | 120 GB SSD | 480 GB SSD | 2 × 1 TB NVMe + 240 GB SSD |
-| Proxmox VE | 8.4.21 (kernel 6.8.12) | 8.4.21 (kernel 6.8.12) | 8.4.19 (kernel 6.14.11) |
+| Hypervisor | Proxmox VE | Proxmox VE | Proxmox VE |
 | Running | 9 LXC | 7 LXC | 4 LXC + 2 VMs |
 | GPU | none | none | 2 × Radeon RX 9060 XT, 16 GB each |
 
@@ -78,11 +80,11 @@ The operating system sees less than the installed RAM: 3.65 GiB on nodes A and B
 | Grandstream GWN7832 | L3 aggregation switch, 12 × 10 Gb SFP+ ports, idle |
 | Ubiquiti UNVR (converted) | 4-bay NAS: RAID 1 of 2 × 3 TB HDDs and RAID 1 of 2 × 960 GB SSDs |
 | MacBook Air (Apple M1, 8 GB) | media server (Jellyfin) and remote workstation (VS Code, AI assistant with MCPs, read-only Kubernetes accounts); broken screen, no video over USB-C |
-| Personal workstation (desktop) | Ryzen 7 7800X3D, MSI B650M board, 24 GB RX 7900 XTX, 1 TB NVMe, Ubuntu 26.04; game-streaming server (Sunshine); outside the lab |
+| Personal workstation (desktop) | Ryzen 7 7800X3D, MSI B650M board, 24 GB RX 7900 XTX, 1 TB NVMe, Ubuntu; runs Sunshine (game-streaming server), not the nodes; outside the lab |
 
-Model software: llama.cpp build 216 (`f12cc6d`), ROCm 7.2.3 and the `amdgpu` driver that ships with the kernel. Extra storage over NFS from a NAS. Network: gigabit between all nodes.
+Model software: llama.cpp, ROCm and the `amdgpu` driver that ships with the kernel. Extra storage over NFS from a NAS. Network: gigabit between all nodes.
 
-Kubernetes cluster "a" (versions read on 2026-11-13): k0s 1.36.4 with one node, Cilium 1.16.5, Istio 1.31.1, Flagger 1.45.0, cert-manager 1.15.3, Prometheus 2.55.0, Jaeger 1.62.0 and OpenTelemetry Collector 0.160.0.
+Kubernetes cluster "a": k0s with one node, Cilium, Istio, Flagger, cert-manager, Prometheus, Jaeger and OpenTelemetry Collector.
 
 <figure class="fig">
 <img src="{{ '/assets/img/homelab-apresentacao/ambiente-en.svg' | relative_url }}" alt="Environment diagram: three Proxmox nodes (two Celerons and one Ryzen with two GPUs), a NAS and, outside the lab, the personal workstation with the RX 7900 XTX.">
@@ -119,7 +121,7 @@ Series rules: every number has a script and raw data; negative results go in the
 
 - The count of 22 services is guests running on 2026-11-13, with Node C on. The 16 services on nodes A and B run 24 hours a day. The 6 on Node C only exist while it is on, and it is not always on: from plug consumption, in October it was on the equivalent of about a third of the month (estimate, at 75 W). Other guests are stopped and left out.
 - RAM and disk figures are for the hosts, not the guests.
-- Cluster "b" was not inspected on this date; the versions above are from cluster "a".
+- Cluster "b" was not inspected on this date.
 - For Frigate I only describe what is configured: I measured nothing about it (camera count, retention, load) and it is off.
 - I did not test isolation between the VLANs: I describe the separation, I did not verify it with tests.
 - I did not measure temperature or availability over time. Power was measured only with a smart plug, with no inference load.
